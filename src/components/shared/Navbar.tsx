@@ -2,28 +2,55 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 import { NAV_MENUS } from "../../config/navigation";
-import {
-  desktopDropdownVariants,
-  mobileItemsVariants,
-  mobilePanelVariants,
-} from "../../lib/animations/navbar";
+import { mobilePanelVariants } from "../../lib/animations/navbar";
 import { ThemeToggle } from "./ThemeToggle";
 
+// Colores de hover/activo por seccion (desktop y movil).
+const sectionHoverStyles: Record<
+  string,
+  {
+    text: string;
+    underline: string;
+    mobileActive: string;
+  }
+> = {
+  vehiculos: {
+    text: "hover:text-blue-800 dark:hover:text-blue-200",
+    underline: "bg-[#0052CC] dark:[#0052CC]",
+    mobileActive: "bg-blue-100 text-blue-900 dark:bg-blue-950/40 dark:text-blue-100",
+  },
+  cardetailing: {
+    text: "hover:text-cyan-800 dark:hover:text-cyan-200",
+    underline: "bg-cyan-700 dark:bg-cyan-300",
+    mobileActive: "bg-cyan-100 text-cyan-900 dark:bg-cyan-950/40 dark:text-cyan-100",
+  },
+  arquitectura: {
+    text: "hover:text-amber-800 dark:hover:text-amber-200",
+    underline: "bg-amber-700 dark:bg-amber-300",
+    mobileActive: "bg-amber-100 text-amber-900 dark:bg-amber-950/40 dark:text-amber-100",
+  },
+  publicidad: {
+    text: "hover:text-fuchsia-800 dark:hover:text-fuchsia-200",
+    underline: "bg-fuchsia-700 dark:bg-fuchsia-300",
+    mobileActive: "bg-fuchsia-100 text-fuchsia-900 dark:bg-fuchsia-950/40 dark:text-fuchsia-100",
+  },
+};
+
 export function Navbar() {
-  // Dropdown activo para desktop.
-  const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null);
   // Estado del menu hamburguesa en movil.
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // Seccion activa del acordeon en movil.
-  const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
+  // Seccion activa para remarcar navegacion.
+  const [activeSection, setActiveSection] = useState<string>("");
   const navRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    // Cierra dropdowns al hacer click fuera de la barra.
+    // Cierra menu movil al hacer click fuera de la barra.
     const onClickOutside = (event: MouseEvent) => {
       if (!navRef.current?.contains(event.target as Node)) {
-        setOpenDesktopMenu(null);
+        setMobileMenuOpen(false);
       }
     };
 
@@ -33,94 +60,92 @@ export function Navbar() {
     };
   }, []);
 
-  const toggleMobileSection = (menuId: string) => {
-    setOpenMobileSection((prev) => (prev === menuId ? null : menuId));
-  };
+  useEffect(() => {
+    // Al volver a desktop cerramos estado movil.
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    const onViewportChange = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    mediaQuery.addEventListener("change", onViewportChange);
+    return () => mediaQuery.removeEventListener("change", onViewportChange);
+  }, []);
+
+  useEffect(() => {
+    // Sincroniza item activo con hash para subrayado persistente.
+    const syncHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      setActiveSection(hash);
+    };
+
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    return () => window.removeEventListener("hashchange", syncHash);
+  }, []);
 
   return (
     <nav
-      className="sticky top-0 z-50 w-full border-b border-slate-300/70 bg-white/95 backdrop-blur dark:border-slate-700 dark:bg-slate-950/95"
+      className="sticky top-0 z-50 w-full border-b border-slate-300/70 bg-slate-100/95 backdrop-blur dark:border-slate-700 dark:bg-slate-950/95"
       ref={navRef}
       aria-label="Navegacion principal"
     >
       <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-5 py-3.5 max-[360px]:px-3 max-[360px]:py-2.5">
-        <div className="text-base font-bold tracking-[0.03em] text-slate-900 dark:text-slate-100 max-[360px]:text-sm">
-          Polarizados del Este
-        </div>
+        <Link href="/" className="inline-flex items-center" aria-label="Ir al inicio">
+          <Image
+            src="/images/NEGRO-FONDO-TRANSPARENTE.png"
+            alt="Polarizados del Este"
+            width={172}
+            height={38}
+            priority
+            className="h-auto w-[154px] dark:hidden max-[360px]:w-[130px]"
+          />
+          <Image
+            src="/images/BLANCO-FONDO-TRANSPARENTE.png"
+            alt="Polarizados del Este"
+            width={172}
+            height={38}
+            priority
+            className="hidden h-auto w-[154px] dark:block max-[360px]:w-[130px]"
+          />
+        </Link>
 
-        <div className="flex items-center gap-2.5 max-[360px]:hidden">
+        <div className="hidden items-center gap-5 md:flex">
           {NAV_MENUS.map((menu) => {
-            const isOpen = openDesktopMenu === menu.id;
+            const isActive = activeSection === menu.id;
+            const hoverStyle = sectionHoverStyles[menu.id] ?? {
+              text: "hover:text-slate-900 dark:hover:text-slate-100",
+              underline: "bg-brand-700 dark:bg-brand-100",
+              mobileActive: "bg-brand-100 text-slate-900 dark:bg-slate-800 dark:text-slate-100",
+            };
 
             return (
-              <div
+              <a
                 key={menu.id}
-                className="relative"
-                onMouseEnter={() => setOpenDesktopMenu(menu.id)}
-                onMouseLeave={() => setOpenDesktopMenu((prev) => (prev === menu.id ? null : prev))}
-                onFocusCapture={() => setOpenDesktopMenu(menu.id)}
-                onBlurCapture={(event) => {
-                  if (!event.currentTarget.contains(event.relatedTarget as Node)) {
-                    setOpenDesktopMenu((prev) => (prev === menu.id ? null : prev));
-                  }
-                }}
+                href={`#${menu.id}`}
+                onClick={() => setActiveSection(menu.id)}
+                className={`group relative inline-flex items-center px-1 py-2 text-[1rem] font-semibold outline-none transition-colors focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${hoverStyle.text} ${
+                  isActive
+                    ? "text-slate-900 dark:text-slate-100"
+                    : "text-slate-700 dark:text-slate-300"
+                }`}
+                aria-current={isActive ? "page" : undefined}
               >
-                <button
-                  type="button"
-                  className={`rounded-[10px] px-3 py-2.5 text-[0.95rem] font-semibold text-slate-900 outline-none ring-offset-2 transition hover:bg-slate-100 focus-visible:bg-slate-100 focus-visible:ring-2 focus-visible:ring-brand-700 dark:text-slate-100 dark:hover:bg-slate-800 dark:focus-visible:bg-slate-800 dark:focus-visible:ring-brand-100 ${
-                    isOpen
-                      ? "rounded-b-none border border-slate-300 border-b-transparent bg-blue-100 text-blue-900 dark:border-slate-600 dark:border-b-transparent dark:bg-slate-700 dark:text-blue-100"
-                      : ""
+                {menu.label}
+                <span
+                  className={`absolute -bottom-[9px] left-0 h-[2px] w-full origin-left transition-transform duration-300 ${hoverStyle.underline} ${
+                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                   }`}
-                  onClick={() => setOpenDesktopMenu((prev) => (prev === menu.id ? null : menu.id))}
-                  onKeyDown={(event) => {
-                    if (event.key === "Escape") {
-                      setOpenDesktopMenu(null);
-                    }
-                  }}
-                  aria-expanded={isOpen}
-                  aria-controls={`dropdown-${menu.id}`}
-                >
-                  {menu.label}
-                </button>
-
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      id={`dropdown-${menu.id}`}
-                      role="menu"
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      variants={desktopDropdownVariants}
-                      className="absolute left-1/2 top-[calc(100%-1px)] z-20 min-w-[220px] -translate-x-1/2 rounded-b-xl rounded-t-none border border-slate-300 bg-white p-2 shadow-[0_12px_30px_rgba(17,24,39,0.12)] dark:border-slate-600 dark:bg-slate-900"
-                      onKeyDown={(event) => {
-                        if (event.key === "Escape") {
-                          setOpenDesktopMenu(null);
-                        }
-                      }}
-                    >
-                      {menu.items.map((item) => (
-                        <a
-                          key={item.id}
-                          href={item.href}
-                          className="block rounded-lg px-2.5 py-2.5 text-[0.92rem] text-slate-900 outline-none ring-offset-2 transition hover:bg-slate-100 focus-visible:bg-slate-100 focus-visible:ring-2 focus-visible:ring-brand-700 dark:text-slate-100 dark:hover:bg-slate-800 dark:focus-visible:bg-slate-800 dark:focus-visible:ring-brand-100"
-                          role="menuitem"
-                          onClick={() => setOpenDesktopMenu(null)}
-                        >
-                          {item.label}
-                        </a>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                  aria-hidden="true"
+                />
+              </a>
             );
           })}
           <ThemeToggle />
         </div>
 
-        <div className="hidden items-center gap-2 max-[360px]:inline-flex">
+        <div className="inline-flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <button
             type="button"
@@ -147,49 +172,32 @@ export function Navbar() {
             animate="visible"
             exit="exit"
             variants={mobilePanelVariants}
-            className="hidden overflow-hidden border-t border-slate-300 bg-white px-3 pb-3 pt-2 dark:border-slate-700 dark:bg-slate-950 max-[360px]:block"
+            className="overflow-hidden border-t border-slate-300 bg-slate-50 px-3 pb-3 pt-2 dark:border-slate-700 dark:bg-slate-950 md:hidden"
           >
             {NAV_MENUS.map((menu) => {
-              const isSectionOpen = openMobileSection === menu.id;
+              const isActive = activeSection === menu.id;
+              const hoverStyle = sectionHoverStyles[menu.id] ?? {
+                text: "hover:text-slate-900 dark:hover:text-slate-100",
+                underline: "bg-brand-700 dark:bg-brand-100",
+                mobileActive: "bg-brand-100 text-slate-900 dark:bg-slate-800 dark:text-slate-100",
+              };
 
               return (
                 <div key={menu.id} className="border-b border-slate-200 py-1.5 dark:border-slate-800">
-                  <button
-                    type="button"
-                    className="w-full rounded-lg bg-transparent px-2 py-[9px] text-left text-[0.95rem] font-semibold text-slate-900 outline-none ring-offset-2 transition hover:bg-slate-100 focus-visible:bg-slate-100 focus-visible:ring-2 focus-visible:ring-brand-700 dark:text-slate-100 dark:hover:bg-slate-800 dark:focus-visible:bg-slate-800 dark:focus-visible:ring-brand-100"
-                    onClick={() => toggleMobileSection(menu.id)}
-                    aria-expanded={isSectionOpen}
-                    aria-controls={`mobile-section-${menu.id}`}
+                  <a
+                    href={`#${menu.id}`}
+                    className={`block w-full rounded-lg px-2 py-[9px] text-left text-[0.95rem] font-semibold outline-none ring-offset-2 transition focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${hoverStyle.text} ${
+                      isActive
+                        ? hoverStyle.mobileActive
+                        : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                    }`}
+                    onClick={() => {
+                      setActiveSection(menu.id);
+                      setMobileMenuOpen(false);
+                    }}
                   >
                     {menu.label}
-                  </button>
-
-                  <AnimatePresence>
-                    {isSectionOpen && (
-                      <motion.div
-                        id={`mobile-section-${menu.id}`}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        variants={mobileItemsVariants}
-                        className="mt-1 overflow-hidden pl-2 pb-2"
-                      >
-                        {menu.items.map((item) => (
-                          <a
-                            key={item.id}
-                            href={item.href}
-                            className="block rounded-md px-2 py-2 text-[0.88rem] text-slate-800 outline-none ring-offset-2 transition hover:bg-slate-100 focus-visible:bg-slate-100 focus-visible:ring-2 focus-visible:ring-brand-700 dark:text-slate-200 dark:hover:bg-slate-800 dark:focus-visible:bg-slate-800 dark:focus-visible:ring-brand-100"
-                            onClick={() => {
-                              setMobileMenuOpen(false);
-                              setOpenMobileSection(null);
-                            }}
-                          >
-                            {item.label}
-                          </a>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  </a>
                 </div>
               );
             })}

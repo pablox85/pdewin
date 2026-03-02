@@ -40,7 +40,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${manrope.variable} ${spaceGrotesk.variable} bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100`}>
+      <body className={`${manrope.variable} ${spaceGrotesk.variable} bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100`}>
         <GoogleAnalytics />
         <Suspense fallback={null}>
           <PageViewTracker />

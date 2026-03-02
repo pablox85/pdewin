@@ -17,11 +17,77 @@ html {
 body {
   margin: 0;
   font-family: var(--font-manrope), sans-serif;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 45%, #ffffff 100%);
+  background: linear-gradient(180deg, #f1f5f9 0%, #e8eef5 45%, #f1f5f9 100%);
 }
 
 html.dark body {
   background: linear-gradient(180deg, #020617 0%, #0f172a 45%, #020617 100%);
+}
+
+/* Modo dia suave: evita blancos puros que cansan la vista. */
+html:not(.dark) .bg-white {
+  background-color: #f3f6fb !important;
+}
+
+html:not(.dark) .bg-white\/95 {
+  background-color: rgb(243 246 251 / 0.95) !important;
+}
+
+/* Resaltado de anclas en main (servicios) al navegar desde los dropdowns. */
+.service-anchor {
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.service-anchor:target {
+  box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.22);
+}
+
+.service-anchor--vehiculos:target {
+  border-color: #2563eb !important;
+  background-color: #eff6ff !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.28);
+}
+
+.service-anchor--cardetailing:target {
+  border-color: #0891b2 !important;
+  background-color: #ecfeff !important;
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.28);
+}
+
+.service-anchor--arquitectura:target {
+  border-color: #d97706 !important;
+  background-color: #fffbeb !important;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.28);
+}
+
+.service-anchor--publicidad:target {
+  border-color: #c026d3 !important;
+  background-color: #fdf4ff !important;
+  box-shadow: 0 0 0 3px rgba(192, 38, 211, 0.28);
+}
+
+html.dark .service-anchor--vehiculos:target {
+  border-color: #60a5fa !important;
+  background-color: rgba(30, 58, 138, 0.3) !important;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.35);
+}
+
+html.dark .service-anchor--cardetailing:target {
+  border-color: #67e8f9 !important;
+  background-color: rgba(8, 145, 178, 0.22) !important;
+  box-shadow: 0 0 0 3px rgba(103, 232, 249, 0.35);
+}
+
+html.dark .service-anchor--arquitectura:target {
+  border-color: #fcd34d !important;
+  background-color: rgba(180, 83, 9, 0.25) !important;
+  box-shadow: 0 0 0 3px rgba(252, 211, 77, 0.32);
+}
+
+html.dark .service-anchor--publicidad:target {
+  border-color: #f0abfc !important;
+  background-color: rgba(162, 28, 175, 0.25) !important;
+  box-shadow: 0 0 0 3px rgba(240, 171, 252, 0.35);
 }
 
 h1,

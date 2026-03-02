@@ -18,6 +18,13 @@ const areaCodes: Record<string, string> = {
   Publicidad: "P",
 };
 
+const areaAnchorClasses: Record<string, string> = {
+  Vehiculos: "service-anchor--vehiculos",
+  Cardetailing: "service-anchor--cardetailing",
+  Arquitectura: "service-anchor--arquitectura",
+  Publicidad: "service-anchor--publicidad",
+};
+
 // Seccion de servicios con IDs para anclaje desde los dropdowns del navbar.
 // Nota de accesibilidad: cada etiqueta incluye codigo y texto para no depender solo del color.
 export function ServicesSection() {
@@ -34,7 +41,7 @@ export function ServicesSection() {
           <Reveal key={item.id} delay={Math.min(index * 0.04, 0.28)}>
             <article
               id={item.id}
-              className="scroll-mt-28 rounded-2xl border border-slate-300 bg-white p-5 shadow-card dark:border-slate-700 dark:bg-slate-900"
+              className={`service-anchor ${areaAnchorClasses[item.area] ?? ""} scroll-mt-28 rounded-2xl border border-slate-300 bg-white p-5 shadow-card dark:border-slate-700 dark:bg-slate-900`}
             >
               <p
                 className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-bold ${

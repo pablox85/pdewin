@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 
@@ -50,10 +50,14 @@ export function ThemeToggle() {
     return (
       <button
         type="button"
-        className="inline-flex min-h-[38px] items-center rounded-lg border border-slate-400/40 bg-white px-3 text-sm font-semibold text-slate-900 dark:border-slate-500/60 dark:bg-slate-900 dark:text-slate-100"
+        className="inline-flex h-8 w-14 items-center rounded-full border border-slate-400/50 bg-slate-200 px-1 dark:border-slate-500/70 dark:bg-slate-700"
         aria-label="Cambiar tema"
+        role="switch"
+        aria-checked={false}
       >
-        Tema
+        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs text-slate-900 shadow-sm dark:bg-slate-100 dark:text-slate-900">
+          {"\u2600"}
+        </span>
       </button>
     );
   }
@@ -64,12 +68,24 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={handleToggle}
-      className="inline-flex min-h-[38px] items-center gap-2 rounded-lg border border-slate-400/40 bg-white px-3 text-sm font-semibold text-slate-900 outline-none ring-offset-2 transition hover:bg-slate-100 focus-visible:ring-2 focus-visible:ring-brand-700 dark:border-slate-500/60 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800 dark:focus-visible:ring-brand-100"
+      role="switch"
+      aria-checked={isDark}
       aria-label={isDark ? "Activar modo dia" : "Activar modo noche"}
-      aria-pressed={isDark}
+      className={`relative inline-flex h-8 w-14 items-center rounded-full border px-1 outline-none ring-offset-2 transition-colors focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${
+        isDark
+          ? "border-blue-300/80 bg-blue-500"
+          : "border-slate-400/50 bg-slate-200 dark:border-slate-500/70 dark:bg-slate-700"
+      }`}
     >
-      <span aria-hidden="true" className="inline-block h-2.5 w-2.5 rounded-full bg-current" />
-      <span>{isDark ? "Dia" : "Noche"}</span>
+      <span
+        aria-hidden="true"
+        className={`inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs text-slate-900 shadow-sm transition-transform ${
+          isDark ? "translate-x-6" : "translate-x-0"
+        }`}
+      >
+        {isDark ? "\u263E" : "\u2600"}
+      </span>
+      <span className="sr-only">{isDark ? "Modo noche activo" : "Modo dia activo"}</span>
     </button>
   );
 }
