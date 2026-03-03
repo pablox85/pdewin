@@ -3,9 +3,9 @@ export const siteConfig = {
   name: "Empresa MultiServicios",
   description:
     "Landing corporativa para vehiculos, cardetailing, arquitectura y publicidad.",
-  domain: "https://tu-dominio.com",
+  domain: "https://pdewin.vercel.app",
   locale: "es_UY",
-  contactEmail: "contacto@tu-dominio.com",
+  contactEmail: "contacto@pdwwin.com",
   contactPhone: "+598 92 906 102",
   address: "Montevideo, Uruguay",
   footer: {
