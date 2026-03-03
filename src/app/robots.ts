@@ -7,8 +7,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-sitemap:
-https://pdewin.vercel.app/sitemap.xml
     },
     sitemap: `${siteConfig.domain}/sitemap.xml`,
   };
