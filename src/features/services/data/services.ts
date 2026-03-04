@@ -20,10 +20,10 @@ export const serviceItems: ServiceItem[] = [
     description: "Laminas y servicios para utilitarios.",
   },
   {
-    id: "vehiculos-motos",
+    id: "vehiculos-gran-porte",
     area: "Vehiculos",
-    title: "Motos",
-    description: "esto no va",
+    title: "Vehiculos de gran porte",
+    description: "Laminas y servicios para camiones, maquinaria y unidades de alto porte.",
   },
   {
     id: "Detailing-interior",

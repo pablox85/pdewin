@@ -84,7 +84,7 @@ export function ContactForm() {
 
       {submitted ? (
         <p className="mt-3 text-sm font-medium text-emerald-800 dark:text-emerald-300">
-          Consulta registrada. Evento de lead enviado a GA4.
+          Consulta recibida. Un asesor se contactará contigo pronto.
         </p>
       ) : null}
     </form>

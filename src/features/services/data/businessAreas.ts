@@ -21,7 +21,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     href: "/vehiculos",
     heroTitle: "Servicios para vehiculos",
     heroDescription:
-      "Soluciones profesionales para autos, utilitarios y motos con enfoque en terminacion, proteccion y durabilidad.",
+      "Soluciones profesionales para autos, utilitarios y vehiculos de gran porte con enfoque en terminacion, proteccion y durabilidad.",
     summary: "Polarizado, laminas y tratamientos para uso particular y flotas.",
     details: [
       {
@@ -35,9 +35,10 @@ export const BUSINESS_AREAS: BusinessArea[] = [
         description: "Instalaciones para uso intensivo en flotas y unidades de trabajo.",
       },
       {
-        id: "vehiculos-motos",
-        title: "Motos",
-        description: "Aplicaciones de proteccion y personalizacion para motos urbanas y touring.",
+        id: "vehiculos-gran-porte",
+        title: "Vehiculos de gran porte",
+        description:
+          "Aplicaciones para camiones, maquinaria y unidades de alto porte con exigencia operativa.",
       },
     ],
   },

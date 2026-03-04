@@ -8,8 +8,8 @@ export function ContactSection() {
     <SectionWrapper id="contacto">
       <SectionTitle
         eyebrow="Contacto"
-        title="Contanos tu necesidad y armamos una propuesta"
-        description="Formulario preparado para medir leads con GA4."
+        title="Contanos tu necesidad."
+        description="Enviá tu consulta y te contactamos a la brevedad."
       />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -26,8 +26,7 @@ export function ContactSection() {
               <li>Ubicacion: {siteConfig.address}</li>
             </ul>
             <p className="mt-5 rounded-xl border border-slate-300 bg-white p-4 text-sm text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
-              Consejo: una vez validado el MVP, conectamos este formulario a una API Route para
-              guardar los leads y responder por email.
+              Una vez recibido tu mensaje, un experto se contactará contigo para asesorarte.
             </p>
           </aside>
         </Reveal>

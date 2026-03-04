@@ -15,7 +15,11 @@ export const NAV_MENUS: NavMenu[] = [
     items: [
       { id: "vehiculos-autos", label: "Autos", href: "/vehiculos#vehiculos-autos" },
       { id: "vehiculos-utilitarios", label: "Utilitarios", href: "/vehiculos#vehiculos-utilitarios" },
-      { id: "vehiculos-motos", label: "Motos", href: "/vehiculos#vehiculos-motos" },
+      {
+        id: "vehiculos-gran-porte",
+        label: "Vehiculos de gran porte",
+        href: "/vehiculos#vehiculos-gran-porte",
+      },
     ],
   },
   {
