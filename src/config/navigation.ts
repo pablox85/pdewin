@@ -1,41 +1,53 @@
 import type { NavMenu } from "../types/navigation";
 
-// Config centralizada de menus para que sea facil editar opciones sin tocar el componente.
+// Navegacion principal por rutas con subitems anclados para cada pagina.
 export const NAV_MENUS: NavMenu[] = [
+  {
+    id: "inicio",
+    label: "Inicio",
+    href: "/",
+    items: [],
+  },
   {
     id: "vehiculos",
     label: "Vehiculos",
+    href: "/vehiculos",
     items: [
-      { id: "vehiculos-autos", label: "Autos", href: "#vehiculos-autos" },
-      { id: "vehiculos-utilitarios", label: "Utilitarios", href: "#vehiculos-utilitarios" },
-      { id: "vehiculos-motos", label: "Motos", href: "#vehiculos-motos" },
+      { id: "vehiculos-autos", label: "Autos", href: "/vehiculos#vehiculos-autos" },
+      { id: "vehiculos-utilitarios", label: "Utilitarios", href: "/vehiculos#vehiculos-utilitarios" },
+      { id: "vehiculos-motos", label: "Motos", href: "/vehiculos#vehiculos-motos" },
     ],
   },
   {
     id: "cardetailing",
     label: "Cardetailing",
+    href: "/cardetailing",
     items: [
-      { id: "detailing-interior", label: "Interior", href: "#detailing-interior" },
-      { id: "detailing-exterior", label: "Exterior", href: "#detailing-exterior" },
-      { id: "detailing-ceramico", label: "Ceramico", href: "#detailing-ceramico" },
+      { id: "detailing-interior", label: "Interior", href: "/cardetailing#detailing-interior" },
+      { id: "detailing-exterior", label: "Exterior", href: "/cardetailing#detailing-exterior" },
+      { id: "detailing-ceramico", label: "Ceramico", href: "/cardetailing#detailing-ceramico" },
     ],
   },
   {
     id: "arquitectura",
-    label: "Arquitectura",
+    label: "Home & Deco",
+    href: "/arquitectura",
     items: [
-      { id: "arquitectura-proyectos", label: "Proyectos", href: "#arquitectura-proyectos" },
-      { id: "arquitectura-planos", label: "Planos", href: "#arquitectura-planos" },
-      { id: "arquitectura-direccion", label: "Direccion de obra", href: "#arquitectura-direccion" },
-    ],
-  },
-  {
-    id: "publicidad",
-    label: "Publicidad",
-    items: [
-      { id: "publicidad-digital", label: "Digital", href: "#publicidad-digital" },
-      { id: "publicidad-impresa", label: "Impresa", href: "#publicidad-impresa" },
-      { id: "publicidad-branding", label: "Branding", href: "#publicidad-branding" },
+      {
+        id: "arquitectura-proyectos",
+        label: "Espacios residenciales",
+        href: "/arquitectura#arquitectura-proyectos",
+      },
+      {
+        id: "arquitectura-planos",
+        label: "Espacios comerciales",
+        href: "/arquitectura#arquitectura-planos",
+      },
+      {
+        id: "arquitectura-direccion",
+        label: "Asesoria decorativa",
+        href: "/arquitectura#arquitectura-direccion",
+      },
     ],
   },
 ];

@@ -60,8 +60,7 @@ export function ContactForm() {
           </option>
           <option value="vehiculos">Vehiculos</option>
           <option value="cardetailing">Cardetailing</option>
-          <option value="arquitectura">Arquitectura</option>
-          <option value="publicidad">Publicidad</option>
+          <option value="home-deco">Home & Deco</option>
         </select>
       </label>
 

@@ -1,7 +1,7 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Reveal, SectionWrapper } from "@/components/shared";
 
-// Hero principal con CTAs para navegar rapido a servicios y contacto.
+// Hero principal con CTAs hacia paginas individuales y contacto.
 export function HeroSection() {
   return (
     <SectionWrapper className="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-slate-100 pt-20 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
@@ -21,18 +21,18 @@ export function HeroSection() {
               Polarizados del Este
             </p>
             <h1 className="text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-              Una sola empresa para potenciar tus proyectos, vehiculos y marca.
+              Tres lineas claras de servicio con detalle por rubro.
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-slate-700 dark:text-slate-300">
-              Atendemos vehiculos, cardetailing, arquitectura y publicidad con enfoque en calidad y
-              orden operativo.
+              Separamos vehiculos, cardetailing y Home & Deco en paginas individuales para mejorar la
+              experiencia y la conversion.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="#vehiculos-autos"
+                href="/vehiculos"
                 className="rounded-xl bg-brand-700 px-6 py-3 text-sm font-semibold text-white outline-none transition hover:bg-brand-500 focus-visible:ring-2 focus-visible:ring-brand-900 focus-visible:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-400 dark:focus-visible:ring-blue-200"
               >
-                Ver servicios
+                Ver lineas de negocio
               </Link>
               <Link
                 href="#contacto"
@@ -46,12 +46,12 @@ export function HeroSection() {
 
         <Reveal delay={0.1}>
           <div className="rounded-2xl border border-slate-300 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900">
-            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Donde nos encontramos</h2>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Como navegar el sitio</h2>
             <ul className="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-300">
-              <li>Somos una empresa ubicada en Ciudad de la Costa.</li>
-              <li>Mas de 15 anos de experiencia en el rubro automotriz.</li>
-              <li>Mas de 15 anos de experiencia en home and deco.</li>
-              <li>Experiencia en diseno aplicado a publicidad y marca.</li>
+              <li>Home: resumen general de los rubros.</li>
+              <li>Una pagina por rubro con enfoque comercial especifico.</li>
+              <li>Anclas internas para ir directo a cada opcion.</li>
+              <li>Formulario unico para recibir consultas centralizadas.</li>
             </ul>
           </div>
         </Reveal>

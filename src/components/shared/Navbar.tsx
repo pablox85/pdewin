@@ -1,9 +1,10 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NAV_MENUS } from "../../config/navigation";
 import { mobilePanelVariants } from "../../lib/animations/navbar";
 import { ThemeToggle } from "./ThemeToggle";
@@ -32,19 +33,13 @@ const sectionHoverStyles: Record<
     underline: "bg-amber-700 dark:bg-amber-300",
     mobileActive: "bg-amber-100 text-amber-900 dark:bg-amber-950/40 dark:text-amber-100",
   },
-  publicidad: {
-    text: "hover:text-fuchsia-800 dark:hover:text-fuchsia-200",
-    underline: "bg-fuchsia-700 dark:bg-fuchsia-300",
-    mobileActive: "bg-fuchsia-100 text-fuchsia-900 dark:bg-fuchsia-950/40 dark:text-fuchsia-100",
-  },
 };
 
 export function Navbar() {
   // Estado del menu hamburguesa en movil.
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // Seccion activa para remarcar navegacion.
-  const [activeSection, setActiveSection] = useState<string>("");
   const navRef = useRef<HTMLElement | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     // Cierra menu movil al hacer click fuera de la barra.
@@ -71,18 +66,6 @@ export function Navbar() {
 
     mediaQuery.addEventListener("change", onViewportChange);
     return () => mediaQuery.removeEventListener("change", onViewportChange);
-  }, []);
-
-  useEffect(() => {
-    // Sincroniza item activo con hash para subrayado persistente.
-    const syncHash = () => {
-      const hash = window.location.hash.replace("#", "");
-      setActiveSection(hash);
-    };
-
-    syncHash();
-    window.addEventListener("hashchange", syncHash);
-    return () => window.removeEventListener("hashchange", syncHash);
   }, []);
 
   return (
@@ -113,7 +96,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-5 md:flex">
           {NAV_MENUS.map((menu) => {
-            const isActive = activeSection === menu.id;
+            const isActive = pathname === menu.href;
             const hoverStyle = sectionHoverStyles[menu.id] ?? {
               text: "hover:text-slate-900 dark:hover:text-slate-100",
               underline: "bg-brand-700 dark:bg-brand-100",
@@ -121,10 +104,9 @@ export function Navbar() {
             };
 
             return (
-              <a
+              <Link
                 key={menu.id}
-                href={`#${menu.id}`}
-                onClick={() => setActiveSection(menu.id)}
+                href={menu.href}
                 className={`group relative inline-flex items-center px-1 py-2 text-[1rem] font-semibold outline-none transition-colors focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${hoverStyle.text} ${
                   isActive
                     ? "text-slate-900 dark:text-slate-100"
@@ -139,7 +121,7 @@ export function Navbar() {
                   }`}
                   aria-hidden="true"
                 />
-              </a>
+              </Link>
             );
           })}
           <ThemeToggle />
@@ -175,7 +157,7 @@ export function Navbar() {
             className="overflow-hidden border-t border-slate-300 bg-slate-50 px-3 pb-3 pt-2 dark:border-slate-700 dark:bg-slate-950 md:hidden"
           >
             {NAV_MENUS.map((menu) => {
-              const isActive = activeSection === menu.id;
+              const isActive = pathname === menu.href;
               const hoverStyle = sectionHoverStyles[menu.id] ?? {
                 text: "hover:text-slate-900 dark:hover:text-slate-100",
                 underline: "bg-brand-700 dark:bg-brand-100",
@@ -184,20 +166,17 @@ export function Navbar() {
 
               return (
                 <div key={menu.id} className="border-b border-slate-200 py-1.5 dark:border-slate-800">
-                  <a
-                    href={`#${menu.id}`}
+                  <Link
+                    href={menu.href}
                     className={`block w-full rounded-lg px-2 py-[9px] text-left text-[0.95rem] font-semibold outline-none ring-offset-2 transition focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${hoverStyle.text} ${
                       isActive
                         ? hoverStyle.mobileActive
                         : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
                     }`}
-                    onClick={() => {
-                      setActiveSection(menu.id);
-                      setMobileMenuOpen(false);
-                    }}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {menu.label}
-                  </a>
+                  </Link>
                 </div>
               );
             })}

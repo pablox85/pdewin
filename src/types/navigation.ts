@@ -8,5 +8,6 @@ export interface DropdownItem {
 export interface NavMenu {
   id: string;
   label: string;
+  href: string;
   items: DropdownItem[];
 }

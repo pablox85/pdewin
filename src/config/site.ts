@@ -1,8 +1,7 @@
 // Config centralizada para datos de marca, SEO y contacto.
 export const siteConfig = {
   name: "Empresa MultiServicios",
-  description:
-    "Landing corporativa para vehiculos, cardetailing, arquitectura y publicidad.",
+  description: "Landing corporativa para vehiculos, cardetailing y Home & Deco.",
   domain: "https://pdewin.vercel.app",
   locale: "es_UY",
   contactEmail: "contacto@pdwwin.com",
