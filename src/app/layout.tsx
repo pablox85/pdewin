@@ -3,6 +3,7 @@ import { Manrope, Space_Grotesk } from "next/font/google";
 import { Suspense } from "react";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { PageViewTracker } from "@/components/analytics/PageViewTracker";
+import { PageTransition } from "@/components/shared/PageTransition";
 import { buildMetadata } from "@/lib/seo/metadata";
 import "./globals.css";
 
@@ -45,7 +46,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <PageViewTracker />
         </Suspense>
-        {children}
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );

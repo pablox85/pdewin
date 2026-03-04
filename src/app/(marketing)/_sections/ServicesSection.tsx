@@ -10,20 +10,20 @@ const areaStyles: Record<string, string> = {
     "border-amber-700/60 bg-amber-50 text-amber-900 dark:border-amber-300/70 dark:bg-amber-950/40 dark:text-amber-100",
 };
 
-// Home: resume cada unidad y deriva a pagina individual con anclas internas.
+// Home: presentacion de unidades con acceso a paginas dedicadas.
 export function ServicesSection() {
   return (
     <SectionWrapper className="bg-slate-50 dark:bg-slate-900/40">
       <SectionTitle
-        eyebrow="Lineas de negocio"
-        title="Elegi un rubro y entra al detalle"
-        description="Cada opcion tiene su propia pagina con informacion segmentada y navegacion por anclas."
+        eyebrow="Unidades de negocio"
+        title="Elegi la solucion ideal para tu objetivo"
+        description="Cada unidad cuenta con una pagina dedicada y detalle por servicio para ayudarte a decidir rapido."
       />
 
       <div className="mt-10 grid gap-5 md:grid-cols-3">
         {BUSINESS_AREAS.map((area, index) => (
           <Reveal key={area.id} delay={Math.min(index * 0.06, 0.24)}>
-            <article className="rounded-2xl border border-slate-300 bg-white p-5 shadow-card dark:border-slate-700 dark:bg-slate-900">
+            <article className="lift-card rounded-2xl border border-slate-300 bg-white p-5 shadow-card dark:border-slate-700 dark:bg-slate-900">
               <p
                 className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] ${
                   areaStyles[area.id] ?? "border-slate-400 bg-slate-100 text-slate-800"
@@ -42,9 +42,9 @@ export function ServicesSection() {
 
               <Link
                 href={area.href}
-                className="mt-6 inline-flex rounded-xl border border-slate-400 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-brand-700 hover:text-brand-700 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-blue-300 dark:hover:text-blue-200"
+                className="cta-pop mt-6 inline-flex rounded-xl border border-slate-400 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-brand-700 hover:text-brand-700 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-blue-300 dark:hover:text-blue-200"
               >
-                Ver pagina de {area.label.toLowerCase()}
+                Ver servicios de {area.label.toLowerCase()}
               </Link>
             </article>
           </Reveal>

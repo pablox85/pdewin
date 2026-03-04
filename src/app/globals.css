@@ -24,6 +24,74 @@ html.dark body {
   background: linear-gradient(180deg, #020617 0%, #0f172a 45%, #020617 100%);
 }
 
+/* Animaciones sutiles para reforzar dinamismo visual sin sobrecargar UI. */
+@keyframes ambientFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0) scale(1.03);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes ctaPulse {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-1px) scale(1.01);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ambient-orb {
+  animation: ambientFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.ambient-orb--slow {
+  animation-duration: 10s;
+  animation-delay: 0.7s;
+}
+
+.lift-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+}
+
+.lift-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px -24px rgba(15, 23, 42, 0.5);
+}
+
+.cta-pop {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-pop:hover {
+  animation: ctaPulse 0.5s ease;
+  box-shadow: 0 10px 22px -14px rgba(37, 99, 235, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-orb,
+  .ambient-orb--slow,
+  .cta-pop:hover {
+    animation: none !important;
+  }
+
+  .lift-card,
+  .lift-card:hover,
+  .cta-pop {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
 /* Modo dia suave: evita blancos puros que cansan la vista. */
 html:not(.dark) .bg-white {
   background-color: #f3f6fb !important;

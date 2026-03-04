@@ -8,16 +8,16 @@ import { AreaDetailPage } from "../_components/AreaDetailPage";
 const area = requireBusinessAreaById("cardetailing");
 
 export const metadata: Metadata = buildMetadata({
-  title: "Cardetailing",
+  title: "Car Detailing",
   description: area.heroDescription,
   alternates: { canonical: "/cardetailing" },
   openGraph: {
     url: `${siteConfig.domain}/cardetailing`,
-    title: `Cardetailing | ${siteConfig.name}`,
+    title: `Car Detailing | ${siteConfig.name}`,
     description: area.heroDescription,
   },
   twitter: {
-    title: `Cardetailing | ${siteConfig.name}`,
+    title: `Car Detailing | ${siteConfig.name}`,
     description: area.heroDescription,
   },
 });

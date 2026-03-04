@@ -24,7 +24,7 @@ export const NAV_MENUS: NavMenu[] = [
   },
   {
     id: "cardetailing",
-    label: "Cardetailing",
+    label: "Car Detailing",
     href: "/cardetailing",
     items: [
       { id: "detailing-interior", label: "Interior", href: "/cardetailing#detailing-interior" },

@@ -18,29 +18,31 @@ export const desktopDropdownVariants: Variants = {
 };
 
 export const mobilePanelVariants: Variants = {
-  hidden: { opacity: 0, height: 0 },
+  hidden: { opacity: 0, y: -10, scale: 0.98 },
   visible: {
     opacity: 1,
-    height: "auto",
+    y: 0,
+    scale: 1,
     transition: { duration: 0.2, ease: "easeOut" },
   },
   exit: {
     opacity: 0,
-    height: 0,
+    y: -6,
+    scale: 0.99,
     transition: { duration: 0.16, ease: "easeIn" },
   },
 };
 
 export const mobileItemsVariants: Variants = {
-  hidden: { opacity: 0, height: 0 },
-  visible: {
+  hidden: { opacity: 0, y: -6 },
+  visible: (index: number) => ({
     opacity: 1,
-    height: "auto",
-    transition: { duration: 0.16, ease: "easeOut" },
-  },
+    y: 0,
+    transition: { duration: 0.18, delay: index * 0.03, ease: "easeOut" },
+  }),
   exit: {
     opacity: 0,
-    height: 0,
+    y: -4,
     transition: { duration: 0.12, ease: "easeIn" },
   },
 };

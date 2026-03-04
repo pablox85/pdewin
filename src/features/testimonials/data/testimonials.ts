@@ -9,19 +9,22 @@ export const testimonials: TestimonialItem[] = [
   {
     id: "t1",
     name: "Laura M.",
-    role: "Gerente Comercial",
-    quote: "Unificaron varias areas de trabajo y logramos ejecutar mas rapido con mejor imagen de marca.",
+    role: "Gerente comercial",
+    quote:
+      "Centralizamos varios servicios con un solo proveedor y mejoramos tiempos, calidad y experiencia del cliente.",
   },
   {
     id: "t2",
     name: "Martin P.",
-    role: "Director de Operaciones",
-    quote: "La propuesta integral nos resolvio vehiculos, presencia digital y seguimiento de obra en un solo equipo.",
+    role: "Director de operaciones",
+    quote:
+      "Nos ayudaron a ordenar la ejecucion y elevar la imagen de marca en vehiculos y espacios comerciales.",
   },
   {
     id: "t3",
     name: "Sofia R.",
     role: "Emprendedora",
-    quote: "El nivel de detalle fue excelente. Tuvimos resultados medibles desde el primer mes.",
+    quote:
+      "El equipo entendio nuestro objetivo desde el inicio y entrego resultados concretos en poco tiempo.",
   },
 ];

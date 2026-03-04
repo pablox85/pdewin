@@ -1,4 +1,4 @@
-﻿import { siteConfig } from "@/config/site";
+import { siteConfig } from "@/config/site";
 import { Reveal, SectionTitle, SectionWrapper } from "@/components/shared";
 import { ContactForm } from "@/features/contact/components/ContactForm";
 
@@ -8,8 +8,8 @@ export function ContactSection() {
     <SectionWrapper id="contacto">
       <SectionTitle
         eyebrow="Contacto"
-        title="Contanos tu necesidad."
-        description="Enviá tu consulta y te contactamos a la brevedad."
+        title="Hablemos de tu proximo proyecto"
+        description="Completa el formulario y te respondemos a la brevedad con una propuesta clara."
       />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -18,15 +18,15 @@ export function ContactSection() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <aside className="rounded-2xl border border-slate-300 bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-900">
-            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Datos directos</h3>
+          <aside className="lift-card rounded-2xl border border-slate-300 bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-900">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Atencion directa</h3>
             <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
               <li>Email: {siteConfig.contactEmail}</li>
               <li>Telefono: {siteConfig.contactPhone}</li>
               <li>Ubicacion: {siteConfig.address}</li>
             </ul>
             <p className="mt-5 rounded-xl border border-slate-300 bg-white p-4 text-sm text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
-              Una vez recibido tu mensaje, un experto se contactará contigo para asesorarte.
+              Al recibir tu mensaje, analizamos tu necesidad y te contactamos con una recomendacion puntual.
             </p>
           </aside>
         </Reveal>

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_MENUS } from "../../config/navigation";
-import { mobilePanelVariants } from "../../lib/animations/navbar";
+import { mobileItemsVariants, mobilePanelVariants } from "../../lib/animations/navbar";
 import { ThemeToggle } from "./ThemeToggle";
 
 // Colores de hover/activo por seccion (desktop y movil).
@@ -68,6 +68,14 @@ export function Navbar() {
     return () => mediaQuery.removeEventListener("change", onViewportChange);
   }, []);
 
+  useEffect(() => {
+    // Evita scroll del fondo mientras el menu movil esta abierto.
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <nav
       className="sticky top-0 z-50 w-full border-b border-slate-300/70 bg-slate-100/95 backdrop-blur dark:border-slate-700 dark:bg-slate-950/95"
@@ -107,7 +115,7 @@ export function Navbar() {
               <Link
                 key={menu.id}
                 href={menu.href}
-                className={`group relative inline-flex items-center px-1 py-2 text-[1rem] font-semibold outline-none transition-colors focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${hoverStyle.text} ${
+                className={`group relative inline-flex items-center px-1 py-2 text-[1rem] font-semibold outline-none transition-all duration-200 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${hoverStyle.text} ${
                   isActive
                     ? "text-slate-900 dark:text-slate-100"
                     : "text-slate-700 dark:text-slate-300"
@@ -148,39 +156,60 @@ export function Navbar() {
 
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            id="mobile-navigation-panel"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={mobilePanelVariants}
-            className="overflow-hidden border-t border-slate-300 bg-slate-50 px-3 pb-3 pt-2 dark:border-slate-700 dark:bg-slate-950 md:hidden"
-          >
-            {NAV_MENUS.map((menu) => {
-              const isActive = pathname === menu.href;
-              const hoverStyle = sectionHoverStyles[menu.id] ?? {
-                text: "hover:text-slate-900 dark:hover:text-slate-100",
-                underline: "bg-brand-700 dark:bg-brand-100",
-                mobileActive: "bg-brand-100 text-slate-900 dark:bg-slate-800 dark:text-slate-100",
-              };
+          <>
+            <motion.button
+              type="button"
+              aria-label="Cerrar menu"
+              className="fixed inset-0 z-40 bg-slate-950/45 md:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              onClick={() => setMobileMenuOpen(false)}
+            />
 
-              return (
-                <div key={menu.id} className="border-b border-slate-200 py-1.5 dark:border-slate-800">
-                  <Link
-                    href={menu.href}
-                    className={`block w-full rounded-lg px-2 py-[9px] text-left text-[0.95rem] font-semibold outline-none ring-offset-2 transition focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${hoverStyle.text} ${
-                      isActive
-                        ? hoverStyle.mobileActive
-                        : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-                    }`}
-                    onClick={() => setMobileMenuOpen(false)}
+            <motion.div
+              id="mobile-navigation-panel"
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={mobilePanelVariants}
+              className="fixed inset-x-0 top-[72px] z-50 max-h-[calc(100dvh-72px)] overflow-y-auto border-t border-slate-200/20 bg-slate-950/90 px-3 pb-3 pt-2 md:hidden"
+            >
+              {NAV_MENUS.map((menu, index) => {
+                const isActive = pathname === menu.href;
+                const hoverStyle = sectionHoverStyles[menu.id] ?? {
+                  text: "hover:text-slate-900 dark:hover:text-slate-100",
+                  underline: "bg-brand-700 dark:bg-brand-100",
+                  mobileActive: "bg-brand-100 text-slate-900 dark:bg-slate-800 dark:text-slate-100",
+                };
+
+                return (
+                  <motion.div
+                    key={menu.id}
+                    className="mx-auto w-full max-w-[1200px] border-b border-slate-300/20 py-1.5 last:border-b-0 dark:border-slate-700/50"
+                    variants={mobileItemsVariants}
+                    custom={index}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
                   >
-                    {menu.label}
-                  </Link>
-                </div>
-              );
-            })}
-          </motion.div>
+                    <Link
+                      href={menu.href}
+                      className={`block w-full rounded-lg px-2 py-[9px] text-left text-[0.95rem] font-semibold outline-none ring-offset-2 transition focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${hoverStyle.text} ${
+                        isActive
+                          ? hoverStyle.mobileActive
+                          : "text-slate-100 hover:bg-white/10 dark:text-slate-100 dark:hover:bg-white/10"
+                      }`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {menu.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
