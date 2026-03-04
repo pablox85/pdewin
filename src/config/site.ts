@@ -1,6 +1,6 @@
 // Config centralizada para datos de marca, SEO y contacto.
 export const siteConfig = {
-  name: "Empresa MultiServicios",
+  name: "Polarizados del Este",
   description: "Landing corporativa para vehiculos, cardetailing y Home & Deco.",
   domain: "https://pdewin.vercel.app",
   locale: "es_UY",
