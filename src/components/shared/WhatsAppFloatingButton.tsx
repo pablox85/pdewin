@@ -37,8 +37,14 @@ export function WhatsAppFloatingButton() {
   }, []);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
     const initialX = window.innerWidth - BUTTON_SIZE - SIDE_MARGIN;
-    const initialY = window.innerHeight - BUTTON_SIZE - BOTTOM_MARGIN;
+
+    const preferredY = isMobile
+      ? Math.round(window.innerHeight * 0.75)
+      : window.innerHeight - BUTTON_SIZE - BOTTOM_MARGIN;
+    const maxY = Math.max(SIDE_MARGIN, window.innerHeight - BUTTON_SIZE - SIDE_MARGIN);
+    const initialY = Math.min(Math.max(preferredY, SIDE_MARGIN), maxY);
     setPosition({ x: initialX, y: initialY });
     setIsReady(true);
   }, []);
