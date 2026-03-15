@@ -5,3 +5,4 @@ export { SectionTitle } from "./SectionTitle";
 export { SectionWrapper } from "./SectionWrapper";
 export { ThemeToggle } from "./ThemeToggle";
 export { PhotoCarousel } from "./PhotoCarousel";
+export { WhatsAppFloatingButton } from "./WhatsAppFloatingButton";

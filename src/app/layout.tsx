@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { PageViewTracker } from "@/components/analytics/PageViewTracker";
 import { PageTransition } from "@/components/shared/PageTransition";
+import { WhatsAppFloatingButton } from "@/components/shared/WhatsAppFloatingButton";
 import { buildMetadata } from "@/lib/seo/metadata";
 import "./globals.css";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
           <PageViewTracker />
         </Suspense>
         <PageTransition>{children}</PageTransition>
+        <WhatsAppFloatingButton />
       </body>
     </html>
   );
