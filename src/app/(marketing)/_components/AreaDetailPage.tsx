@@ -80,7 +80,15 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
                 className={`service-anchor lift-card ${areaAnchorClasses[area.id]} scroll-mt-28 rounded-2xl border border-slate-300 bg-white p-5 shadow-card dark:border-slate-700 dark:bg-slate-900`}
               >
                 <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">{detail.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{detail.description}</p>
+                {Array.isArray(detail.description) ? (
+                  <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                    {detail.description.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{detail.description}</p>
+                )}
               </article>
             </Reveal>
           ))}

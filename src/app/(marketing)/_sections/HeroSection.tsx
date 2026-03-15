@@ -21,15 +21,15 @@ export function HeroSection() {
               Polarizados del Este
             </p>
             <h1 className="text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-              Soluciones premium para vehiculos, car detailing y Home & Deco.
+              Soluciones premium para vehiculos, Car Detailing, Home, Office & Business.
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-slate-700 dark:text-slate-300">
               Elevamos la imagen y el valor de cada proyecto con procesos claros, ejecucion precisa y
-              resultados que se notan desde el primer contacto.
+              resultados que se notan al instante.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/vehiculos"
+                href="#soluciones" //cambiado
                 className="cta-pop rounded-xl bg-brand-700 px-6 py-3 text-sm font-semibold text-white outline-none transition hover:bg-brand-500 focus-visible:ring-2 focus-visible:ring-brand-900 focus-visible:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-400 dark:focus-visible:ring-blue-200"
               >
                 Explorar servicios
@@ -51,7 +51,6 @@ export function HeroSection() {
               <li>Diagnostico inicial para definir la mejor solucion para tu caso.</li>
               <li>Atencion personalizada para clientes particulares, empresas y flotas.</li>
               <li>Estandares de calidad consistentes en cada etapa del servicio.</li>
-              <li>Seguimiento post-servicio para asegurar resultados sostenibles.</li>
             </ul>
           </div>
         </Reveal>

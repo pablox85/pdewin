@@ -15,7 +15,7 @@ export function AboutSection() {
           <article className="lift-card rounded-2xl border border-slate-300 bg-white p-5 text-slate-900 shadow-card dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100">
             <h3 className="text-lg font-bold">Enfoque integral</h3>
             <p className="mt-3 text-sm text-slate-700 dark:text-slate-300">
-              Integramos tecnica, estetica y vision comercial para crear soluciones completas.
+              Combinamos tecnica, estetica y vision comercial para crear soluciones completas. {/* modificado */}
             </p>
           </article>
         </Reveal>
@@ -31,7 +31,7 @@ export function AboutSection() {
           <article className="lift-card rounded-2xl border border-slate-300 bg-white p-5 text-slate-900 shadow-card dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100">
             <h3 className="text-lg font-bold">Comunicacion clara</h3>
             <p className="mt-3 text-sm text-slate-700 dark:text-slate-300">
-              Mantenemos una comunicacion simple y directa para que sepas que se hace, cuando y por que.
+              Mantenemos una comunicacion simple y directa de impacto inmediato.  {/* modificado */}
             </p>
           </article>
         </Reveal>

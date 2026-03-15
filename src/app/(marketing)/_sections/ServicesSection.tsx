@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Reveal, SectionTitle, SectionWrapper } from "@/components/shared";
+import { PhotoCarousel, Reveal, SectionTitle, SectionWrapper } from "@/components/shared";
 import { BUSINESS_AREAS } from "@/features/services/data/businessAreas";
 
 const areaStyles: Record<string, string> = {
@@ -10,16 +10,35 @@ const areaStyles: Record<string, string> = {
     "border-amber-700/60 bg-amber-50 text-amber-900 dark:border-amber-300/70 dark:bg-amber-950/40 dark:text-amber-100",
 };
 
+const areaCarouselImages: Record<string, { src: string; alt: string }[]> = {
+  vehiculos: [
+    { src: "/images/inst1.jpg", alt: "Servicio para vehiculos" },
+    { src: "/images/inst2.jpg", alt: "Laminas para vehiculos" },
+    { src: "/images/inst3.jpg", alt: "Instalcin de lamina" },
+  ],
+  cardetailing: [
+    { src: "/images/det1.jpg", alt: "Proceso de car detailing" },
+    { src: "/images/det2.jpg", alt: "Terminacion de car detailing" },
+    { src: "/images/det3.jpg", alt: "car detailing" },
+  ],
+  arquitectura: [
+    { src: "/images/home.jpg", alt: "Home, deco y business" },
+    { src: "/images/bath.jpg", alt: "Carteleria" },
+    { src: "/images/office.jpg", alt: "Intervencion en oficina" },
+  ],
+};
+
 // Home: presentacion de unidades con acceso a paginas dedicadas.
 export function ServicesSection() {
   return (
     <SectionWrapper className="bg-slate-50 dark:bg-slate-900/40">
+      <div id="soluciones">
       <SectionTitle
         eyebrow="Unidades de negocio"
         title="Elegi la solucion ideal para tu objetivo"
         description="Cada unidad cuenta con una pagina dedicada y detalle por servicio para ayudarte a decidir rapido."
       />
-
+</div>
       <div className="mt-10 grid gap-5 md:grid-cols-3">
         {BUSINESS_AREAS.map((area, index) => (
           <Reveal key={area.id} delay={Math.min(index * 0.06, 0.24)}>
@@ -40,11 +59,17 @@ export function ServicesSection() {
                 ))}
               </ul>
 
+              <PhotoCarousel
+                className="mt-4"
+                images={areaCarouselImages[area.id] ?? []}
+                autoPlayMs={1500}
+                startDelayMs={index * 350}
+              />
+
               <Link
                 href={area.href}
                 className="cta-pop mt-6 inline-flex rounded-xl border border-slate-400 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-brand-700 hover:text-brand-700 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-blue-300 dark:hover:text-blue-200"
-              >
-                Ver servicios de {area.label.toLowerCase()}
+              >                 Ver servicios de {area.label.toLowerCase()}
               </Link>
             </article>
           </Reveal>

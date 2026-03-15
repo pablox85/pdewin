@@ -1,7 +1,7 @@
 export interface AreaDetail {
   id: string;
   title: string;
-  description: string;
+  description: string | string[];
 }
 
 export interface BusinessArea {
@@ -21,7 +21,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     href: "/vehiculos",
     heroTitle: "Proteccion y estilo para todo tipo de vehiculos",
     heroDescription:
-      "Aplicamos soluciones de alta calidad para autos, utilitarios y vehiculos de gran porte, con foco en durabilidad y terminacion.",
+      "Aplicamos soluciones de alta calidad para autos, utilitarios, vehiculos de gran porte y maquinaria pesada, con foco en durabilidad y terminacion.",
     summary: "Polarizados y laminas profesionales para uso particular, comercial y flotas.",
     details: [
       {
@@ -40,7 +40,14 @@ export const BUSINESS_AREAS: BusinessArea[] = [
         id: "vehiculos-gran-porte",
         title: "Vehiculos de gran porte",
         description:
-          "Aplicaciones para camiones, maquinaria y unidades de alto porte con exigencia operativa.",
+          "Aplicaciones para camiones,omnibus, motorhome, ambulancias.", // modificacion
+      },
+      {
+        //modificacion esta id se crea a mano 
+        id: "veiculos-gran-porte",
+        title: "Maquinaria pesada",
+        description:
+          "Retroexcavadoras, palas, cuchillas y unidades de alto porte con exigencia operativa.", 
       },
     ],
   },
@@ -69,36 +76,59 @@ export const BUSINESS_AREAS: BusinessArea[] = [
         id: "detailing-ceramico",
         title: "Tratamiento ceramico",
         description:
-          "Aplicacion de coating ceramico para brillo sostenido y resistencia superior frente al desgaste.",
+          "Aplicacion de coating nanoceramico para brillo sostenido y resistencia superior frente al desgaste.",
+      },
+      {
+      id: "detailing-acrilico",
+      title: "Tratamiento acrilico",
+      description:
+        "Aplicacion de coating acrilico para brillo sostenido y resistencia superior frente al desgaste.",
       },
     ],
   },
   {
     id: "arquitectura",
-    label: "Home & Deco",
+    label: "Home, Deco & Business",
     href: "/arquitectura",
-    heroTitle: "Home & Deco para hogares y espacios comerciales",
+    heroTitle: "Home, Deco & Business para hogares y espacios comerciales",
     heroDescription:
       "Disenamos propuestas funcionales y esteticas para transformar ambientes con criterio y personalidad.",
     summary: "Ambientacion, seleccion de materiales y renovacion visual para espacios con impacto.",
     details: [
       {
         id: "arquitectura-proyectos",
-        title: "Espacios residenciales",
-        description:
-          "Propuestas de ambientacion para living, dormitorios, cocinas y exteriores con estilo coherente.",
+        title: "Home",
+        description: [
+          "Laminas de control solar.",
+          "Laminas de seguridad.",
+          "Control Visual",
+          "Laminas decorativas.",
+          "Vinilos decorativos y de proteccion.",
+        ],
       },
       {
         id: "arquitectura-planos",
-        title: "Espacios comerciales",
+        title: "Office",
         description:
-          "Intervenciones para locales y oficinas enfocadas en experiencia, circulacion y presencia de marca.",
+         [
+          "Laminas de control solar.",
+          "Laminas de seguridad.",
+          "Control Visual",
+          "Laminas decorativas.",
+          "Vinilos decorativos y de proteccion.",
+          "Carteleria interna"
+        ],
       },
       {
         id: "arquitectura-direccion",
-        title: "Asesoria decorativa",
+        title: "Business",
         description:
-          "Definicion de paletas, texturas, revestimientos y mobiliario para lograr espacios armonicos y funcionales.",
+          [
+            "Vinilos microperforados",
+            "Vinilos publicitacios",
+            "Lona impresa",
+            "Carteleria en general"
+         ],
       },
     ],
   },

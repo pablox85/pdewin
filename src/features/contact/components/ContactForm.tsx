@@ -60,7 +60,9 @@ export function ContactForm() {
           </option>
           <option value="vehiculos">Vehiculos</option>
           <option value="car-detailing">Car Detailing</option>
-          <option value="home-deco">Home & Deco</option>
+          <option value="home-deco">Home</option>
+          <option value="home-deco">Office</option>  {/* modificado linea nueva */}
+          <option value="home-deco">Bussines</option> {/* Este es un comentario en JSX */}
         </select>
       </label>
 

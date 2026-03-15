@@ -34,7 +34,7 @@ export const NAV_MENUS: NavMenu[] = [
   },
   {
     id: "arquitectura",
-    label: "Home & Deco",
+    label: "Home, Deco & Business",
     href: "/arquitectura",
     items: [
       {
