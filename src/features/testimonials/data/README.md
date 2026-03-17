@@ -1,5 +1,7 @@
 # testimonials/data
 
-Datos de testimonios para social proof en la landing.
+Datos estáticos de testimonios.
 
-- `testimonials.ts`: listado base de testimonios placeholder.
+## Archivo actual
+
+- `testimonials.ts`: lista de testimonios con `id`, `name`, `role` y `quote`.

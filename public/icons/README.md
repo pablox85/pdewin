@@ -1,8 +1,7 @@
-﻿# icons
+# icons
 
-Iconografia y favicons.
+Carpeta reservada para iconografía y favicons.
 
-## Que va aqui
-- `favicon.ico`
-- `apple-touch-icon.png`
-- SVGs de marca/servicios.
+## Estado actual
+
+Hoy no hay iconos además de este README.

@@ -28,7 +28,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
         id: "vehiculos-autos",
         title: "Autos",
         description:
-          "Polarizados y laminas de control solar para mayor confort, privacidad y proteccion.",
+          "Laminas de control solar para mayor confort, privacidad y proteccion.",
       },
       {
         id: "vehiculos-utilitarios",
@@ -124,7 +124,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
         title: "Business",
         description:
           [
-            "Vinilos microperforados",
+            "Microperforados",
             "Vinilos publicitacios",
             "Lona impresa",
             "Carteleria en general"

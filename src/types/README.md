@@ -1,11 +1,7 @@
-﻿# types
+# types
 
-Tipos globales de TypeScript.
+Tipos TypeScript compartidos.
 
-## Que contiene
-- Interfaces compartidas entre features.
-- Tipos de payloads para analytics/SEO.
-- Tipos utilitarios.
+## Archivo actual
 
-## Regla
-- Evitar duplicar tipos en multiples carpetas.
+- `navigation.ts`: define `DropdownItem` y `NavMenu` para mantener tipada la navegación principal.

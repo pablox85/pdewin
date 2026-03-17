@@ -1,11 +1,13 @@
-﻿# _components
+# _components
 
-Componentes de apoyo exclusivos del route group marketing.
+Componentes de apoyo usados solo dentro de las rutas de marketing.
 
-## Ejemplos
-- `HeroBackground.tsx`
-- `SectionContainer.tsx`
-- `StickyCTA.tsx`
+## Componentes actuales
 
-## Regla
-- Si un componente sirve en todo el sitio, moverlo a `src/components`.
+- `AreaDetailPage.tsx`: plantilla de detalle para `/vehiculos`, `/cardetailing` y `/arquitectura`.
+- `MarketingHomeSkeleton.tsx`: skeleton de carga para la home.
+- `ServicePageSkeleton.tsx`: skeleton de carga para páginas de detalle.
+
+## Criterio
+
+Si un componente empieza a servir fuera del grupo `(marketing)`, conviene moverlo a `src/components/shared`.

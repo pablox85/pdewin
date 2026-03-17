@@ -1,11 +1,11 @@
-﻿# ui
+# ui
 
-Biblioteca base de UI (design system ligero).
+Carpeta reservada para primitives visuales del proyecto.
 
-## Contenido esperado
-- Botones, cards, badges, inputs, modals, skeletons.
+## Estado actual
 
-## Reglas
-- Sin logica de negocio.
-- Props tipadas con TypeScript.
-- Accesibilidad por defecto (focus visible, aria cuando aplique).
+Todavía no hay componentes dentro de esta carpeta.
+
+## Cuándo usarla
+
+Crear aquí botones, inputs, badges o cards base solo si pasan a reutilizarse en varias zonas del sitio. Mientras tanto, los componentes existentes viven en `shared` o dentro de cada feature.

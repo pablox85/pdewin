@@ -1,11 +1,9 @@
-﻿# components
+# components
 
-Componentes reutilizables de presentacion.
+Componentes reutilizables del proyecto.
 
-## Objetivo
-- Reutilizacion maxima.
-- Evitar duplicacion entre secciones.
+## Subcarpetas actuales
 
-## Subcarpetas
-- `ui`: primitives visuales (button, card, skeleton, etc).
-- `shared`: piezas compuestas usadas por varias features.
+- `shared`: componentes visuales y estructurales usados por varias páginas.
+- `analytics`: componentes cliente para integrar Google Analytics 4.
+- `ui`: carpeta reservada para primitives del sistema visual; hoy no tiene implementaciones.

@@ -1,11 +1,11 @@
-﻿# styles
+# styles
 
-Estilos globales del proyecto.
+Espacio para estilos compartidos del proyecto.
 
-## Que va aqui
-- `globals.css`
-- Variables CSS de tema.
-- Estilos base y utilidades globales.
+## Estado actual
 
-## Regla
-- Mantener estilos de componente dentro de cada componente cuando sea posible.
+La carpeta existe como reserva, pero los estilos globales activos están en [globals.css](/home/pablo/Escritorio/pdewin/src/app/globals.css).
+
+## Cuándo usarla
+
+Tiene sentido mover estilos aquí solo si aparecen archivos CSS compartidos adicionales aparte del global principal.

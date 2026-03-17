@@ -1,11 +1,11 @@
-﻿# animations
+# animations
 
-Presets de animacion reutilizables (Framer Motion).
+Configuraciones reutilizables de animación.
 
-## Que va aqui
-- Variants de entrada/salida.
-- Stagger para listas y secciones.
-- Config para `prefers-reduced-motion`.
+## Archivo actual
 
-## Performance
-- Animar solo `transform` y `opacity`.
+- `navbar.ts`: variantes para dropdown de escritorio, panel móvil e items móviles de la navegación.
+
+## Uso
+
+Estas variantes se consumen desde componentes que usan `framer-motion`, evitando duplicar transiciones.

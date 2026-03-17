@@ -1,11 +1,9 @@
-﻿# lib
+# lib
 
-Utilidades transversales del proyecto.
+Utilidades técnicas compartidas del proyecto.
 
-## Objetivo
-- Centralizar logica tecnica reutilizable.
+## Subcarpetas actuales
 
-## Subcarpetas
-- `seo`: helpers de metadata, schema, sitemap.
-- `analytics`: eventos y pageviews para GA4.
-- `animations`: presets de Framer Motion.
+- `analytics`: helpers para GA4.
+- `animations`: variantes de `framer-motion` reutilizables.
+- `seo`: helper para metadata de Next.

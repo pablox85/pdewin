@@ -1,11 +1,14 @@
-﻿# docs
+# docs
 
-Documentacion funcional y tecnica.
+Carpeta reservada para documentación complementaria del proyecto.
 
-## Que va aqui
-- Guia de despliegue en Vercel.
-- Setup de GA4 y Search Console.
-- Convenciones de codigo y arquitectura.
+## Estado actual
 
-## Objetivo
-- Facilitar mantenimiento y onboarding.
+Por ahora solo contiene este README.
+
+## Documentación útil para agregar aquí
+
+- guía de despliegue,
+- checklist de contenido/SEO,
+- integración real del formulario,
+- procedimientos de mantenimiento.

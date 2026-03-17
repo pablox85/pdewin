@@ -1,12 +1,12 @@
-﻿# config
+# config
 
-Configuracion centralizada.
+Configuración central del sitio.
 
-## Que va aqui
-- Constantes de marca (nombre, dominio, redes).
-- Navegacion principal.
-- Config SEO por defecto.
-- Variables para contacto.
+## Archivos actuales
 
-## Beneficio
-- Cambios globales desde un solo lugar.
+- `site.ts`: nombre comercial, descripción, dominio, locale y datos de contacto.
+- `navigation.ts`: estructura tipada del menú principal y sus subitems.
+
+## Uso
+
+Aquí vive la información que impacta en branding, navegación, contacto y SEO base.

@@ -1,12 +1,15 @@
-﻿# _sections
+# _sections
 
-Secciones grandes de la landing para ensamblar la pagina principal.
+Secciones de la home pública.
 
-## Ejemplos
-- `HeroSection.tsx`
-- `ServicesSection.tsx`
-- `TestimonialsSection.tsx`
-- `ContactSection.tsx`
+## Componentes actuales
 
-## Regla
-- Cada seccion consume componentes de `components` y datos de `features/config`.
+- `HeroSection.tsx`: propuesta principal, CTAs y bloque de diferenciadores.
+- `ServicesSection.tsx`: tarjetas de unidades de negocio con carrusel de imágenes.
+- `TestimonialsSection.tsx`: testimonios de clientes.
+- `AboutSection.tsx`: bloque institucional.
+- `ContactSection.tsx`: cierre con formulario y datos de contacto.
+
+## Regla de uso
+
+Estas piezas componen la página `/` y consumen datos de `src/features` y `src/config`.

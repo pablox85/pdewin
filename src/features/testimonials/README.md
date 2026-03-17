@@ -1,12 +1,11 @@
-﻿# testimonials (feature)
+# testimonials
 
-Feature de testimonios/casos de exito.
+Feature de prueba social de la landing.
 
-## Que contiene
-- Datos de testimonios.
-- Componentes de slider/grid.
-- Variantes con y sin animacion.
+## Qué contiene hoy
 
-## SEO/UX
-- Refuerza confianza y conversion.
-- Evitar bloquear render con librerias pesadas.
+- `data/testimonials.ts`: arreglo con testimonios mostrados en `TestimonialsSection`.
+
+## Uso actual
+
+La home renderiza estos testimonios en formato de tarjetas simples, sin slider ni dependencia externa adicional.

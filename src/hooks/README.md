@@ -1,11 +1,7 @@
-﻿# hooks
+# hooks
 
-Hooks custom reutilizables.
+Carpeta reservada para hooks reutilizables.
 
-## Ejemplos
-- `useIsMounted`
-- `useMediaQuery`
-- `useReducedMotionPreference`
+## Estado actual
 
-## Regla
-- Mantenerlos puros y testeables.
+Actualmente no hay hooks custom implementados en este proyecto.

@@ -1,5 +1,7 @@
 # contact/components
 
-Componentes UI de la feature de contacto.
+Componentes visuales de la feature de contacto.
 
-- `ContactForm.tsx`: formulario cliente con evento `generate_lead` a GA4.
+## Archivo actual
+
+- `ContactForm.tsx`: formulario cliente con campos de nombre, email, servicio y mensaje, más tracking opcional de lead en GA4.

@@ -1,12 +1,20 @@
-﻿# shared
+# shared
 
-Componentes compuestos reutilizables entre paginas/features.
+Piezas reutilizables del sitio que no pertenecen a una sola feature.
 
-## Ejemplos
-- `Navbar.tsx`
-- `Footer.tsx`
-- `SectionTitle.tsx`
-- `FAQAccordion.tsx`
+## Componentes actuales
 
-## Regla
-- Deben ser agnosticos de una feature especifica.
+- `Navbar.tsx`: navegación principal con menús y enlaces por rubro.
+- `Footer.tsx`: cierre global del sitio.
+- `SectionTitle.tsx`: encabezado reutilizable para secciones.
+- `SectionWrapper.tsx`: contenedor con ancho y espaciado consistentes.
+- `Reveal.tsx`: animación de aparición al entrar en viewport.
+- `PageTransition.tsx`: transición entre rutas.
+- `ThemeToggle.tsx`: interruptor de tema claro/oscuro.
+- `PhotoCarousel.tsx`: carrusel simple de imágenes.
+- `WhatsAppFloatingButton.tsx`: CTA flotante arrastrable que abre WhatsApp.
+- `index.ts`: exportaciones agrupadas.
+
+## Uso
+
+Son los bloques base para componer tanto la home como las páginas de detalle.

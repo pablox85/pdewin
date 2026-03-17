@@ -1,11 +1,11 @@
-﻿# seo
+# seo
 
-Utilidades SEO tecnicas.
+Utilidades SEO del proyecto.
 
-## Que va aqui
-- Builders de metadata de Next.js.
-- Generadores de JSON-LD (Organization, Service, FAQ).
-- Helpers para canonical URL.
+## Archivo actual
 
-## Resultado
-- SEO consistente sin repetir codigo en cada pagina.
+- `metadata.ts`: helper `buildMetadata()` para generar metadata consistente a partir de `siteConfig` y sobrescrituras por página.
+
+## Uso actual
+
+Se usa en `src/app/layout.tsx` para metadata global y en las páginas de detalle para metadata específica de cada rubro.

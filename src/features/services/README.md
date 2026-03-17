@@ -1,11 +1,12 @@
-﻿# services (feature)
+# services
 
-Feature para exponer los servicios de la empresa.
+Feature que concentra la oferta comercial del sitio.
 
-## Que contiene
-- Definicion de cards de servicio.
-- Datos (titulo, descripcion, icono, CTA).
-- Componentes de render de servicios.
+## Qué contiene hoy
 
-## SEO
-- Permite crear contenido semantico por servicio con headings claros.
+- `data/businessAreas.ts`: definición principal de las tres unidades de negocio y sus detalles.
+- `data/services.ts`: listado adicional de servicios/cards heredado, hoy no es la fuente principal de las páginas de detalle.
+
+## Fuente de verdad actual
+
+Las páginas `/vehiculos`, `/cardetailing` y `/arquitectura` se construyen a partir de `businessAreas.ts`.

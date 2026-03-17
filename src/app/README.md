@@ -1,26 +1,23 @@
-﻿# app
+# app
 
-Capa de enrutado y renderizado de Next.js (App Router).
+Capa de rutas y renderizado con App Router de Next.js.
 
-## Que va aqui
-- `layout.tsx`: layout raiz con metadata base.
-- `page.tsx`: entry point de cada ruta.
-- `loading.tsx`: skeletons de carga por ruta.
-- `error.tsx`: UI de error para fallos de render.
+## Archivos actuales
+
+- `layout.tsx`: layout global, fuentes, script inicial de tema, GA4, transición de páginas y botón flotante de WhatsApp.
+- `globals.css`: estilos globales y tokens visuales del sitio.
+- `loading.tsx`: skeleton global de respaldo.
+- `sitemap.ts`: genera sitemap para home y páginas de servicios.
+- `robots.ts`: habilita rastreo y expone el sitemap.
+- `(marketing)/`: grupo de rutas para la parte pública del sitio.
+
+## Rutas públicas actuales
+
+- `/`
+- `/vehiculos`
+- `/cardetailing`
+- `/arquitectura`
 
 ## SEO
-- Definir metadata por pagina desde esta capa.
-- Integrar JSON-LD en paginas clave.
 
-## Manejo de la pagina
-- (page.tsx)
-- Navbar
--      main
--        HeroSection 
--        ServicesSection
--        TestimonialsSection
--        AboutSection
--        ContactSection
--      main
--      Footer
-    
+La metadata base se construye desde `src/lib/seo/metadata.ts` y cada página de detalle extiende esa base con título, descripción y canonical propios.

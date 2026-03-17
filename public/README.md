@@ -1,11 +1,12 @@
-﻿# public
+# public
 
-Assets estaticos servidos directamente.
+Assets estáticos servidos directamente por Next.js.
 
-## Que va aqui
-- Imagenes optimizadas.
-- Iconos y favicons.
-- Archivos de verificacion (Search Console).
+## Contenido actual
+
+- `images/`: fotos usadas en la home y en las tarjetas de servicios.
+- `icons/`: carpeta reservada para favicons o iconografía de marca.
 
 ## Nota
-- Priorizar formatos modernos (`webp`, `avif`) cuando aplique.
+
+Las imágenes actuales se consumen desde componentes como `PhotoCarousel` y distintas secciones de marketing.

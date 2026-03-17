@@ -1,6 +1,12 @@
-# analytics components
+# analytics
 
-Componentes cliente para integracion de GA4.
+Componentes cliente para la integración opcional con Google Analytics 4.
 
-- `GoogleAnalytics.tsx`: inyecta script e inicializa `gtag`.
-- `PageViewTracker.tsx`: envia `page_view` en cambios de ruta.
+## Archivos actuales
+
+- `GoogleAnalytics.tsx`: carga el script de GA4 e inicializa `gtag` cuando existe `NEXT_PUBLIC_GA_ID`.
+- `PageViewTracker.tsx`: envía `page_view` en cambios de ruta del App Router.
+
+## Dependencia
+
+Ambos se apoyan en `src/lib/analytics/gtag.ts`.
