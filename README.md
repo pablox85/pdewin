@@ -77,6 +77,17 @@ CONTACT_EMAIL_TO=pdpcorrales@gmail.com
 
 Si usas Gmail, lo recomendable es una app password en lugar de la clave normal.
 
+## Resumen interno con IA
+
+El endpoint también puede generar un resumen interno automático antes de enviar el mail. Variables opcionales:
+
+```bash
+OPENAI_API_KEY=tu_api_key
+OPENAI_MODEL=gpt-4o-mini
+```
+
+Si `OPENAI_API_KEY` no está definida o falla la llamada, el sistema usa un resumen local de respaldo y el mail igual se envía.
+
 ## Observaciones
 
 - El formulario de contacto ahora envía datos a `POST /api/contact` y dispara el evento `generate_lead` si el envío fue exitoso.
