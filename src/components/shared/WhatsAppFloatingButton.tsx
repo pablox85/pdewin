@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import type { MouseEventHandler, PointerEventHandler } from "react";
 import { siteConfig } from "@/config/site";
 
@@ -15,9 +15,29 @@ interface Position {
   y: number;
 }
 
+function subscribeToClientStatus() {
+  return () => {};
+}
+
+function getInitialPosition(): Position | null {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  const isMobile = window.innerWidth < 768;
+  const initialX = window.innerWidth - BUTTON_SIZE - SIDE_MARGIN;
+  const preferredY = isMobile
+    ? Math.round(window.innerHeight * 0.75)
+    : window.innerHeight - BUTTON_SIZE - BOTTOM_MARGIN;
+  const maxY = Math.max(SIDE_MARGIN, window.innerHeight - BUTTON_SIZE - SIDE_MARGIN);
+  const initialY = Math.min(Math.max(preferredY, SIDE_MARGIN), maxY);
+
+  return { x: initialX, y: initialY };
+}
+
 export function WhatsAppFloatingButton() {
-  const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
-  const [isReady, setIsReady] = useState(false);
+  const isClient = useSyncExternalStore(subscribeToClientStatus, () => true, () => false);
+  const [position, setPosition] = useState<Position | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [isSnapping, setIsSnapping] = useState(false);
 
@@ -35,39 +55,32 @@ export function WhatsAppFloatingButton() {
     const phone = siteConfig.contactPhone.replace(/\D/g, "");
     return `https://wa.me/${phone}?text=${encodeURIComponent(MESSAGE)}`;
   }, []);
+  const resolvedPosition = position ?? (isClient ? getInitialPosition() : null);
 
   useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    const initialX = window.innerWidth - BUTTON_SIZE - SIDE_MARGIN;
-
-    const preferredY = isMobile
-      ? Math.round(window.innerHeight * 0.75)
-      : window.innerHeight - BUTTON_SIZE - BOTTOM_MARGIN;
-    const maxY = Math.max(SIDE_MARGIN, window.innerHeight - BUTTON_SIZE - SIDE_MARGIN);
-    const initialY = Math.min(Math.max(preferredY, SIDE_MARGIN), maxY);
-    setPosition({ x: initialX, y: initialY });
-    setIsReady(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isReady) {
+    if (!isClient) {
       return;
     }
 
     const onResize = () => {
       setPosition((prev) => {
+        const currentPosition = prev ?? getInitialPosition();
+        if (!currentPosition) {
+          return prev;
+        }
+
         const maxX = Math.max(SIDE_MARGIN, window.innerWidth - BUTTON_SIZE - SIDE_MARGIN);
         const maxY = Math.max(SIDE_MARGIN, window.innerHeight - BUTTON_SIZE - SIDE_MARGIN);
         return {
-          x: Math.min(Math.max(prev.x, SIDE_MARGIN), maxX),
-          y: Math.min(Math.max(prev.y, SIDE_MARGIN), maxY),
+          x: Math.min(Math.max(currentPosition.x, SIDE_MARGIN), maxX),
+          y: Math.min(Math.max(currentPosition.y, SIDE_MARGIN), maxY),
         };
       });
     };
 
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, [isReady]);
+  }, [isClient]);
 
   const openWhatsApp = () => {
     window.open(whatsappHref, "_blank", "noopener,noreferrer");
@@ -79,8 +92,8 @@ export function WhatsAppFloatingButton() {
     dragRef.current = {
       startX: event.clientX,
       startY: event.clientY,
-      originX: position.x,
-      originY: position.y,
+      originX: resolvedPosition?.x ?? 0,
+      originY: resolvedPosition?.y ?? 0,
       moved: false,
       active: true,
     };
@@ -122,12 +135,17 @@ export function WhatsAppFloatingButton() {
     }
 
     setPosition((prev) => {
-      const centerX = prev.x + BUTTON_SIZE / 2;
+      const currentPosition = prev ?? getInitialPosition();
+      if (!currentPosition) {
+        return prev;
+      }
+
+      const centerX = currentPosition.x + BUTTON_SIZE / 2;
       const viewportMid = window.innerWidth / 2;
       const snapX = centerX >= viewportMid ? window.innerWidth - BUTTON_SIZE - SIDE_MARGIN : SIDE_MARGIN;
       setIsSnapping(true);
       window.setTimeout(() => setIsSnapping(false), 260);
-      return { x: snapX, y: prev.y };
+      return { x: snapX, y: currentPosition.y };
     });
   };
 
@@ -140,7 +158,7 @@ export function WhatsAppFloatingButton() {
     openWhatsApp();
   };
 
-  if (!isReady) {
+  if (!resolvedPosition) {
     return null;
   }
 
@@ -153,7 +171,7 @@ export function WhatsAppFloatingButton() {
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
-      style={{ left: `${position.x}px`, top: `${position.y}px` }}
+      style={{ left: `${resolvedPosition.x}px`, top: `${resolvedPosition.y}px` }}
       className={`fixed z-[70] inline-flex h-[58px] w-[58px] touch-none select-none items-center justify-center rounded-full border border-green-700/40 bg-[#25D366] text-white shadow-lg ring-offset-2 ${
         isSnapping
           ? "transition-[left,top,transform] duration-300 ease-out"

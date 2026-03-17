@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 type ThemeMode = "light" | "dark";
 
@@ -27,26 +27,32 @@ function applyTheme(theme: ThemeMode) {
   document.documentElement.classList.toggle("dark", theme === "dark");
 }
 
+function subscribeToClientStatus() {
+  return () => {};
+}
+
 // Toggle accesible de modo dia/noche con persistencia local.
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<ThemeMode>("light");
-  const [mounted, setMounted] = useState(false);
+  const isClient = useSyncExternalStore(subscribeToClientStatus, () => true, () => false);
+  const [theme, setTheme] = useState<ThemeMode | null>(null);
+  const effectiveTheme = theme ?? (isClient ? getPreferredTheme() : "light");
 
   useEffect(() => {
-    const preferredTheme = getPreferredTheme();
-    setTheme(preferredTheme);
-    applyTheme(preferredTheme);
-    setMounted(true);
-  }, []);
+    if (!isClient) {
+      return;
+    }
+
+    applyTheme(effectiveTheme);
+  }, [effectiveTheme, isClient]);
 
   const handleToggle = () => {
-    const nextTheme: ThemeMode = theme === "light" ? "dark" : "light";
+    const nextTheme: ThemeMode = effectiveTheme === "light" ? "dark" : "light";
     setTheme(nextTheme);
     applyTheme(nextTheme);
     window.localStorage.setItem(STORAGE_KEY, nextTheme);
   };
 
-  if (!mounted) {
+  if (!isClient) {
     return (
       <button
         type="button"
@@ -62,7 +68,7 @@ export function ThemeToggle() {
     );
   }
 
-  const isDark = theme === "dark";
+  const isDark = effectiveTheme === "dark";
 
   return (
     <button

@@ -27,6 +27,7 @@ export function PhotoCarousel({
 }: PhotoCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const total = images.length;
+  const activeIndex = total > 0 ? currentIndex % total : 0;
 
   useEffect(() => {
     if (autoPlayMs <= 0 || total <= 1) {
@@ -50,12 +51,6 @@ export function PhotoCarousel({
     };
   }, [autoPlayMs, startDelayMs, total]);
 
-  useEffect(() => {
-    if (currentIndex > total - 1) {
-      setCurrentIndex(0);
-    }
-  }, [currentIndex, total]);
-
   if (total === 0) {
     return null;
   }
@@ -74,7 +69,7 @@ export function PhotoCarousel({
         {images.map((image, index) => (
           <div
             key={`${image.src}-${index}`}
-            className={`absolute inset-0 transition-opacity duration-500 ${index === currentIndex ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 transition-opacity duration-500 ${index === activeIndex ? "opacity-100" : "opacity-0"}`}
           >
             <Image
               src={image.src}
@@ -116,7 +111,7 @@ export function PhotoCarousel({
               type="button"
               onClick={() => setCurrentIndex(index)}
               aria-label={`Ir a foto ${index + 1}`}
-              className={`h-2.5 w-2.5 rounded-full transition ${index === currentIndex ? "bg-white" : "bg-white/50 hover:bg-white/80"}`}
+              className={`h-2.5 w-2.5 rounded-full transition ${index === activeIndex ? "bg-white" : "bg-white/50 hover:bg-white/80"}`}
             />
           ))}
         </div>

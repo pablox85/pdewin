@@ -40,14 +40,13 @@ export const BUSINESS_AREAS: BusinessArea[] = [
         id: "vehiculos-gran-porte",
         title: "Vehiculos de gran porte",
         description:
-          "Aplicaciones para camiones,omnibus, motorhome, ambulancias.", // modificacion
+          "Aplicaciones para camiones, omnibus, motorhome y ambulancias.",
       },
       {
-        //modificacion esta id se crea a mano 
-        id: "veiculos-gran-porte",
+        id: "vehiculos-maquinaria-pesada",
         title: "Maquinaria pesada",
         description:
-          "Retroexcavadoras, palas, cuchillas y unidades de alto porte con exigencia operativa.", 
+          "Retroexcavadoras, palas, cuchillas y unidades de alto porte con exigencia operativa.",
       },
     ],
   },
@@ -79,10 +78,10 @@ export const BUSINESS_AREAS: BusinessArea[] = [
           "Aplicacion de coating nanoceramico para brillo sostenido y resistencia superior frente al desgaste.",
       },
       {
-      id: "detailing-acrilico",
-      title: "Tratamiento acrilico",
-      description:
-        "Aplicacion de coating acrilico para brillo sostenido y resistencia superior frente al desgaste.",
+        id: "detailing-acrilico",
+        title: "Tratamiento acrilico",
+        description:
+          "Aplicacion de coating acrilico para brillo sostenido y resistencia superior frente al desgaste.",
       },
     ],
   },
@@ -109,26 +108,24 @@ export const BUSINESS_AREAS: BusinessArea[] = [
       {
         id: "arquitectura-planos",
         title: "Office",
-        description:
-         [
+        description: [
           "Laminas de control solar.",
           "Laminas de seguridad.",
           "Control Visual",
           "Laminas decorativas.",
           "Vinilos decorativos y de proteccion.",
-          "Carteleria interna"
+          "Carteleria interna",
         ],
       },
       {
         id: "arquitectura-direccion",
         title: "Business",
-        description:
-          [
-            "Microperforados",
-            "Vinilos publicitacios",
-            "Lona impresa",
-            "Carteleria en general"
-         ],
+        description: [
+          "Microperforados",
+          "Vinilos publicitarios",
+          "Lona impresa",
+          "Carteleria en general",
+        ],
       },
     ],
   },
