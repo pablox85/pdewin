@@ -25,33 +25,33 @@ export const NAV_MENUS: NavMenu[] = [
   {
     id: "cardetailing",
     label: "Car Detailing",
-    href: "/cardetailing",
+    href: "/detailing",
     items: [
-      { id: "detailing-interior", label: "Interior", href: "/cardetailing#detailing-interior" },
-      { id: "detailing-exterior", label: "Exterior", href: "/cardetailing#detailing-exterior" },
-      { id: "detailing-ceramico", label: "Ceramico", href: "/cardetailing#detailing-ceramico" },
-      { id: "detailing-acrilico", label: "Acrilico", href: "/cardetailing#detailing-acrilico" },
+      { id: "detailing-interior", label: "Interior", href: "/detailing#detailing-interior" },
+      { id: "detailing-exterior", label: "Exterior", href: "/detailing#detailing-exterior" },
+      { id: "detailing-ceramico", label: "Ceramico", href: "/detailing#detailing-ceramico" },
+      { id: "detailing-acrilico", label: "Acrilico", href: "/detailing#detailing-acrilico" },
     ],
   },
   {
     id: "arquitectura",
     label: "Home, Office & Business",
-    href: "/arquitectura",
+    href: "/home-business",
     items: [
       {
         id: "arquitectura-laminas",
         label: "Espacios residenciales",
-        href: "/arquitectura#arquitectura-laminas",
+        href: "/home-business#arquitectura-laminas",
       },
       {
         id: "arquitectura-carteleria",
         label: "Espacios comerciales",
-        href: "/arquitectura#arquitectura-carteleria",
+        href: "/home-business#arquitectura-carteleria",
       },
       {
         id: "arquitectura-publicidad",
         label: "Asesoria decorativa",
-        href: "/arquitectura#arquitectura-publicidad",
+        href: "/home-business#arquitectura-publicidad",
       },
     ],
   },

@@ -9,4 +9,4 @@ Feature que concentra la oferta comercial del sitio.
 
 ## Fuente de verdad actual
 
-Las páginas `/vehiculos`, `/cardetailing` y `/arquitectura` se construyen a partir de `businessAreas.ts`.
+Las páginas `/vehiculos`, `/detailing` y `/home-business` se construyen a partir de `businessAreas.ts`.

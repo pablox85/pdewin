@@ -9,8 +9,8 @@ El sitio ya incluye:
 - Home pública con secciones de hero, unidades de negocio, testimonios, institucional y contacto.
 - Tres páginas de detalle por unidad de negocio:
   - `/vehiculos`
-  - `/cardetailing`
-  - `/arquitectura`
+  - `/detailing`
+  - `/home-business`
 - Modo claro/oscuro con persistencia local.
 - Botón flotante de WhatsApp arrastrable.
 - SEO base con metadata, `sitemap.xml`, `robots.txt` y JSON-LD de organización.

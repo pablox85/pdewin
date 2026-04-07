@@ -5,24 +5,24 @@ import { requireBusinessAreaById } from "@/features/services/data/businessAreas"
 import { buildMetadata } from "@/lib/seo/metadata";
 import { AreaDetailPage } from "../_components/AreaDetailPage";
 
-const area = requireBusinessAreaById("cardetailing");
+const area = requireBusinessAreaById("arquitectura");
 
 export const metadata: Metadata = buildMetadata({
-  title: "Car Detailing",
+  title: "Home, Office & Business",
   description: area.heroDescription,
-  alternates: { canonical: "/cardetailing" },
+  alternates: { canonical: "/home-business" },
   openGraph: {
-    url: `${siteConfig.domain}/cardetailing`,
-    title: `Car Detailing | ${siteConfig.name}`,
+    url: `${siteConfig.domain}/home-business`,
+    title: `Home & Business | ${siteConfig.name}`,
     description: area.heroDescription,
   },
   twitter: {
-    title: `Car Detailing | ${siteConfig.name}`,
+    title: `Home & Business | ${siteConfig.name}`,
     description: area.heroDescription,
   },
 });
 
-export default function CarDetailingPage() {
+export default function HomeBusinessPage() {
   return (
     <>
       <Navbar />

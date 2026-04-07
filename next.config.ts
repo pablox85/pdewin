@@ -8,6 +8,20 @@ const projectRoot = dirname(fileURLToPath(import.meta.url));
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: "/cardetailing",
+        destination: "/detailing",
+        permanent: true,
+      },
+      {
+        source: "/arquitectura",
+        destination: "/home-business",
+        permanent: true,
+      },
+    ];
+  },
   turbopack: {
     root: join(projectRoot),
   },

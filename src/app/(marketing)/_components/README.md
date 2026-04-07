@@ -4,7 +4,7 @@ Componentes de apoyo usados solo dentro de las rutas de marketing.
 
 ## Componentes actuales
 
-- `AreaDetailPage.tsx`: plantilla de detalle para `/vehiculos`, `/cardetailing` y `/arquitectura`.
+- `AreaDetailPage.tsx`: plantilla de detalle para `/vehiculos`, `/detailing` y `/home-business`.
 - `MarketingHomeSkeleton.tsx`: skeleton de carga para la home.
 - `ServicePageSkeleton.tsx`: skeleton de carga para páginas de detalle.
 

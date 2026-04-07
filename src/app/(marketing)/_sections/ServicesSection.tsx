@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { PhotoCarousel, Reveal, SectionTitle, SectionWrapper } from "@/components/shared";
+import { PhotoCarousel, Reveal, RouteButton, SectionTitle, SectionWrapper } from "@/components/shared";
 import { BUSINESS_AREAS } from "@/features/services/data/businessAreas";
 
 const areaStyles: Record<string, string> = {
@@ -66,11 +65,12 @@ export function ServicesSection() {
                 startDelayMs={index * 350}
               />
 
-              <Link
+              <RouteButton
                 href={area.href}
                 className="cta-pop mt-6 inline-flex rounded-xl border border-slate-400 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-brand-700 hover:text-brand-700 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-blue-300 dark:hover:text-blue-200"
-              >                 Ver servicios de {area.label.toLowerCase()}
-              </Link>
+              >
+                Ver servicios de {area.label.toLowerCase()}
+              </RouteButton>
             </article>
           </Reveal>
         ))}

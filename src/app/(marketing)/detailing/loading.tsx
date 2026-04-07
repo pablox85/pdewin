@@ -1,5 +1,5 @@
 import { ServicePageSkeleton } from "../_components/ServicePageSkeleton";
 
-export default function ArquitecturaLoading() {
+export default function DetailingLoading() {
   return <ServicePageSkeleton />;
 }

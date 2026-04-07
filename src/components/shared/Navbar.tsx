@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_MENUS } from "../../config/navigation";
 import { mobileItemsVariants, mobilePanelVariants } from "../../lib/animations/navbar";
+import { RouteButton } from "./RouteButton";
 import { ThemeToggle } from "./ThemeToggle";
 
 // Colores de hover/activo por seccion (desktop y movil).
@@ -83,7 +83,7 @@ export function Navbar() {
       aria-label="Navegacion principal"
     >
       <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-5 py-3.5 max-[360px]:px-3 max-[360px]:py-2.5">
-        <Link href="/" className="inline-flex items-center" aria-label="Ir al inicio">
+        <RouteButton href="/" className="inline-flex items-center" aria-label="Ir al inicio">
           <Image
             src="/images/NEGRO-FONDO-TRANSPARENTE.png"
             alt="Polarizados del Este"
@@ -100,7 +100,7 @@ export function Navbar() {
             priority
             className="hidden h-auto w-[154px] dark:block max-[360px]:w-[130px]"
           />
-        </Link>
+        </RouteButton>
 
         <div className="hidden items-center gap-5 md:flex">
           {NAV_MENUS.map((menu) => {
@@ -112,7 +112,7 @@ export function Navbar() {
             };
 
             return (
-              <Link
+              <RouteButton
                 key={menu.id}
                 href={menu.href}
                 className={`group relative inline-flex items-center px-1 py-2 text-[1rem] font-semibold outline-none transition-all duration-200 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${hoverStyle.text} ${
@@ -129,7 +129,7 @@ export function Navbar() {
                   }`}
                   aria-hidden="true"
                 />
-              </Link>
+              </RouteButton>
             );
           })}
           <ThemeToggle />
@@ -194,7 +194,7 @@ export function Navbar() {
                     animate="visible"
                     exit="exit"
                   >
-                    <Link
+                    <RouteButton
                       href={menu.href}
                       className={`block w-full rounded-lg px-2 py-[9px] text-left text-[0.95rem] font-semibold outline-none ring-offset-2 transition focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${hoverStyle.text} ${
                         isActive
@@ -204,7 +204,7 @@ export function Navbar() {
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {menu.label}
-                    </Link>
+                    </RouteButton>
                   </motion.div>
                 );
               })}

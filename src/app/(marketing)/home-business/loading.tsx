@@ -1,5 +1,5 @@
 import { ServicePageSkeleton } from "../_components/ServicePageSkeleton";
 
-export default function CarDetailingLoading() {
+export default function HomeBusinessLoading() {
   return <ServicePageSkeleton />;
 }

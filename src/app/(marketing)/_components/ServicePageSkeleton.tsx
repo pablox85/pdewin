@@ -1,4 +1,4 @@
-// Skeleton para paginas de servicio (vehiculos/cardetailing/home & deco).
+// Skeleton para paginas de servicio (vehiculos/detailing/home-business).
 export function ServicePageSkeleton() {
   return (
     <div className="animate-pulse">

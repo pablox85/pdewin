@@ -15,8 +15,8 @@ Capa de rutas y renderizado con App Router de Next.js.
 
 - `/`
 - `/vehiculos`
-- `/cardetailing`
-- `/arquitectura`
+- `/detailing`
+- `/home-business`
 
 ## SEO
 

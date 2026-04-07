@@ -53,7 +53,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
   {
     id: "cardetailing",
     label: "Car Detailing",
-    href: "/cardetailing",
+    href: "/detailing",
     heroTitle: "Car detailing de nivel profesional",
     heroDescription:
       "Restauramos y protegemos tu vehiculo con tecnicas especializadas para conservar su estetica y valor.",
@@ -88,7 +88,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
   {
     id: "arquitectura",
     label: "Home & Office",
-    href: "/arquitectura",
+    href: "/home-business",
     heroTitle: "Home, Office & Business para hogares y espacios comerciales",
     heroDescription:
       "Láminas para vidrios y vinilos decorativos para hogares. \nCartelería profesional, soluciones visuales para oficinas y comercios.",

@@ -7,8 +7,8 @@ Grupo de rutas que concentra toda la experiencia pública de la landing.
 - `page.tsx`: home principal.
 - `loading.tsx`: skeleton específico de la home.
 - `vehiculos/`: página de detalle y loading.
-- `cardetailing/`: página de detalle y loading.
-- `arquitectura/`: página de detalle y loading.
+- `detailing/`: página de detalle y loading.
+- `home-business/`: página de detalle y loading.
 - `_sections/`: secciones que componen la home.
 - `_components/`: componentes exclusivos de este grupo de rutas.
 
