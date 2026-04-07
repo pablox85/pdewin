@@ -21,7 +21,7 @@ export function HeroSection() {
               Polarizados del Este
             </p>
             <h1 className="text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-              Soluciones premium para vehiculos, Car Detailing, Home, Office & Business.
+              Soluciones premium para vehiculos, Car Detailing, Home & Office.
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-slate-700 dark:text-slate-300">
               Elevamos la imagen y el valor de cada proyecto con procesos claros, ejecucion precisa y

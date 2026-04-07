@@ -33,7 +33,7 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
             <h1 className="text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
               {area.heroTitle}
             </h1>
-            <p className="mt-5 max-w-2xl text-lg text-slate-700 dark:text-slate-300">{area.heroDescription}</p>
+            <p className="mt-5 max-w-2xl text-lg text-slate-700 dark:text-slate-300 whitespace-pre-line">{area.heroDescription}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href={`#${area.details[0]?.id}`}
@@ -51,7 +51,7 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
           </div>
 
           <aside className="lift-card rounded-2xl border border-slate-300 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900">
-            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Accesos rapidos</h2>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Servicios</h2>
             <ul className="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-300">
               {area.details.map((detail) => (
                 <li key={detail.id}>
@@ -69,7 +69,7 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
         <SectionTitle
           eyebrow="Detalle del servicio"
           title={`Servicios de ${area.label.toLowerCase()}`}
-          description="Cada bloque tiene su ancla para compartir enlaces directos con clientes."
+          description="Detalle de cada servicio."
         />
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

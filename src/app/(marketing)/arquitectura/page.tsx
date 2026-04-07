@@ -8,16 +8,16 @@ import { AreaDetailPage } from "../_components/AreaDetailPage";
 const area = requireBusinessAreaById("arquitectura");
 
 export const metadata: Metadata = buildMetadata({
-  title: "Home, Deco & Business",
+  title: "Home, Office & Business", //pestaña
   description: area.heroDescription,
   alternates: { canonical: "/arquitectura" },
   openGraph: {
     url: `${siteConfig.domain}/arquitectura`,
-    title: `Home, Deco & Business | ${siteConfig.name}`,
+    title: `Home & Office | ${siteConfig.name}`,
     description: area.heroDescription,
   },
   twitter: {
-    title: `Home, Deco & Business | ${siteConfig.name}`,
+    title: `Home & Office | ${siteConfig.name}`,
     description: area.heroDescription,
   },
 });

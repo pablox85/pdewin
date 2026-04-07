@@ -97,9 +97,7 @@ export function ContactForm() {
           </option>
           <option value="vehiculos">Vehiculos</option>
           <option value="cardetailing">Car Detailing</option>
-          <option value="home">Home</option>
-          <option value="office">Office</option>
-          <option value="business">Business</option>
+          <option value="arquitectura">Home & Office</option>
         </select>
       </label>
 

@@ -43,6 +43,12 @@ export const serviceItems: ServiceItem[] = [
     title: "Tratamiento Ceramico",
     description: "Aplicacion de coating ceramico para brillo sostenido y mayor resistencia.",
   },
+  {
+    id: "Detailing-acrilico",
+    area: "Cardetailing",
+    title: "Tratamiento Acrilico",
+    description: "Aplicacion de coating acrilico para realzar el brillo y proteger la superficie.",
+  },
   /*{
     id: "arquitectura-proyectos",
     area: "Arquitectura",

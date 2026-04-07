@@ -1,7 +1,7 @@
 // Config centralizada para datos de marca, SEO y contacto.
 export const siteConfig = {
   name: "Polarizados del Este",
-  description: "Soluciones profesionales en vehiculos, car detailing y Home, Deco & Business.",
+  description: "Soluciones profesionales en vehiculos, car detailing y Home & Office.",
   domain: "https://www.polarizadosdeleste.com",
   locale: "es_UY",
   contactEmail: "pdpcorrales@gmail.com",

@@ -61,41 +61,41 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     details: [
       {
         id: "detailing-interior",
-        title: "Interior",
+        title: "Limpieza Interior",
         description:
           "Limpieza tecnica de tapizados, plasticos y superficies para recuperar confort e higiene.",
       },
       {
         id: "detailing-exterior",
-        title: "Exterior",
+        title: "Limpieza Exterior",
         description:
           "Lavado premium, descontaminado y proteccion de pintura con terminacion uniforme.",
       },
       {
         id: "detailing-ceramico",
-        title: "Tratamiento ceramico",
+        title: "Tratamiento Nanoceramico",
         description:
-          "Aplicacion de coating nanoceramico para brillo sostenido y resistencia superior frente al desgaste.",
+          "Se fusiona con la pintura. Repele agua, UV y suciedad por años — sin retoques, sin perder el brillo.",
       },
       {
         id: "detailing-acrilico",
-        title: "Tratamiento acrilico",
+        title: "Tratamiento Acrilico",
         description:
-          "Aplicacion de coating acrilico para brillo sostenido y resistencia superior frente al desgaste.",
+          "Sella y protege la superficie con brillo visible desde el primer día. Mantenimiento más fácil, resultado inmediato.",
       },
     ],
   },
   {
     id: "arquitectura",
-    label: "Home, Deco & Business",
+    label: "Home & Office",
     href: "/arquitectura",
-    heroTitle: "Home, Deco & Business para hogares y espacios comerciales",
+    heroTitle: "Home, Office & Business para hogares y espacios comerciales",
     heroDescription:
-      "Disenamos propuestas funcionales y esteticas para transformar ambientes con criterio y personalidad.",
-    summary: "Ambientacion, seleccion de materiales y renovacion visual para espacios con impacto.",
+      "Láminas para vidrios y vinilos decorativos para hogares. \nCartelería profesional, soluciones visuales para oficinas y comercios.",
+    summary: "ASoluciones en láminas y vinilos para controlar el sol, ganar privacidad, decorar espacios y comunicar tu marca.",
     details: [
       {
-        id: "arquitectura-proyectos",
+        id: "arquitectura-laminas", //cambiar ids arquitectura-laminas
         title: "Home",
         description: [
           "Laminas de control solar.",
@@ -106,7 +106,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
         ],
       },
       {
-        id: "arquitectura-planos",
+        id: "arquitectura-carteleria", //cambiar ids arquitectuca-carteleria
         title: "Office",
         description: [
           "Laminas de control solar.",
@@ -118,10 +118,10 @@ export const BUSINESS_AREAS: BusinessArea[] = [
         ],
       },
       {
-        id: "arquitectura-direccion",
+        id: "arquitectura-publicidad", //cambiar ids arquitectura-publicidad
         title: "Business",
         description: [
-          "Microperforados",
+          "Vinilos icroperforados",
           "Vinilos publicitarios",
           "Lona impresa",
           "Carteleria en general",

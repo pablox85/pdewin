@@ -22,7 +22,7 @@ const areaCarouselImages: Record<string, { src: string; alt: string }[]> = {
     { src: "/images/det3.jpg", alt: "car detailing" },
   ],
   arquitectura: [
-    { src: "/images/home.jpg", alt: "Home, deco y business" },
+    { src: "/images/home.jpg", alt: "Home & Office" },
     { src: "/images/bath.jpg", alt: "Carteleria" },
     { src: "/images/office.jpg", alt: "Intervencion en oficina" },
   ],
