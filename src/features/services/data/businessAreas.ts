@@ -121,7 +121,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
         id: "arquitectura-publicidad", //cambiar ids arquitectura-publicidad
         title: "Business",
         description: [
-          "Vinilos icroperforados",
+          "Vinilos Microperforados",
           "Vinilos publicitarios",
           "Lona impresa",
           "Carteleria en general",
