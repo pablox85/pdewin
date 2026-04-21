@@ -1,129 +1,114 @@
 # Polarizados del Este
 
-Landing comercial desarrollada con `Next.js`, `TypeScript`, `Tailwind CSS` y `Framer Motion` para presentar los servicios de Polarizados del Este.
+Landing comercial para Polarizados del Este, construida con Next.js y enfocada en mostrar servicios, generar consultas y reforzar la presencia de la marca.
 
-## Estado actual
+## Tecnologias
 
-El sitio ya incluye:
+- `Next.js 16` con App Router
+- `React 19`
+- `TypeScript 5`
+- `Tailwind CSS 3`
+- `Framer Motion`
+- `Nodemailer` para el envio de correos desde la web
 
-- Home pública con secciones de hero, unidades de negocio, testimonios, institucional y contacto.
-- Tres páginas de detalle por unidad de negocio:
+## Que incluye
+
+- Home principal con secciones de hero, servicios, testimonios, about y contacto.
+- Paginas de detalle para cada unidad de negocio:
   - `/vehiculos`
   - `/detailing`
   - `/home-business`
+- Boton flotante de WhatsApp.
 - Modo claro/oscuro con persistencia local.
-- Botón flotante de WhatsApp arrastrable.
-- SEO base con metadata, `sitemap.xml`, `robots.txt` y JSON-LD de organización.
-- Integración opcional con Google Analytics 4 mediante `NEXT_PUBLIC_GA_ID`.
+- SEO base con metadata, `robots.txt`, `sitemap.xml` y datos estructurados.
+- Integracion opcional con Google Analytics 4.
+- Formulario de contacto con envio por correo.
 
-## Stack
+## Estructura
 
-- `next@16`
-- `react@19`
-- `typescript@5`
-- `tailwindcss@3`
-- `framer-motion`
+- `src/app`: rutas de Next.js, layout global, SEO y API routes.
+- `src/components`: componentes compartidos, UI y analytics.
+- `src/features`: contenido y piezas especificas de servicios, contacto y testimonios.
+- `src/config`: configuracion central del sitio, textos y navegacion.
+- `src/lib`: utilidades de animacion, analytics y SEO.
+- `public`: imagenes, iconos y recursos estaticos.
 
-## Estructura principal
+## Instalacion local
 
-- `src/app`: App Router, layout global, rutas públicas y archivos SEO de Next.
-- `src/components`: componentes compartidos y componentes de analytics.
-- `src/features`: datos y piezas ligadas a servicios, testimonios y contacto.
-- `src/config`: configuración central del sitio y navegación.
-- `src/lib`: utilidades transversales para SEO, analytics y animaciones.
-- `public`: imágenes e identidad visual usadas por la landing.
-- `docs`: espacio reservado para documentación complementaria.
-
-## Desarrollo local
+1. Clona el repositorio.
+2. Instala dependencias:
 
 ```bash
 npm install
+```
+
+3. Toma `.env.example` como base y copialo a `.env.local`, luego completalo con tus valores.
+
+## Ejecutar en desarrollo
+
+```bash
 npm run dev
 ```
 
-Sitio disponible en `http://localhost:3000`.
+Luego abrilo en `http://localhost:3000`.
 
-## Build de producción
+Este comando levanta la aplicacion completa de Next.js, incluida la parte de servidor que expone la API interna.
+
+## Backend
+
+No hay un backend separado en otro proyecto o puerto. La logica del servidor vive dentro de Next.js, en particular en:
+
+- `src/app/api/contact/route.ts`
+
+Ese endpoint procesa el formulario de contacto, valida datos y envia el correo mediante SMTP. Tambien puede generar un resumen interno con OpenAI si se configuran las variables correspondientes.
+
+## Variables de entorno
+
+Variables utiles:
+
+```bash
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=tu_usuario_smtp
+SMTP_PASS=tu_app_password_o_clave_smtp
+SMTP_FROM=correo_remitente
+CONTACT_EMAIL_TO=correo_destino
+OPENAI_API_KEY=tu_api_key
+OPENAI_MODEL=gpt-4o-mini
+```
+
+Notas:
+
+- `NEXT_PUBLIC_GA_ID` es opcional. Si no existe, el sitio funciona igual sin Analytics.
+- Las variables `SMTP_*` son necesarias para que el formulario de contacto pueda enviar correos.
+- `OPENAI_API_KEY` y `OPENAI_MODEL` son opcionales. Si no se configuran, el sistema usa un resumen local de respaldo.
+
+## Correr el servidor en modo produccion local
 
 ```bash
 npm run build
 npm run start
 ```
 
-## Variables de entorno
+Eso levanta la version compilada de Next.js, incluyendo la API interna de contacto.
 
-Podés partir de [`.env.example`](/home/pablo/Escritorio/pdewin/.env.example) y copiarlo a `.env.local`.
-
-`GitHub` debe guardar solo el código. Los secretos van siempre en:
-
-- `.env.local` para desarrollo local.
-- `Environment Variables` del proyecto en Vercel para preview y producción.
-
-`.env.local` ya está ignorado por Git, así que no se sube al repo.
-
-Si solo querés habilitar GA4:
+## Lint
 
 ```bash
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+npm run lint
 ```
 
-Si la variable no existe, el sitio funciona igual y simplemente no carga tracking.
+## Flujo recomendado de uso
 
-## Envio de formularios
+1. Instalar dependencias con `npm install`.
+2. Configurar `.env.local`.
+3. Ejecutar `npm run dev` para desarrollar.
+4. Probar el formulario de contacto y verificar que SMTP este funcionando.
+5. Antes de publicar, correr `npm run build`.
 
-La API de contacto vive en `POST /api/contact` y usa SMTP. Variables necesarias:
+## Despliegue
 
-```bash
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_USER=pdpcorrales@gmail.com
-SMTP_PASS=tu-clave-o-app-password
-SMTP_FROM=pdpcorrales@gmail.com
-CONTACT_EMAIL_TO=pdpcorrales@gmail.com
-```
+El proyecto esta listo para deploy en Vercel o cualquier entorno compatible con Next.js.
 
-Si usas Gmail, lo recomendable es una app password en lugar de la clave normal.
-
-## Resumen interno con IA
-
-El endpoint también puede generar un resumen interno automático antes de enviar el mail. Variables opcionales:
-
-```bash
-OPENAI_API_KEY=tu_api_key
-OPENAI_MODEL=gpt-4o-mini
-```
-
-Si `OPENAI_API_KEY` no está definida o falla la llamada, el sistema usa un resumen local de respaldo y el mail igual se envía.
-
-## Deploy en GitHub + Vercel
-
-Flujo recomendado:
-
-1. Subir el código a GitHub.
-2. Importar el repositorio en Vercel.
-3. Configurar las variables de entorno en Vercel.
-4. Hacer deploy desde la branch principal o previews desde branches de trabajo.
-
-Variables mínimas para que el formulario funcione en Vercel:
-
-```bash
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_USER=pdpcorrales@gmail.com
-SMTP_PASS=tu_app_password_real
-SMTP_FROM=pdpcorrales@gmail.com
-CONTACT_EMAIL_TO=pdpcorrales@gmail.com
-```
-
-Importante:
-
-- `SMTP_PASS` no puede quedar con un texto de ejemplo como `REEMPLAZAR_CON_APP_PASSWORD_DE_GMAIL`.
-- Si usás Gmail, necesitás una `App Password`.
-- `OPENAI_API_KEY` es opcional.
-- Cada `git push` puede disparar un deploy automático en Vercel si el repo está conectado.
-
-## Observaciones
-
-- El formulario de contacto ahora envía datos a `POST /api/contact` y dispara el evento `generate_lead` si el envío fue exitoso.
-- Varios textos y datos comerciales viven en `src/config/site.ts` y `src/features/services/data/businessAreas.ts`.
-- La carpeta `src/components/ui` existe como base para futuros primitives, pero actualmente no contiene componentes.
+Para produccion, no olvides cargar las mismas variables de entorno del formulario y, si corresponde, la clave de Analytics y OpenAI.
