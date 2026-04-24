@@ -9,21 +9,31 @@ const areaStyles: Record<string, string> = {
     "border-amber-700/60 bg-amber-50 text-amber-900 dark:border-amber-300/70 dark:bg-amber-950/40 dark:text-amber-100",
 };
 
-const areaCarouselImages: Record<string, { src: string; alt: string }[]> = {
+type AreaCarouselImage = {
+  src: string;
+  alt: string;
+  positionMobile?: string;
+  positionDesktop?: string;
+};
+
+// Control global del autoplay del carrusel: usar 0 para dejarlo fijo.
+const AREA_CAROUSEL_AUTOPLAY_MS = 1500;
+
+const areaCarouselImages: Record<string, AreaCarouselImage[]> = {
   vehiculos: [
-    { src: "/images/inst1.jpg", alt: "Servicio para vehiculos" },
-    { src: "/images/inst2.jpg", alt: "Laminas para vehiculos" },
-    { src: "/images/inst3.jpg", alt: "Instalcin de lamina" },
+    { src: "/images/polarizado/pola021.jpeg", alt: "Instalacion en BMW", positionMobile: "50% 52%", positionDesktop: "42% 45%" },
+    { src: "/images/inst2.jpg", alt: "Laminas para vehiculos", positionMobile: "50% 50%", positionDesktop: "25% 46%" },
+    { src: "/images/polarizado/pola002.jpeg", alt: "Instalcion Peugeot", positionMobile: "50% 50%", positionDesktop: "50% 42%" },
   ],
   cardetailing: [
-    { src: "/images/det1.jpg", alt: "Proceso de car detailing" },
-    { src: "/images/det2.jpg", alt: "Terminacion de car detailing" },
-    { src: "/images/det3.jpg", alt: "car detailing" },
+    { src: "/images/det1.jpg", alt: "Proceso de car detailing", positionMobile: "38% 52%", positionDesktop: "32% 46%" },
+    { src: "/images/det2.jpg", alt: "Terminacion de car detailing", positionMobile: "62% 50%", positionDesktop: "68% 48%" },
+    { src: "/images/det3.jpg", alt: "car detailing", positionMobile: "45% 58%", positionDesktop: "40% 52%" },
   ],
   arquitectura: [
-    { src: "/images/home.jpg", alt: "Home & Office" },
-    { src: "/images/bath.jpg", alt: "Carteleria" },
-    { src: "/images/office.jpg", alt: "Intervencion en oficina" },
+    { src: "/images/office/office001.jpeg", alt: "Home & Office", positionMobile: "56% 60%", positionDesktop: "60% 0%" },
+    { src: "/images/office/office002.jpeg", alt: "Carteleria", positionMobile: "34% 50%", positionDesktop: "30% 46%" },
+    { src: "/images/office/sorri004.jpeg", alt: "Intervencion en oficina", positionMobile: "52% 60%", positionDesktop: "58% 40%" },
   ],
 };
 
@@ -61,7 +71,7 @@ export function ServicesSection() {
               <PhotoCarousel
                 className="mt-4"
                 images={areaCarouselImages[area.id] ?? []}
-                autoPlayMs={1500}
+                autoPlayMs={AREA_CAROUSEL_AUTOPLAY_MS} 
                 startDelayMs={index * 350}
               />
 

@@ -35,7 +35,7 @@ export default function RootLayout({
               (function() {
                 var storageKey = "pde-theme";
                 var saved = localStorage.getItem(storageKey);
-                var shouldUseDark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+                var shouldUseDark = saved ? saved === "dark" : true;
                 if (shouldUseDark) document.documentElement.classList.add("dark");
               })();
             `,

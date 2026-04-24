@@ -18,6 +18,10 @@ pnpm-debug.log*
 .env.test.local
 .env.production.local
 
+#manual
+.txt
+.sh
+
 # OS files
 .DS_Store
 Thumbs.db

@@ -166,3 +166,13 @@ h5,
 h6 {
   font-family: var(--font-space-grotesk), sans-serif;
 }
+
+.carousel-image {
+  object-position: var(--image-position-mobile, 50% 50%);
+}
+
+@media (min-width: 1024px) {
+  .carousel-image {
+    object-position: var(--image-position-desktop, var(--image-position-mobile, 50% 50%));
+  }
+}

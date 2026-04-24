@@ -8,7 +8,7 @@ const STORAGE_KEY = "pde-theme";
 
 function getPreferredTheme(): ThemeMode {
   if (typeof window === "undefined") {
-    return "light";
+    return "dark";
   }
 
   const storedTheme = window.localStorage.getItem(STORAGE_KEY);
@@ -16,7 +16,7 @@ function getPreferredTheme(): ThemeMode {
     return storedTheme;
   }
 
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return "dark";
 }
 
 function applyTheme(theme: ThemeMode) {
@@ -35,7 +35,7 @@ function subscribeToClientStatus() {
 export function ThemeToggle() {
   const isClient = useSyncExternalStore(subscribeToClientStatus, () => true, () => false);
   const [theme, setTheme] = useState<ThemeMode | null>(null);
-  const effectiveTheme = theme ?? (isClient ? getPreferredTheme() : "light");
+  const effectiveTheme = theme ?? (isClient ? getPreferredTheme() : "dark");
 
   useEffect(() => {
     if (!isClient) {

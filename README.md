@@ -33,6 +33,33 @@ Landing comercial para Polarizados del Este, construida con Next.js y enfocada e
 - `src/lib`: utilidades de animacion, analytics y SEO.
 - `public`: imagenes, iconos y recursos estaticos.
 
+## Centrado manual de fotos (carousel)
+
+Si queres ajustar el encuadre de cada foto en mobile y escritorio, edita:
+
+- `src/app/(marketing)/_sections/ServicesSection.tsx`
+
+Dentro de `areaCarouselImages` cada item acepta:
+
+- `positionMobile`: posicion para mobile/tablet (ejemplo: `"50% 52%"`)
+- `positionDesktop`: posicion para escritorio desde `1024px` (ejemplo: `"50% 45%"`)
+
+Ejemplo:
+
+```ts
+{
+  src: "/images/det1.jpg",
+  alt: "Proceso de car detailing",
+  positionMobile: "50% 52%",
+  positionDesktop: "50% 46%"
+}
+```
+
+Referencia tecnica:
+
+- La logica del carousel vive en `src/components/shared/PhotoCarousel.tsx`.
+- El comportamiento responsive de `object-position` se define en `src/app/globals.css` con la clase `.carousel-image`.
+
 ## Instalacion local
 
 1. Clona el repositorio.

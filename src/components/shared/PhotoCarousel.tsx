@@ -1,11 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 
 export interface CarouselImage {
   src: string;
   alt: string;
+  position?: string;
+  positionMobile?: string;
+  positionDesktop?: string;
 }
 
 interface PhotoCarouselProps {
@@ -76,7 +79,13 @@ export function PhotoCarousel({
               alt={image.alt}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-              className="object-cover"
+              className="carousel-image object-cover"
+              style={
+                {
+                  "--image-position-mobile": image.positionMobile ?? image.position ?? "50% 50%",
+                  "--image-position-desktop": image.positionDesktop ?? image.position ?? image.positionMobile ?? "50% 50%",
+                } as CSSProperties
+              }
             />
           </div>
         ))}
