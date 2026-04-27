@@ -55,4 +55,10 @@ export const NAV_MENUS: NavMenu[] = [
       },
     ],
   },
+  {
+    id: "galeria",
+    label: "Galeria",
+    href: "/galeria",
+    items: [],
+  },
 ];

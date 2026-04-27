@@ -14,19 +14,25 @@ export interface CarouselImage {
 interface PhotoCarouselProps {
   images: CarouselImage[];
   className?: string;
+  imageContainerClassName?: string;
   autoPlayMs?: number;
   startDelayMs?: number;
   showDots?: boolean;
   showArrows?: boolean;
+  showCounter?: boolean;
+  onImageClick?: (image: CarouselImage, index: number) => void;
 }
 
 export function PhotoCarousel({
   images,
   className = "",
+  imageContainerClassName = "h-56 sm:h-64",
   autoPlayMs = 0,
   startDelayMs = 0,
   showDots = true,
   showArrows = true,
+  showCounter = false,
+  onImageClick,
 }: PhotoCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const total = images.length;
@@ -66,9 +72,33 @@ export function PhotoCarousel({
     setCurrentIndex((prev) => (prev + 1) % total);
   };
 
+  const handleImageClick = () => {
+    if (!onImageClick) {
+      return;
+    }
+
+    onImageClick(images[activeIndex], activeIndex);
+  };
+
   return (
     <div className={`relative overflow-hidden rounded-2xl border border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900 ${className}`}>
-      <div className="relative h-56 w-full sm:h-64">
+      <div
+        className={`relative w-full ${imageContainerClassName} ${onImageClick ? "cursor-zoom-in" : ""}`}
+        onClick={handleImageClick}
+        onKeyDown={(event) => {
+          if (!onImageClick) {
+            return;
+          }
+
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            handleImageClick();
+          }
+        }}
+        role={onImageClick ? "button" : undefined}
+        tabIndex={onImageClick ? 0 : undefined}
+        aria-label={onImageClick ? "Abrir imagen en grande" : undefined}
+      >
         {images.map((image, index) => (
           <div
             key={`${image.src}-${index}`}
@@ -110,6 +140,12 @@ export function PhotoCarousel({
             {">"}
           </button>
         </>
+      ) : null}
+
+      {showCounter ? (
+        <div className="absolute right-3 top-3 rounded-full bg-black/55 px-3 py-1 text-xs font-semibold text-white">
+          Foto {activeIndex + 1} de {total}
+        </div>
       ) : null}
 
       {showDots && total > 1 ? (

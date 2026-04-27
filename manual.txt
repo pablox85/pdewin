@@ -53,3 +53,65 @@ Referencia tecnica:
 Detalle:
 - Esa constante se pasa a <PhotoCarousel autoPlayMs={AREA_CAROUSEL_AUTOPLAY_MS} />.
 - En PhotoCarousel, si autoPlayMs <= 0, no arranca el autoplay.
+
+
+5) Direccion para manejar la carga de fotos (galeria completa)
+- Carpeta de carga:
+  public/images/
+- Ruta de la pagina:
+  /galeria
+- Archivo que arma la carga automatica:
+  src/lib/gallery/getPublicImages.ts
+- Archivo que muestra la galeria agrupada:
+  src/app/(marketing)/galeria/page.tsx
+- Componente reutilizado para mostrar fotos por grupo:
+  src/components/shared/PhotoCarousel.tsx
+
+Regla de agrupacion por nombre de archivo (prefijo):
+- car* => Carteleria
+- pola* => Polarizados
+- pesados* => Maquinaria
+- sorri* => Home, Office & Business
+- office* => Home, Office & Business
+- home* => Home, Office & Business
+- det* => Detailing
+
+Ejemplos de nombres validos:
+- car010.jpeg
+- pola023.jpeg
+- pesados016.jpeg
+- sorri008.jpeg
+- office005.jpeg
+- home004.jpeg
+- det4.jpg
+
+Nota:
+- Si una imagen no coincide con esos prefijos, aparece en el grupo "Otros".
+
+Vista actual de la galeria:
+- Se renderiza una card por grupo (ejemplo: Carteleria, Polarizados, etc.).
+- Cada card muestra un carrusel con las fotos de esa categoria.
+- El carrusel se configura desde:
+  src/app/(marketing)/galeria/page.tsx
+  (props de PhotoCarousel: autoPlayMs, startDelayMs, showDots, showArrows, showCounter)
+
+Layout actual (2 cards en viewport desktop):
+- La grilla usa 2 columnas desde `lg`:
+  `lg:grid-cols-2`
+- Archivo:
+  src/app/(marketing)/galeria/page.tsx
+
+Manejo manual de ancho y alto en galeria:
+- Archivo:
+  src/app/(marketing)/galeria/page.tsx
+- Constantes editables:
+  - `GALLERY_GRID_MAX_WIDTH_CLASS` => controla ancho maximo del bloque de cards.
+  - `GALLERY_CAROUSEL_HEIGHT_CLASS` => controla alto visible del carrusel en cada card.
+
+Manejo tecnico de alto del carrusel reutilizable:
+- Componente:
+  src/components/shared/PhotoCarousel.tsx
+- Prop nueva:
+  `imageContainerClassName`
+- Si no se pasa, usa alto por defecto:
+  `h-56 sm:h-64`

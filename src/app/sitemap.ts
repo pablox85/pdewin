@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 
 // Sitemap basico para indexacion de home y paginas por rubro.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/vehiculos", "/detailing", "/home-business"];
+  const routes = ["", "/vehiculos", "/detailing", "/home-business", "/galeria"];
 
   return routes.map((route, index) => ({
     url: `${siteConfig.domain}${route}`,
