@@ -106,7 +106,7 @@ export function GalleryStackWithModal({
               images={group.images.map((image) => ({ src: image.src, alt: image.alt }))}
               autoPlayMs={autoPlayMs}
               startDelayMs={index * 250}
-              showDots={group.images.length > 1}
+              showDots={false}
               showArrows={group.images.length > 1}
               showCounter
               imageContainerClassName={carouselHeightClassName}

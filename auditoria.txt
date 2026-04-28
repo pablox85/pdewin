@@ -1,0 +1,57 @@
+AUDITORIA SEO - Polarizados del Este
+Fecha: 2026-04-28
+
+Puntaje general: 7/10
+
+Resumen rapido
+- La base SEO tecnica esta bien armada: metadata por pagina, canonical, Open Graph/Twitter, robots y sitemap.
+- Hay margen claro para subir posiciones con mejoras de contenido semantico, datos estructurados locales y enrichment social.
+
+Fortalezas detectadas
+1) Metadata centralizada y consistente (buildMetadata) con title/description/canonical.
+2) Paginas principales con metadata propia (vehiculos, detailing, home-business, galeria).
+3) Sitemap y robots implementados.
+4) Lang en HTML configurado en espanol (lang="es").
+5) Home incluye JSON-LD de Organization.
+
+Debilidades que afectan SEO
+1) Falta image social dedicada (og:image y twitter:image) para mejorar CTR en buscadores/redes.
+2) El schema actual es solo Organization; para negocio local conviene LocalBusiness/AutomotiveBusiness con horario, areaServed, geo, sameAs.
+3) Title/description de home son genericos; falta incluir propuesta/localidad mas fuerte para intencion local.
+4) Sitemap usa lastModified dinamico (new Date()) para todas las URLs; eso puede enviar senales de actualizacion no reales.
+5) No se ve un bloque FAQ schema (si existe FAQ real) que podria mejorar rich results.
+6) Canonicals y metadata estan bien, pero falta estrategia de enlazado interno con anchor text mas intencional entre servicios.
+
+Mejoras sugeridas (prioridad)
+Alta
+- Definir og:image + twitter:image global y por paginas clave.
+- Migrar schema de home a LocalBusiness (o AutomotiveBusiness) y agregar:
+  - address completo
+  - areaServed (Ciudad de la Costa, Canelones, Montevideo, etc.)
+  - openingHoursSpecification
+  - sameAs (redes)
+  - geo (lat/lng)
+- Reescribir title/description de home para busqueda local y servicios principales.
+
+Media
+- Refinar sitemap: usar lastModified real por ruta (o fecha estable por deploy), no "now" para todo.
+- Agregar FAQ visible + FAQPage schema en la home o paginas de servicio.
+- Revisar headings y contenido para incluir variantes semanticas (polarizados vehiculares, laminas solares, detailing, etc.) sin sobre-optimizar.
+
+Baja
+- Revisar enlaces internos de navbar/secciones para reforzar clusters tematicos.
+- Agregar breadcrumbs schema en paginas de categoria si la navegacion lo justifica.
+
+Objetivo recomendado
+- Con las mejoras de prioridad alta + media, el proyecto puede subir de 7/10 a 8.5-9/10 en SEO tecnico/on-page.
+
+Archivos revisados
+- src/lib/seo/metadata.ts
+- src/app/layout.tsx
+- src/app/robots.ts
+- src/app/sitemap.ts
+- src/app/(marketing)/page.tsx
+- src/app/(marketing)/vehiculos/page.tsx
+- src/app/(marketing)/detailing/page.tsx
+- src/app/(marketing)/home-business/page.tsx
+- src/app/(marketing)/galeria/page.tsx

@@ -24,6 +24,13 @@ export default async function GaleriaPage() {
   // Ajustes manuales de layout para galeria.
   const GALLERY_CAROUSEL_HEIGHT_CLASS = "h-[38vh] min-h-[260px] sm:min-h-[300px] lg:min-h-[320px]";
   const GALLERY_AUTOPLAY_MS = 0;
+  const VISIBLE_CATEGORIES = [
+    "Carteleria",
+    "Polarizados",
+    "Maquinaria",
+    "Home, Office & Business",
+    "Detailing",
+   ];
 
   const images = await getPublicImages("images");
   const categoryByPrefix: Record<string, string> = {
@@ -72,6 +79,7 @@ export default async function GaleriaPage() {
 
     return a.localeCompare(b, "es");
   }).map(([title, imagesInCategory]) => ({ title, images: imagesInCategory }));
+  const visibleGroups = groupedEntries.filter((group) => VISIBLE_CATEGORIES.includes(group.title));
 
   return (
     <>
@@ -82,18 +90,18 @@ export default async function GaleriaPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-700 dark:text-blue-200">Galeria</p>
             <h1 className="mt-2 text-4xl font-extrabold text-slate-900 dark:text-slate-100 sm:text-5xl">Todas las fotos</h1>
             <p className="mt-4 max-w-3xl text-base text-slate-700 dark:text-slate-300 sm:text-lg">
-              <p>Eliminar grid dejar solo contador y arrows, fotos pasan a mano</p>
+            
               Total de imagenes: {images.length}.
             </p>
           </header>
 
-          {images.length === 0 ? (
+          {images.length === 0 || visibleGroups.length === 0 ? (
             <div className="mx-auto w-full max-w-[1200px] rounded-2xl border border-slate-300 bg-white p-8 text-slate-700 shadow-card dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
-              No se encontraron fotos en la carpeta publica.
+              No se encontraron fotos para las categorias visibles.
             </div>
           ) : (
             <GalleryStackWithModal
-              groups={groupedEntries}
+              groups={visibleGroups}
               carouselHeightClassName={GALLERY_CAROUSEL_HEIGHT_CLASS}
               autoPlayMs={GALLERY_AUTOPLAY_MS}
             />
