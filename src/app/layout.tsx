@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import { cookies } from "next/headers";
+import { siteConfig } from "@/config/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 import "./globals.css";
 
@@ -15,7 +16,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 // Metadata global SEO para toda la app.
-export const metadata: Metadata = buildMetadata();
+export const metadata: Metadata = buildMetadata({
+  metadataBase: new URL(siteConfig.domain),
+  alternates: {
+    canonical: "/",
+  },
+});
 
 export default async function RootLayout({
   children,

@@ -3,6 +3,8 @@ import { siteConfig } from "@/config/site";
 
 // Helper para mantener metadata SEO consistente por pagina.
 export function buildMetadata(overrides?: Partial<Metadata>): Metadata {
+  const isVercelPreview = process.env.VERCEL_ENV === "preview";
+
   return {
     metadataBase: new URL(siteConfig.domain),
     title: {
@@ -26,6 +28,16 @@ export function buildMetadata(overrides?: Partial<Metadata>): Metadata {
       title: siteConfig.name,
       description: siteConfig.description,
     },
+    robots: isVercelPreview
+      ? {
+          index: false,
+          follow: false,
+          googleBot: {
+            index: false,
+            follow: false,
+          },
+        }
+      : undefined,
     ...overrides,
   };
 }

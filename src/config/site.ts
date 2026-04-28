@@ -4,10 +4,6 @@ function resolveSiteUrl() {
     return envSiteUrl.replace(/\/$/, "");
   }
 
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`.replace(/\/$/, "");
-  }
-
   return "https://pdewin.vercel.app";
 }
 
