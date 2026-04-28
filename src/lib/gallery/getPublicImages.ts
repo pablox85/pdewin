@@ -12,7 +12,17 @@ export interface PublicImage {
 function toAltText(fileName: string) {
   const withoutExtension = fileName.replace(/\.[^.]+$/, "");
   const normalized = withoutExtension.replace(/[_-]+/g, " ").replace(/\s+/g, " ").trim();
-  return normalized || "Imagen";
+  const lower = normalized.toLowerCase();
+
+  if (lower.startsWith("pola")) return "Trabajo de polarizado vehicular";
+  if (lower.startsWith("det")) return "Trabajo de car detailing";
+  if (lower.startsWith("office") || lower.startsWith("sorri") || lower.startsWith("home")) {
+    return "Instalacion de laminas para home y office";
+  }
+  if (lower.startsWith("pesados")) return "Laminado en vehiculo de gran porte";
+  if (lower.startsWith("car")) return "Trabajo de carteleria y vinilo";
+
+  return normalized || "Imagen de trabajo realizado";
 }
 
 function toPublicSrc(relativePath: string) {

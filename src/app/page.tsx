@@ -9,15 +9,17 @@ import { ServicesSection } from "./(marketing)/_sections/ServicesSection";
 import { TestimonialsSection } from "./(marketing)/_sections/TestimonialsSection";
 
 export const metadata = buildMetadata({
-  title: "Polarizados del Este",
+  title: "Polarizados y tratamiento ceramico en Ciudad de la Costa",
+  description:
+    "Instalacion de laminas para vehiculos, car detailing y tratamiento ceramico. Servicio en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
   alternates: {
     canonical: "/",
   },
 });
 
-const organizationSchema = {
+const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "AutomotiveBusiness",
   name: siteConfig.name,
   url: siteConfig.domain,
   email: siteConfig.contactEmail,
@@ -25,7 +27,20 @@ const organizationSchema = {
   address: {
     "@type": "PostalAddress",
     addressLocality: siteConfig.address,
+    addressCountry: "UY",
   },
+  areaServed: [
+    { "@type": "City", name: "Ciudad de la Costa" },
+    { "@type": "City", name: "Canelones" },
+    { "@type": "City", name: "Montevideo" },
+    { "@type": "City", name: "Maldonado" },
+  ],
+  serviceType: [
+    "Instalacion de laminas para vehiculos",
+    "Polarizados para autos",
+    "Car detailing",
+    "Tratamiento ceramico",
+  ],
 };
 
 export default function HomePage() {
@@ -33,7 +48,7 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <Navbar />
       <main>

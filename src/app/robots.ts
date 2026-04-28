@@ -3,11 +3,18 @@ import { siteConfig } from "@/config/site";
 
 // Robots basico para permitir rastreo y enlazar sitemap.
 export default function robots(): MetadataRoute.Robots {
+  const isPreview = process.env.VERCEL_ENV === "preview";
+
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
+    rules: isPreview
+      ? {
+          userAgent: "*",
+          disallow: "/",
+        }
+      : {
+          userAgent: "*",
+          allow: "/",
+        },
     sitemap: `${siteConfig.domain}/sitemap.xml`,
   };
 }

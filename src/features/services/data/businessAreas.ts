@@ -19,10 +19,11 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     id: "vehiculos",
     label: "Vehiculos",
     href: "/vehiculos",
-    heroTitle: "Proteccion y estilo para todo tipo de vehiculos",
+    heroTitle: "Polarizados y laminado de vidrios para vehiculos",
     heroDescription:
-      "Aplicamos soluciones de alta calidad para autos, utilitarios, vehiculos de gran porte y maquinaria pesada, con foco en durabilidad y terminacion.",
-    summary: "Polarizados y laminas profesionales para uso particular, comercial y flotas.",
+      "Instalamos laminas de control solar y seguridad para autos, utilitarios, vehiculos de gran porte y maquinaria pesada, con terminacion profesional y foco en durabilidad.",
+    summary:
+      "Servicio de polarizados y laminado vehicular para clientes particulares, empresas y flotas en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
     details: [
       {
         id: "vehiculos-autos",
@@ -54,10 +55,11 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     id: "cardetailing",
     label: "Car Detailing",
     href: "/detailing",
-    heroTitle: "Car detailing de nivel profesional",
+    heroTitle: "Car detailing y tratamiento ceramico profesional",
     heroDescription:
-      "Restauramos y protegemos tu vehiculo con tecnicas especializadas para conservar su estetica y valor.",
-    summary: "Limpieza profunda, correccion visual y proteccion avanzada para resultados superiores.",
+      "Restauramos y protegemos tu vehiculo con tecnicas especializadas para conservar su estetica y valor, incluyendo tratamiento ceramico de alta duracion.",
+    summary:
+      "Limpieza profunda, correccion visual y coating para clientes de Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
     details: [
       {
         id: "detailing-interior",
@@ -91,40 +93,41 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     href: "/home-business",
     heroTitle: "Home, Office & Business para hogares y espacios comerciales",
     heroDescription:
-      "Láminas para vidrios y vinilos decorativos para hogares. \nCartelería profesional, soluciones visuales para oficinas y comercios.",
-    summary: "ASoluciones en láminas y vinilos para controlar el sol, ganar privacidad, decorar espacios y comunicar tu marca.",
+      "Laminas para vidrios y vinilos decorativos para hogares.\nCarteleria profesional y soluciones visuales para oficinas y comercios.",
+    summary:
+      "Soluciones en laminas y vinilos para controlar el sol, ganar privacidad, decorar espacios y comunicar tu marca.",
     details: [
       {
-        id: "arquitectura-laminas", //cambiar ids arquitectura-laminas
+        id: "arquitectura-laminas",
         title: "Home",
         description: [
           "Laminas de control solar.",
           "Laminas de seguridad.",
-          "Control Visual",
+          "Control visual.",
           "Laminas decorativas.",
           "Vinilos decorativos y de proteccion.",
         ],
       },
       {
-        id: "arquitectura-carteleria", //cambiar ids arquitectuca-carteleria
+        id: "arquitectura-carteleria",
         title: "Office",
         description: [
           "Laminas de control solar.",
           "Laminas de seguridad.",
-          "Control Visual",
+          "Control visual.",
           "Laminas decorativas.",
           "Vinilos decorativos y de proteccion.",
-          "Carteleria interna",
+          "Carteleria interna.",
         ],
       },
       {
-        id: "arquitectura-publicidad", //cambiar ids arquitectura-publicidad
+        id: "arquitectura-publicidad",
         title: "Business",
         description: [
-          "Vinilos Microperforados",
-          "Vinilos publicitarios",
-          "Lona impresa",
-          "Carteleria en general",
+          "Vinilos microperforados.",
+          "Vinilos publicitarios.",
+          "Lona impresa.",
+          "Carteleria en general.",
         ],
       },
     ],

@@ -171,6 +171,18 @@ h6 {
   object-position: var(--image-position-mobile, 50% 50%);
 }
 
+.new-content-highlight {
+  border-left: 4px solid #f59e0b;
+  background: rgba(251, 191, 36, 0.16);
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.55rem;
+}
+
+html.dark .new-content-highlight {
+  border-left-color: #fcd34d;
+  background: rgba(251, 191, 36, 0.14);
+}
+
 @media (min-width: 1024px) {
   .carousel-image {
     object-position: var(--image-position-desktop, var(--image-position-mobile, 50% 50%));

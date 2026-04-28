@@ -8,17 +8,20 @@ import { AreaDetailPage } from "../_components/AreaDetailPage";
 const area = requireBusinessAreaById("arquitectura");
 
 export const metadata: Metadata = buildMetadata({
-  title: "Home, Office & Business",
-  description: area.heroDescription,
+  title: "Laminas para hogar, oficina y negocio en Canelones y Montevideo",
+  description:
+    "Laminas de control solar, vinilos y carteleria para home, office y business. Cobertura en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
   alternates: { canonical: "/home-business" },
   openGraph: {
     url: `${siteConfig.domain}/home-business`,
-    title: `Home & Business | ${siteConfig.name}`,
-    description: area.heroDescription,
+    title: `Laminas para home, office y business | ${siteConfig.name}`,
+    description:
+      "Soluciones para control solar, privacidad y comunicacion visual en hogares y comercios.",
   },
   twitter: {
-    title: `Home & Business | ${siteConfig.name}`,
-    description: area.heroDescription,
+    title: `Laminas para home, office y business | ${siteConfig.name}`,
+    description:
+      "Soluciones para control solar, privacidad y comunicacion visual en hogares y comercios.",
   },
 });
 
