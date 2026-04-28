@@ -16,6 +16,11 @@ function getPreferredTheme(): ThemeMode {
     return storedTheme;
   }
 
+  const hasDarkClass = document.documentElement.classList.contains("dark");
+  if (hasDarkClass) {
+    return "dark";
+  }
+
   return "dark";
 }
 
@@ -25,6 +30,15 @@ function applyTheme(theme: ThemeMode) {
   }
 
   document.documentElement.classList.toggle("dark", theme === "dark");
+}
+
+function persistTheme(theme: ThemeMode) {
+  if (typeof document === "undefined" || typeof window === "undefined") {
+    return;
+  }
+
+  window.localStorage.setItem(STORAGE_KEY, theme);
+  document.cookie = `${STORAGE_KEY}=${theme}; path=/; max-age=31536000; samesite=lax`;
 }
 
 function subscribeToClientStatus() {
@@ -49,7 +63,7 @@ export function ThemeToggle() {
     const nextTheme: ThemeMode = effectiveTheme === "light" ? "dark" : "light";
     setTheme(nextTheme);
     applyTheme(nextTheme);
-    window.localStorage.setItem(STORAGE_KEY, nextTheme);
+    persistTheme(nextTheme);
   };
 
   if (!isClient) {

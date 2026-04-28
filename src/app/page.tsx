@@ -1,12 +1,19 @@
 import { Footer, Navbar } from "@/components/shared";
 import { siteConfig } from "@/config/site";
-import { AboutSection } from "./_sections/AboutSection";
-import { ContactSection } from "./_sections/ContactSection";
-import { HeroSection } from "./_sections/HeroSection";
-import { ServicesSection } from "./_sections/ServicesSection";
-import { TestimonialsSection } from "./_sections/TestimonialsSection";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { AboutSection } from "./(marketing)/_sections/AboutSection";
+import { ContactSection } from "./(marketing)/_sections/ContactSection";
+import { HeroSection } from "./(marketing)/_sections/HeroSection";
+import { ServicesSection } from "./(marketing)/_sections/ServicesSection";
+import { TestimonialsSection } from "./(marketing)/_sections/TestimonialsSection";
 
-// JSON-LD basico para reforzar contexto de Organization en buscadores.
+export const metadata = buildMetadata({
+  title: "Polarizados del Este",
+  alternates: {
+    canonical: "/",
+  },
+});
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -20,7 +27,7 @@ const organizationSchema = {
   },
 };
 
-export default function MarketingHomePage() {
+export default function HomePage() {
   return (
     <>
       <script
