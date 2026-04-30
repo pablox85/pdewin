@@ -1,5 +1,4 @@
 import { Footer, Navbar } from "@/components/shared";
-import { ClientEnhancements } from "@/components/client/ClientEnhancements";
 import { siteConfig } from "@/config/site";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { AboutSection } from "./(marketing)/_sections/AboutSection";
@@ -59,7 +58,6 @@ export default function HomePage() {
         <ContactSection />
       </main>
       <Footer />
-      <ClientEnhancements />
     </>
   );
 }

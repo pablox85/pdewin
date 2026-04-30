@@ -26,6 +26,14 @@ const hasMailConfig = Boolean(SMTP_HOST && SMTP_PORT && SMTP_USER && SMTP_PASS &
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY?.trim() ?? "";
 const OPENAI_MODEL = process.env.OPENAI_MODEL?.trim() || "gpt-4o-mini";
 const hasOpenAiConfig = Boolean(OPENAI_API_KEY);
+const missingMailConfig = [
+  !SMTP_HOST ? "SMTP_HOST" : null,
+  !SMTP_PORT ? "SMTP_PORT" : null,
+  !SMTP_USER ? "SMTP_USER" : null,
+  !SMTP_PASS ? "SMTP_PASS" : null,
+  !SMTP_FROM ? "SMTP_FROM" : null,
+  !CONTACT_EMAIL_TO ? "CONTACT_EMAIL_TO" : null,
+].filter((value): value is string => Boolean(value));
 
 export const runtime = "nodejs";
 
@@ -179,8 +187,9 @@ async function generateInternalSummary(payload: ContactPayload): Promise<Contact
 
 export async function POST(request: Request) {
   if (!hasMailConfig) {
+    console.error("Configuracion SMTP incompleta. Variables faltantes:", missingMailConfig.join(", "));
     return NextResponse.json(
-      { error: "La configuracion de correo no esta completa en el servidor." },
+      { error: "La configuracion de correo no esta completa en el servidor. Faltan variables SMTP." },
       { status: 500 },
     );
   }
