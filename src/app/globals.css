@@ -178,6 +178,29 @@ h6 {
   border-radius: 0.55rem;
 }
 
+.faq-answer-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-answer-wrap--open {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.faq-answer-inner--open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 html.dark .new-content-highlight {
   border-left-color: #fcd34d;
   background: rgba(251, 191, 36, 0.14);

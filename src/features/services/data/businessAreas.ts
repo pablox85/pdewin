@@ -23,7 +23,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     heroDescription:
       "Instalamos laminas de control solar y seguridad para autos, utilitarios, vehiculos de gran porte y maquinaria pesada, con terminacion profesional y foco en durabilidad.",
     summary:
-      "Servicio de polarizados y laminado vehicular para clientes particulares, empresas y flotas en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
+      "Servicio de polarizados y laminado vehicular para clientes particulares, empresas y flotas en todo el pais, siempre con agenda previa.",
     details: [
       {
         id: "vehiculos-autos",
@@ -59,7 +59,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     heroDescription:
       "Restauramos y protegemos tu vehiculo con tecnicas especializadas para conservar su estetica y valor, incluyendo tratamiento ceramico de alta duracion.",
     summary:
-      "Limpieza profunda, correccion visual y coating para clientes de Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
+      "Limpieza profunda, correccion visual y coating para clientes en todo el pais, siempre con agenda previa.",
     details: [
       {
         id: "detailing-interior",
@@ -91,11 +91,11 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     id: "arquitectura",
     label: "Home & Office",
     href: "/home-business",
-    heroTitle: "Home, Office & Business para hogares y espacios comerciales",
+    heroTitle: "Home, Office, Business y Carteleria para hogares y espacios comerciales",
     heroDescription:
-      "Laminas para vidrios y vinilos decorativos para hogares.\nCarteleria profesional y soluciones visuales para oficinas y comercios.",
+      "Laminas para vidrios, polarizado arquitectonico y vinilos decorativos para hogares y oficinas.\nCarteleria interna y exterior para reforzar la comunicacion visual en espacios comerciales.",
     summary:
-      "Soluciones en laminas y vinilos para controlar el sol, ganar privacidad, decorar espacios y comunicar tu marca.",
+      "Soluciones en laminas para vidrios, polarizado arquitectonico, vinilos y carteleria para comunicar tu marca en todo el pais, siempre con agenda previa.",
     details: [
       {
         id: "arquitectura-laminas",
@@ -110,7 +110,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
       },
       {
         id: "arquitectura-carteleria",
-        title: "Office",
+        title: "Office + carteleria interna",
         description: [
           "Laminas de control solar.",
           "Laminas de seguridad.",
@@ -122,7 +122,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
       },
       {
         id: "arquitectura-publicidad",
-        title: "Business",
+        title: "Business + carteleria exterior/publicitaria",
         description: [
           "Vinilos microperforados.",
           "Vinilos publicitarios.",

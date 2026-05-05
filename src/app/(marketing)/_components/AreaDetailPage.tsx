@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 import { Reveal, SectionTitle, SectionWrapper } from "@/components/shared";
 import type { BusinessArea } from "@/features/services/data/businessAreas";
 
@@ -30,13 +33,13 @@ const areaSeoContent: Record<
     ],
     seoParagraphs: [
       "Nuestro servicio de polarizados para vehiculos esta pensado para quienes buscan confort termico, reduccion de reflejos y una imagen prolija. Trabajamos con autos particulares, utilitarios, flotas y unidades de gran porte, priorizando calidad de instalacion y materiales confiables.",
-      "Atendemos clientes de Ciudad de la Costa, Canelones, Montevideo y Maldonado. Si la distancia es una preocupacion, coordinamos agenda por zona para facilitar tiempos y traslado, de forma que puedas resolver el servicio sin complicaciones.",
+      "Trabajamos en todo el pais, siempre con agenda previa. Si la distancia es una preocupacion, coordinamos agenda por zona para facilitar tiempos y traslado, de forma que puedas resolver el servicio sin complicaciones.",
     ],
     faq: [
       {
         question: "Que zonas cubren para polarizados?",
         answer:
-          "Trabajamos en Ciudad de la Costa, Canelones, Montevideo y Maldonado, con coordinacion por agenda para optimizar tiempos.",
+          "Trabajamos en todo el pais, siempre con agenda previa, con coordinacion por zona para optimizar tiempos.",
       },
       {
         question: "Que beneficio principal tiene el laminado de vidrios?",
@@ -59,7 +62,7 @@ const areaSeoContent: Record<
     ],
     seoParagraphs: [
       "El car detailing profesional combina tecnica y criterio para recuperar brillo, higiene y presencia general del vehiculo. Nuestro objetivo no es solo que se vea bien un dia, sino que conserve su estado por mas tiempo con un mantenimiento razonable.",
-      "Si buscas tratamiento ceramico en Ciudad de la Costa, Canelones, Montevideo o Maldonado, coordinamos trabajos por agenda para minimizar traslados y darte una experiencia ordenada de principio a fin.",
+      "Trabajamos en todo el pais, siempre con agenda previa, para minimizar traslados y darte una experiencia ordenada de principio a fin.",
     ],
     faq: [
       {
@@ -74,21 +77,20 @@ const areaSeoContent: Record<
       },
       {
         question: "Trabajan clientes fuera de Ciudad de la Costa?",
-        answer:
-          "Si. Coordinamos servicios para Canelones, Montevideo y Maldonado con agenda por zona.",
+        answer: "Si. Trabajamos en todo el pais, siempre con agenda previa, coordinando servicios por zona.",
       },
     ],
   },
   arquitectura: {
-    processTitle: "Como resolvemos proyectos Home, Office & Business",
+    processTitle: "Como resolvemos proyectos Home, Office, Business y Carteleria",
     processSteps: [
       "Relevamos necesidad de control solar, privacidad, estetica o comunicacion visual segun el tipo de espacio.",
       "Definimos materiales y propuesta de instalacion para asegurar funcionalidad y coherencia visual.",
       "Ejecutamos la aplicacion con terminacion profesional y recomendaciones de cuidado.",
     ],
     seoParagraphs: [
-      "Para hogares, oficinas y negocios, combinamos laminas de control solar, vinilos decorativos y carteleria con foco en resultado real: espacios mas confortables, mejor imagen y comunicacion clara para clientes o equipos.",
-      "Atendemos proyectos en Ciudad de la Costa, Canelones, Montevideo y Maldonado, coordinando por cercania para reducir friccion logistica y tiempos de ejecucion.",
+      "Para hogares, oficinas y negocios, combinamos laminas de control solar, polarizado arquitectonico, vinilos y carteleria interna y exterior con foco en resultado real: espacios mas confortables, mejor imagen y comunicacion clara para clientes o equipos.",
+      "Trabajamos en todo el pais, siempre con agenda previa, para ejecutar proyectos de carteleria interior/exterior y soluciones para vidrios con coordinacion logistica ordenada.",
     ],
     faq: [
       {
@@ -102,9 +104,14 @@ const areaSeoContent: Record<
           "Si, trabajamos tanto hogares como oficinas y comercios, adaptando la propuesta a cada necesidad.",
       },
       {
+        question: "Tambien hacen carteleria para negocios?",
+        answer:
+          "Si. Realizamos carteleria interna y externa, piezas publicitarias para fachada y puntos de contacto, adaptadas a cada espacio comercial.",
+      },
+      {
         question: "Cubren Montevideo y Maldonado?",
         answer:
-          "Si, coordinamos trabajos en Montevideo y Maldonado ademas de Ciudad de la Costa y Canelones.",
+          "Si. Trabajamos en todo el pais, siempre con agenda previa, incluyendo Montevideo, Maldonado, Ciudad de la Costa y Canelones.",
       },
     ],
   },
@@ -112,6 +119,11 @@ const areaSeoContent: Record<
 
 export function AreaDetailPage({ area }: AreaDetailPageProps) {
   const seoContent = areaSeoContent[area.id];
+  const [openFaqItems, setOpenFaqItems] = useState<Record<string, boolean>>({});
+
+  const toggleFaqItem = (question: string) => {
+    setOpenFaqItems((prev) => ({ ...prev, [question]: !prev[question] }));
+  };
 
   return (
     <>
@@ -229,7 +241,7 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
               <li>Maldonado</li>
             </ul>
             <p className="new-content-highlight mt-4 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-              Coordinamos agenda por zona para reducir tiempos de traslado y facilitar la contratacion.
+              Trabajamos en todo el pais, siempre con agenda previa, para reducir tiempos de traslado y facilitar la contratacion.
             </p>
           </aside>
         </div>
@@ -238,17 +250,42 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
       <SectionWrapper>
         <SectionTitle eyebrow="FAQ" title="Preguntas frecuentes" />
         <div className="mt-8 grid gap-4">
-          {seoContent.faq.map((item) => (
-            <article
-              key={item.question}
-              className="rounded-2xl border border-slate-300 bg-white p-5 shadow-card dark:border-slate-700 dark:bg-slate-900"
-            >
-              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">{item.question}</h3>
-              <p className="new-content-highlight mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                {item.answer}
-              </p>
-            </article>
-          ))}
+          {seoContent.faq.map((item) => {
+            const isOpen = Boolean(openFaqItems[item.question]);
+            const panelId = `faq-panel-${area.id}-${item.question.replace(/\s+/g, "-").toLowerCase()}`;
+
+            return (
+              <article
+                key={item.question}
+                className="rounded-2xl border border-slate-300 bg-white p-5 shadow-card dark:border-slate-700 dark:bg-slate-900"
+              >
+                <h3>
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between gap-3 text-left text-lg font-bold text-slate-900 dark:text-slate-100"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    onClick={() => toggleFaqItem(item.question)}
+                  >
+                    <span>{item.question}</span>
+                    <span
+                      className={`inline-block text-xl leading-none transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
+                      aria-hidden="true"
+                    >
+                      ⌄
+                    </span>
+                  </button>
+                </h3>
+                <div className={`faq-answer-wrap mt-2 ${isOpen ? "faq-answer-wrap--open" : ""}`} id={panelId}>
+                  <div className={`faq-answer-inner ${isOpen ? "faq-answer-inner--open" : ""}`}>
+                    <p className="new-content-highlight text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <div className="mt-8 rounded-2xl border border-slate-300 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-900">

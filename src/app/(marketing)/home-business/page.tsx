@@ -8,20 +8,20 @@ import { AreaDetailPage } from "../_components/AreaDetailPage";
 const area = requireBusinessAreaById("arquitectura");
 
 export const metadata: Metadata = buildMetadata({
-  title: "Laminas para hogar, oficina y negocio en Canelones y Montevideo",
+  title: "Laminas y carteleria para Home, Office y Business en todo el pais",
   description:
-    "Laminas de control solar, vinilos y carteleria para home, office y business. Cobertura en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
+    "Laminas de control solar, polarizado arquitectonico, vinilos y carteleria para Home, Office y Business en todo el pais, siempre con agenda previa.",
   alternates: { canonical: "/home-business" },
   openGraph: {
     url: `${siteConfig.domain}/home-business`,
     title: `Laminas para home, office y business | ${siteConfig.name}`,
     description:
-      "Soluciones para control solar, privacidad y comunicacion visual en hogares y comercios.",
+      "Carteleria, control solar y comunicacion visual para hogares, oficinas y comercios en todo el pais, siempre con agenda previa.",
   },
   twitter: {
     title: `Laminas para home, office y business | ${siteConfig.name}`,
     description:
-      "Soluciones para control solar, privacidad y comunicacion visual en hogares y comercios.",
+      "Carteleria y comunicacion visual para Home, Office y Business en todo el pais, siempre con agenda previa.",
   },
 });
 
