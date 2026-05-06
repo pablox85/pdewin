@@ -23,19 +23,19 @@ type AreaCarouselImage = {
 };
 
 // Control global del autoplay del carrusel: usar 0 para dejarlo fijo.
-const AREA_CAROUSEL_AUTOPLAY_MS = 1500;
+const AREA_CAROUSEL_AUTOPLAY_MS = 0;
 
 const areaCarouselImages: Record<string, AreaCarouselImage[]> = {
   vehiculos: [
-    { src: "/images/polarizado/pola021.jpeg", alt: "Instalacion en BMW", positionMobile: "50% 52%", positionDesktop: "42% 45%" },
-    { src: "/images/inst2.jpg", alt: "Laminas para vehiculos", positionMobile: "50% 50%", positionDesktop: "25% 46%" },
+    { src: "/images/polarizado/pola014.jpeg", alt: "Instalacion en BMW", positionMobile: "50% 52%", positionDesktop: "42% 45%" },
+    { src: "/images/polarizado/pola001.jpg", alt: "Laminas para vehiculos", positionMobile: "50% 50%", positionDesktop: "25% 46%" },
     { src: "/images/polarizado/pola002.jpeg", alt: "Instalcion Peugeot", positionMobile: "50% 50%", positionDesktop: "50% 42%" },
   ],
   cardetailing: [
-    { src: "/images/detailing/det001.jpg", alt: "Proceso de polishing", positionMobile: "50% 52%", positionDesktop: "42% 45%" },
-    { src: "/images/detailing/det003.jpg", alt: "Proceso de polishing", positionMobile: "38% 52%", positionDesktop: "32% 46%" },
-    { src: "/images/detailing/det011.jpg", alt: "Cobertura nanoceramica", positionMobile: "62% 50%", positionDesktop: "68% 48%" },
-    { src: "/images/detailing/det012.jpg", alt: "Cobertura nanoceramica", positionMobile: "45% 58%", positionDesktop: "40% 52%" },
+    { src: "/images/detailing/det001.jpeg", alt: "Proceso de polishing", positionMobile: "50% 52%", positionDesktop: "42% 45%" },
+    { src: "/images/detailing/det003.jpeg", alt: "Proceso de polishing", positionMobile: "38% 35%", positionDesktop: "32% 46%" },
+    { src: "/images/detailing/det011.jpeg", alt: "Cobertura nanoceramica", positionMobile: "62% 50%", positionDesktop: "68% 48%" },
+    { src: "/images/detailing/det012.jpeg", alt: "Cobertura nanoceramica", positionMobile: "45% 58%", positionDesktop: "40% 52%" },
   ],
   arquitectura: [
     { src: "/images/office/office001.jpeg", alt: "Home & Office", positionMobile: "56% 60%", positionDesktop: "60% 0%" },
