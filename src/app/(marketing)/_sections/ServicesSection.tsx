@@ -28,7 +28,7 @@ const AREA_CAROUSEL_AUTOPLAY_MS = 1500;
 const areaCarouselImages: Record<string, AreaCarouselImage[]> = {
   vehiculos: [
     { src: "/images/polarizado/pola002.jpeg", alt: "Instalacion en Peugeot", positionMobile: "50% 52%", positionDesktop: "42% 45%" },
-    { src: "/images/polarizado/pola001.jpg", alt: "Laminas para vehiculos", positionMobile: "50% 50%", positionDesktop: "25% 46%" },
+    { src: "/images/polarizado/pola022.jpeg", alt: "Laminas para vehiculos", positionMobile: "50% 50%", positionDesktop: "25% 46%" },
     { src: "/images/polarizado/pola014.jpeg", alt: "Instalcion Mercedes", positionMobile: "50% 50%", positionDesktop: "50% 42%" },
   ],
   cardetailing: [
