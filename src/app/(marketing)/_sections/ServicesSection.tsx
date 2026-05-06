@@ -33,7 +33,7 @@ const areaCarouselImages: Record<string, AreaCarouselImage[]> = {
   ],
   cardetailing: [
     { src: "/images/detailing/det001.jpeg", alt: "Proceso de polishing", positionMobile: "50% 52%", positionDesktop: "42% 45%" },
-    { src: "/images/detailing/det003.jpeg", alt: "Proceso de polishing", positionMobile: "38% 35%", positionDesktop: "32% 46%" },
+    { src: "/images/detailing/det003.jpeg", alt: "Proceso de polishing", positionMobile: "38% 35%", positionDesktop: "32% 33%" },
     { src: "/images/detailing/det011.jpeg", alt: "Cobertura nanoceramica", positionMobile: "62% 50%", positionDesktop: "68% 48%" },
     { src: "/images/detailing/det012.jpeg", alt: "Cobertura nanoceramica", positionMobile: "45% 58%", positionDesktop: "40% 52%" },
   ],
