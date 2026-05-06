@@ -9,6 +9,12 @@ const areaStyles: Record<string, string> = {
     "border-amber-700/60 bg-amber-50 text-amber-900 dark:border-amber-300/70 dark:bg-amber-950/40 dark:text-amber-100",
 };
 
+const galleryAnchorByAreaId: Record<string, string> = {
+  vehiculos: "polarizados",
+  arquitectura: "home-office-business",
+  cardetailing: "detailing",
+};
+
 type AreaCarouselImage = {
   src: string;
   alt: string;
@@ -80,6 +86,12 @@ export function ServicesSection() {
                 className="cta-pop mt-6 inline-flex rounded-xl border border-slate-400 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-brand-700 hover:text-brand-700 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-blue-300 dark:hover:text-blue-200"
               >
                 Ver servicios de {area.label.toLowerCase()}
+              </RouteButton>
+              <RouteButton
+                href={`/galeria#${galleryAnchorByAreaId[area.id] ?? ""}`}
+                className="mt-3 inline-flex rounded-xl border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-brand-700 hover:text-brand-700 dark:border-slate-600 dark:text-slate-200 dark:hover:border-blue-300 dark:hover:text-blue-200"
+              >
+                Ver fotos en galeria
               </RouteButton>
             </article>
           </Reveal>

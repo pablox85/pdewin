@@ -3,6 +3,7 @@ import { Footer, Navbar } from "@/components/shared";
 import { siteConfig } from "@/config/site";
 import { getPublicImages } from "@/lib/gallery/getPublicImages";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { CoverageCollapsible } from "./_components/CoverageCollapsible";
 import { GalleryStackWithModal } from "./_components/GalleryStackWithModal";
 
 export const metadata: Metadata = buildMetadata({
@@ -93,15 +94,11 @@ export default async function GaleriaPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-700 dark:text-blue-200">Galeria</p>
             <h1 className="mt-2 text-4xl font-extrabold text-slate-900 dark:text-slate-100 sm:text-5xl">Todas las fotos</h1>
             <p className="new-content-highlight mt-4 max-w-3xl text-base text-slate-700 dark:text-slate-300 sm:text-lg">
-              Esta galeria muestra trabajos reales de instalacion de laminas para vehiculos, tratamiento
+              Trabajos reales de instalacion de laminas para vehiculos, tratamiento
               ceramico, soluciones para home & office y proyectos de carteleria. Compartimos resultados
               para que puedas evaluar terminacion, estilo y calidad antes de solicitar presupuesto.
             </p>
-            <p className="new-content-highlight mt-3 max-w-3xl text-base text-slate-700 dark:text-slate-300 sm:text-lg">
-              Atendemos clientes en Ciudad de la Costa, Canelones, Montevideo y Maldonado. Si la distancia
-              es un factor importante para vos, coordinamos agenda por zona para facilitar el servicio.
-              Total de imagenes publicadas: {images.length}.
-            </p>
+            <CoverageCollapsible />
           </header>
 
           {images.length === 0 || visibleGroups.length === 0 ? (

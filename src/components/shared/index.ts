@@ -7,3 +7,4 @@ export { ThemeToggle } from "./ThemeToggle";
 export { PhotoCarousel } from "./PhotoCarousel";
 export { WhatsAppFloatingButton } from "./WhatsAppFloatingButton";
 export { RouteButton } from "./RouteButton";
+export { Collapsible } from "./Collapsible";

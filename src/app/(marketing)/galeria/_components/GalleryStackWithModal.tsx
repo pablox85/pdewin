@@ -22,6 +22,14 @@ interface ActiveModal {
   index: number;
 }
 
+function toCategoryAnchor(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/,/g, "")
+    .replace(/\s+/g, "-");
+}
+
 export function GalleryStackWithModal({
   groups,
   carouselHeightClassName,
@@ -93,6 +101,7 @@ export function GalleryStackWithModal({
         {groups.map((group, index) => (
           <article
             key={group.title}
+            id={toCategoryAnchor(group.title)}
             className="rounded-2xl border border-slate-300 bg-white p-4 shadow-card dark:border-slate-700 dark:bg-slate-900 sm:p-5"
           >
             <div className="mb-3 flex w-full items-center justify-between gap-3">

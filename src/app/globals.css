@@ -201,6 +201,7 @@ h6 {
   transform: translateY(0);
 }
 
+
 html.dark .new-content-highlight {
   border-left-color: #fcd34d;
   background: rgba(251, 191, 36, 0.14);

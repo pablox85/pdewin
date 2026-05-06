@@ -7,6 +7,9 @@ interface ContactPayload {
   email: string;
   servicio: string;
   mensaje: string;
+  captchaA: number;
+  captchaB: number;
+  captchaAnswer: number;
 }
 
 interface ContactSummary {
@@ -64,6 +67,9 @@ function getPayload(body: unknown): ContactPayload | null {
   const email = sanitizeText(payload.email);
   const servicio = sanitizeText(payload.servicio);
   const mensaje = sanitizeText(payload.mensaje);
+  const captchaA = Number(payload.captchaA);
+  const captchaB = Number(payload.captchaB);
+  const captchaAnswer = Number(payload.captchaAnswer);
 
   if (!nombre || !email || !servicio || !mensaje) {
     return null;
@@ -73,7 +79,21 @@ function getPayload(body: unknown): ContactPayload | null {
     return null;
   }
 
-  return { nombre, email, servicio, mensaje };
+  const isValidCaptchaValues =
+    Number.isInteger(captchaA) &&
+    Number.isInteger(captchaB) &&
+    Number.isInteger(captchaAnswer) &&
+    captchaA >= 1 &&
+    captchaA <= 9 &&
+    captchaB >= 1 &&
+    captchaB <= 9 &&
+    captchaAnswer === captchaA + captchaB;
+
+  if (!isValidCaptchaValues) {
+    return null;
+  }
+
+  return { nombre, email, servicio, mensaje, captchaA, captchaB, captchaAnswer };
 }
 
 function buildFallbackSummary(payload: ContactPayload): ContactSummary {
@@ -200,7 +220,7 @@ export async function POST(request: Request) {
 
     if (!payload) {
       return NextResponse.json(
-        { error: "Datos invalidos. Revisar nombre, email, servicio y mensaje." },
+        { error: "Datos invalidos. Revisar nombre, email, servicio, mensaje y captcha." },
         { status: 400 },
       );
     }

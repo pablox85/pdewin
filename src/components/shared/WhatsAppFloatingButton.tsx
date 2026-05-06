@@ -2,13 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import type { MouseEventHandler, PointerEventHandler } from "react";
-import { siteConfig } from "@/config/site";
+import { buildWhatsAppHref } from "@/lib/whatsapp";
 
 const BUTTON_SIZE = 58;
 const SIDE_MARGIN = 16;
 const BOTTOM_MARGIN = 24;
 const DRAG_THRESHOLD = 6;
-const MESSAGE = "Hola me gustaria hacer una consulta";
 
 interface Position {
   x: number;
@@ -51,10 +50,7 @@ export function WhatsAppFloatingButton() {
   });
   const suppressClickRef = useRef(false);
 
-  const whatsappHref = useMemo(() => {
-    const phone = siteConfig.contactPhone.replace(/\D/g, "");
-    return `https://wa.me/${phone}?text=${encodeURIComponent(MESSAGE)}`;
-  }, []);
+  const whatsappHref = useMemo(() => buildWhatsAppHref(), []);
   const resolvedPosition = position ?? (isClient ? getInitialPosition() : null);
 
   useEffect(() => {

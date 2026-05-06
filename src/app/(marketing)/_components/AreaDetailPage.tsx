@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Reveal, SectionTitle, SectionWrapper } from "@/components/shared";
+import { Collapsible, Reveal, SectionTitle, SectionWrapper } from "@/components/shared";
 import type { BusinessArea } from "@/features/services/data/businessAreas";
 
 const areaAnchorClasses: Record<string, string> = {
@@ -39,7 +39,7 @@ const areaSeoContent: Record<
       {
         question: "Que zonas cubren para polarizados?",
         answer:
-          "Trabajamos en todo el pais, siempre con agenda previa, con coordinacion por zona para optimizar tiempos.",
+          "Trabajamos en todo el pais, siempre con agenda previa para optimizar tiempos.",
       },
       {
         question: "Que beneficio principal tiene el laminado de vidrios?",
@@ -77,7 +77,7 @@ const areaSeoContent: Record<
       },
       {
         question: "Trabajan clientes fuera de Ciudad de la Costa?",
-        answer: "Si. Trabajamos en todo el pais, siempre con agenda previa, coordinando servicios por zona.",
+        answer: "Si. Trabajamos en todo el pais, siempre con agenda previa.",
       },
     ],
   },
@@ -99,7 +99,7 @@ const areaSeoContent: Record<
           "Si. Evaluamos tu caso y recomendamos la opcion mas conveniente en control solar, privacidad o estetica.",
       },
       {
-        question: "Trabajan oficinas y comercios pequenos?",
+        question: "Trabajan oficinas y comercios pequeños?",
         answer:
           "Si, trabajamos tanto hogares como oficinas y comercios, adaptando la propuesta a cada necesidad.",
       },
@@ -112,6 +112,11 @@ const areaSeoContent: Record<
         question: "Cubren Montevideo y Maldonado?",
         answer:
           "Si. Trabajamos en todo el pais, siempre con agenda previa, incluyendo Montevideo, Maldonado, Ciudad de la Costa y Canelones.",
+      },
+      {
+        question:"Realizan trabajos en edificios con seguridad estricta o acceso controlado?",
+        answer:
+          "Si. Para proyectos en edificios con seguridad o acceso controlado, coordinamos con anticipacion para cumplir con los requisitos y asegurar una instalacion sin contratiempos.",
       },
     ],
   },
@@ -259,30 +264,17 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
                 key={item.question}
                 className="rounded-2xl border border-slate-300 bg-white p-5 shadow-card dark:border-slate-700 dark:bg-slate-900"
               >
-                <h3>
-                  <button
-                    type="button"
-                    className="flex w-full items-center justify-between gap-3 text-left text-lg font-bold text-slate-900 dark:text-slate-100"
-                    aria-expanded={isOpen}
-                    aria-controls={panelId}
-                    onClick={() => toggleFaqItem(item.question)}
-                  >
-                    <span>{item.question}</span>
-                    <span
-                      className={`inline-block text-xl leading-none transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
-                      aria-hidden="true"
-                    >
-                      ⌄
-                    </span>
-                  </button>
-                </h3>
-                <div className={`faq-answer-wrap mt-2 ${isOpen ? "faq-answer-wrap--open" : ""}`} id={panelId}>
-                  <div className={`faq-answer-inner ${isOpen ? "faq-answer-inner--open" : ""}`}>
-                    <p className="new-content-highlight text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                      {item.answer}
-                    </p>
-                  </div>
-                </div>
+                <Collapsible
+                  isOpen={isOpen}
+                  onToggle={() => toggleFaqItem(item.question)}
+                  panelId={panelId}
+                  triggerClassName="text-lg font-bold text-slate-900 dark:text-slate-100"
+                  title={item.question}
+                >
+                  <p className="new-content-highlight text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                    {item.answer}
+                  </p>
+                </Collapsible>
               </article>
             );
           })}

@@ -4,7 +4,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "sync:reviews": "node scripts/sync-google-reviews.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.34.3",
