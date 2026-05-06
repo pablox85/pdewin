@@ -1,16 +1,17 @@
+#!/usr/bin/env node
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import manifestImages from "./generated-public-images.json";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const repoRoot = path.resolve(__dirname, "..");
+const publicImagesRoot = path.join(repoRoot, "public", "images");
+const outputPath = path.join(repoRoot, "src", "lib", "gallery", "generated-public-images.json");
 
 const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp", ".svg"]);
 
-export interface PublicImage {
-  src: string;
-  alt: string;
-  folder: string;
-}
-
-function toAltText(fileName: string) {
+function toAltText(fileName) {
   const withoutExtension = fileName.replace(/\.[^.]+$/, "");
   const normalized = withoutExtension.replace(/[_-]+/g, " ").replace(/\s+/g, " ").trim();
   const lower = normalized.toLowerCase();
@@ -26,7 +27,7 @@ function toAltText(fileName: string) {
   return normalized || "Imagen de trabajo realizado";
 }
 
-function toPublicSrc(relativePath: string) {
+function toPublicSrc(relativePath) {
   return `/${relativePath
     .split(path.sep)
     .join("/")
@@ -35,9 +36,9 @@ function toPublicSrc(relativePath: string) {
     .join("/")}`;
 }
 
-async function walkImages(baseAbsolutePath: string, relativePath = ""): Promise<string[]> {
+async function walkImages(baseAbsolutePath, relativePath = "") {
   const entries = await fs.readdir(path.join(baseAbsolutePath, relativePath), { withFileTypes: true });
-  const files: string[] = [];
+  const files = [];
 
   for (const entry of entries) {
     if (entry.name.startsWith(".")) {
@@ -60,24 +61,12 @@ async function walkImages(baseAbsolutePath: string, relativePath = ""): Promise<
   return files;
 }
 
-export async function getPublicImages(baseFolder = "images"): Promise<PublicImage[]> {
-  if (baseFolder === "images" && Array.isArray(manifestImages) && manifestImages.length > 0) {
-    return manifestImages as PublicImage[];
-  }
+async function run() {
+  const imageFiles = await walkImages(publicImagesRoot);
 
-  const publicRoot = path.join(process.cwd(), "public");
-  const targetFolder = path.join(publicRoot, baseFolder);
-
-  let imageFiles: string[] = [];
-  try {
-    imageFiles = await walkImages(targetFolder);
-  } catch {
-    return [];
-  }
-
-  return imageFiles
+  const manifest = imageFiles
     .map((relativeFilePath) => {
-      const normalizedRelativePath = path.join(baseFolder, relativeFilePath);
+      const normalizedRelativePath = path.join("images", relativeFilePath);
       const fileName = path.basename(relativeFilePath);
       const folderPath = path.dirname(relativeFilePath);
 
@@ -88,4 +77,12 @@ export async function getPublicImages(baseFolder = "images"): Promise<PublicImag
       };
     })
     .sort((a, b) => a.src.localeCompare(b.src, "es", { numeric: true }));
+
+  await fs.writeFile(outputPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+  console.log(`Manifest generado con ${manifest.length} imagenes: ${outputPath}`);
 }
+
+run().catch((error) => {
+  console.error("No se pudo generar el manifest de galeria:", error);
+  process.exit(1);
+});

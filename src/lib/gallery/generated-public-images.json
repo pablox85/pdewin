@@ -1,0 +1,432 @@
+[
+  {
+    "src": "/images/BLANCO-FONDO-TRANSPARENTE.png",
+    "alt": "BLANCO FONDO TRANSPARENTE",
+    "folder": "General"
+  },
+  {
+    "src": "/images/carteleria/car001.jpeg",
+    "alt": "Trabajo de carteleria y vinilo",
+    "folder": "carteleria"
+  },
+  {
+    "src": "/images/carteleria/car002.jpeg",
+    "alt": "Trabajo de carteleria y vinilo",
+    "folder": "carteleria"
+  },
+  {
+    "src": "/images/carteleria/car003.jpeg",
+    "alt": "Trabajo de carteleria y vinilo",
+    "folder": "carteleria"
+  },
+  {
+    "src": "/images/carteleria/car004.jpeg",
+    "alt": "Trabajo de carteleria y vinilo",
+    "folder": "carteleria"
+  },
+  {
+    "src": "/images/carteleria/car005.jpeg",
+    "alt": "Trabajo de carteleria y vinilo",
+    "folder": "carteleria"
+  },
+  {
+    "src": "/images/carteleria/car006.jpeg",
+    "alt": "Trabajo de carteleria y vinilo",
+    "folder": "carteleria"
+  },
+  {
+    "src": "/images/carteleria/car007.jpeg",
+    "alt": "Trabajo de carteleria y vinilo",
+    "folder": "carteleria"
+  },
+  {
+    "src": "/images/carteleria/car008.jpeg",
+    "alt": "Trabajo de carteleria y vinilo",
+    "folder": "carteleria"
+  },
+  {
+    "src": "/images/carteleria/car009.jpeg",
+    "alt": "Trabajo de carteleria y vinilo",
+    "folder": "carteleria"
+  },
+  {
+    "src": "/images/detailing/det001.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/detailing/det002.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/detailing/det003.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/detailing/det004.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/detailing/det005.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/detailing/det006.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/detailing/det007.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/detailing/det008.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/detailing/det009.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/detailing/det010.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/detailing/det011.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/detailing/det012.jpeg",
+    "alt": "Trabajo de car detailing",
+    "folder": "detailing"
+  },
+  {
+    "src": "/images/FONDO-NEGRO.png",
+    "alt": "FONDO NEGRO",
+    "folder": "General"
+  },
+  {
+    "src": "/images/home/home001.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "home"
+  },
+  {
+    "src": "/images/home/home002.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "home"
+  },
+  {
+    "src": "/images/home/home003.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "home"
+  },
+  {
+    "src": "/images/mejoras/file_00000000d69c722fad17faeab4d88c47.png",
+    "alt": "file 00000000d69c722fad17faeab4d88c47",
+    "folder": "mejoras"
+  },
+  {
+    "src": "/images/NEGRO-FONDO-TRANSPARENTE.png",
+    "alt": "NEGRO FONDO TRANSPARENTE",
+    "folder": "General"
+  },
+  {
+    "src": "/images/office/office001.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/office002.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/office003.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/office004.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/sorri001.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/sorri002.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/sorri003.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/sorri004.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/sorri005.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/sorri006.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/sorri007.jpeg",
+    "alt": "Instalacion de laminas para home y office",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.42.jpeg",
+    "alt": "WhatsApp Image 2026 04 24 at 09.37.42",
+    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+  },
+  {
+    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.43.jpeg",
+    "alt": "WhatsApp Image 2026 04 24 at 09.37.43",
+    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+  },
+  {
+    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.43%20(1).jpeg",
+    "alt": "WhatsApp Image 2026 04 24 at 09.37.43 (1)",
+    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+  },
+  {
+    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.43%20(2).jpeg",
+    "alt": "WhatsApp Image 2026 04 24 at 09.37.43 (2)",
+    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+  },
+  {
+    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.43%20(3).jpeg",
+    "alt": "WhatsApp Image 2026 04 24 at 09.37.43 (3)",
+    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+  },
+  {
+    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.43%20(4).jpeg",
+    "alt": "WhatsApp Image 2026 04 24 at 09.37.43 (4)",
+    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+  },
+  {
+    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.44.jpeg",
+    "alt": "WhatsApp Image 2026 04 24 at 09.37.44",
+    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+  },
+  {
+    "src": "/images/pesados/pesados001.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados002.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados003.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados004.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados005.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados006.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados007.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados008.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados009.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados010.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados011.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados012.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados013.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados014.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/pesados/pesados015.jpeg",
+    "alt": "Laminado en vehiculo de gran porte",
+    "folder": "pesados"
+  },
+  {
+    "src": "/images/polarizado/pola001.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola001.jpg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola002.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola002.jpg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola003.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola003.jpg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola004.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola005.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola006.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola007.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola007.png",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola008.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola008.png",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola009.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola009.png",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola010.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola011.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola011.png",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola012.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola013.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola014.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola015.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola016.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola017.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola018.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  }
+]
