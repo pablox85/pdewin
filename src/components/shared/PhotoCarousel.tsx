@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 export interface CarouselImage {
   src: string;
@@ -34,7 +34,13 @@ export function PhotoCarousel({
   showCounter = false,
   onImageClick,
 }: PhotoCarouselProps) {
+  const SWIPE_THRESHOLD_PX = 40;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchRef = useRef({
+    startX: 0,
+    startY: 0,
+    moved: false,
+  });
   const total = images.length;
   const activeIndex = total > 0 ? currentIndex % total : 0;
 
@@ -73,6 +79,11 @@ export function PhotoCarousel({
   };
 
   const handleImageClick = () => {
+    if (touchRef.current.moved) {
+      touchRef.current.moved = false;
+      return;
+    }
+
     if (!onImageClick) {
       return;
     }
@@ -85,6 +96,52 @@ export function PhotoCarousel({
       <div
         className={`relative w-full ${imageContainerClassName} ${onImageClick ? "cursor-zoom-in" : ""}`}
         onClick={handleImageClick}
+        onTouchStart={(event) => {
+          const touch = event.touches[0];
+          if (!touch) {
+            return;
+          }
+
+          touchRef.current.startX = touch.clientX;
+          touchRef.current.startY = touch.clientY;
+          touchRef.current.moved = false;
+        }}
+        onTouchMove={(event) => {
+          const touch = event.touches[0];
+          if (!touch) {
+            return;
+          }
+
+          const deltaX = touch.clientX - touchRef.current.startX;
+          const deltaY = touch.clientY - touchRef.current.startY;
+          if (Math.abs(deltaX) > 6 || Math.abs(deltaY) > 6) {
+            touchRef.current.moved = true;
+          }
+        }}
+        onTouchEnd={(event) => {
+          if (total <= 1) {
+            return;
+          }
+
+          const touch = event.changedTouches[0];
+          if (!touch) {
+            return;
+          }
+
+          const deltaX = touch.clientX - touchRef.current.startX;
+          const deltaY = touch.clientY - touchRef.current.startY;
+
+          if (Math.abs(deltaX) < SWIPE_THRESHOLD_PX || Math.abs(deltaX) <= Math.abs(deltaY)) {
+            return;
+          }
+
+          if (deltaX < 0) {
+            goToNext();
+            return;
+          }
+
+          goToPrev();
+        }}
         onKeyDown={(event) => {
           if (!onImageClick) {
             return;
