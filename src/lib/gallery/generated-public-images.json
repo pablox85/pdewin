@@ -130,11 +130,6 @@
     "folder": "home"
   },
   {
-    "src": "/images/mejoras/file_00000000d69c722fad17faeab4d88c47.png",
-    "alt": "file 00000000d69c722fad17faeab4d88c47",
-    "folder": "mejoras"
-  },
-  {
     "src": "/images/NEGRO-FONDO-TRANSPARENTE.png",
     "alt": "NEGRO FONDO TRANSPARENTE",
     "folder": "General"
@@ -310,27 +305,12 @@
     "folder": "polarizado"
   },
   {
-    "src": "/images/polarizado/pola001.jpg",
-    "alt": "Trabajo de polarizado vehicular",
-    "folder": "polarizado"
-  },
-  {
     "src": "/images/polarizado/pola002.jpeg",
     "alt": "Trabajo de polarizado vehicular",
     "folder": "polarizado"
   },
   {
-    "src": "/images/polarizado/pola002.jpg",
-    "alt": "Trabajo de polarizado vehicular",
-    "folder": "polarizado"
-  },
-  {
     "src": "/images/polarizado/pola003.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
-    "folder": "polarizado"
-  },
-  {
-    "src": "/images/polarizado/pola003.jpg",
     "alt": "Trabajo de polarizado vehicular",
     "folder": "polarizado"
   },
@@ -355,27 +335,12 @@
     "folder": "polarizado"
   },
   {
-    "src": "/images/polarizado/pola007.png",
-    "alt": "Trabajo de polarizado vehicular",
-    "folder": "polarizado"
-  },
-  {
     "src": "/images/polarizado/pola008.jpeg",
     "alt": "Trabajo de polarizado vehicular",
     "folder": "polarizado"
   },
   {
-    "src": "/images/polarizado/pola008.png",
-    "alt": "Trabajo de polarizado vehicular",
-    "folder": "polarizado"
-  },
-  {
     "src": "/images/polarizado/pola009.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
-    "folder": "polarizado"
-  },
-  {
-    "src": "/images/polarizado/pola009.png",
     "alt": "Trabajo de polarizado vehicular",
     "folder": "polarizado"
   },
@@ -386,11 +351,6 @@
   },
   {
     "src": "/images/polarizado/pola011.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
-    "folder": "polarizado"
-  },
-  {
-    "src": "/images/polarizado/pola011.png",
     "alt": "Trabajo de polarizado vehicular",
     "folder": "polarizado"
   },
@@ -426,6 +386,36 @@
   },
   {
     "src": "/images/polarizado/pola018.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola019.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola020.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola021.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola022.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola023.jpeg",
+    "alt": "Trabajo de polarizado vehicular",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola024.jpeg",
     "alt": "Trabajo de polarizado vehicular",
     "folder": "polarizado"
   }

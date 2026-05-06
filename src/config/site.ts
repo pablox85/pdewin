@@ -13,7 +13,7 @@ export const siteConfig = {
   description: "Soluciones profesionales en Vehiculos, Car detailing, Home, Office & Business.",
   domain: resolveSiteUrl(),
   locale: "es_UY",
-  contactEmail: "pdpcorrales@gmail.com",
+  contactEmail: "polarizadosdeleste@gmail.com",
   contactPhone: "+598 92 906 102",
   address: "Ciudad de la Costa, Uruguay",
   footer: {

@@ -1,141 +1,192 @@
 # Polarizados del Este
 
-Landing comercial para Polarizados del Este, construida con Next.js y enfocada en mostrar servicios, generar consultas y reforzar la presencia de la marca.
+Modern lead-generation website built for **Polarizados del Este**, focused on converting traffic into real customer inquiries through high-conversion UI, trust signals, and streamlined contact flows.
 
-## Tecnologias
+🚀 Live Demo: https://pdewin.vercel.app
 
-- `Next.js 16` con App Router
-- `React 19`
-- `TypeScript 5`
-- `Tailwind CSS 3`
-- `Framer Motion`
-- `Nodemailer` para el envio de correos desde la web
+---
 
-## Que incluye
+## Preview
 
-- Home principal con secciones de hero, servicios, testimonios, about y contacto.
-- Paginas de detalle para cada unidad de negocio:
-  - `/vehiculos`
-  - `/detailing`
-  - `/home-business`
-- Boton flotante de WhatsApp.
-- Modo claro/oscuro con persistencia local.
-- SEO base con metadata, `robots.txt`, `sitemap.xml` y datos estructurados.
-- Integracion opcional con Google Analytics 4.
-- Formulario de contacto con envio por correo.
+![Homepage Preview](./public/preview-home.png)
 
-## Estructura
+---
 
-- `src/app`: rutas de Next.js, layout global, SEO y API routes.
-- `src/components`: componentes compartidos, UI y analytics.
-- `src/features`: contenido y piezas especificas de servicios, contacto y testimonios.
-- `src/config`: configuracion central del sitio, textos y navegacion.
-- `src/lib`: utilidades de animacion, analytics y SEO.
-- `public`: imagenes, iconos y recursos estaticos.
+## About The Project
 
-## Centrado manual de fotos (carousel)
+Polarizados del Este is a commercial marketing website developed for a real services business focused on:
 
-Si queres ajustar el encuadre de cada foto en mobile y escritorio, edita:
+- Window tinting
+- Auto detailing
+- Home & business solutions
 
-- `src/app/(marketing)/_sections/ServicesSection.tsx`
+The platform was designed with a strong focus on:
 
-Dentro de `areaCarouselImages` cada item acepta:
+- conversion-oriented UX
+- responsive design
+- SEO optimization
+- fast loading performance
+- simplified maintenance
+- real inquiry generation
 
-- `positionMobile`: posicion para mobile/tablet (ejemplo: `"50% 52%"`)
-- `positionDesktop`: posicion para escritorio desde `1024px` (ejemplo: `"50% 45%"`)
+Instead of being just another static landing page, the platform integrates automated review synchronization, interactive galleries, dynamic testimonials, analytics tracking, and validated contact flows to improve trust and maximize conversion.
 
-Ejemplo:
+---
 
-```ts
-{
-  src: "/images/det1.jpg",
-  alt: "Proceso de car detailing",
-  positionMobile: "50% 52%",
-  positionDesktop: "50% 46%"
-}
-```
+## Tech Stack
 
-Referencia tecnica:
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Nodemailer
+- Google Places API
+- Google Analytics
+- Vercel
 
-- La logica del carousel vive en `src/components/shared/PhotoCarousel.tsx`.
-- El comportamiento responsive de `object-position` se define en `src/app/globals.css` con la clase `.carousel-image`.
+---
 
-## Instalacion local
+## Features
 
-1. Clona el repositorio.
-2. Instala dependencias:
+### SEO & Performance
+
+- SEO-oriented structure
+- Semantic HTML
+- Optimized metadata
+- Responsive design
+- Fast loading performance
+- Optimized for local business visibility
+
+### Responsive Commercial Landing Page
+
+- Mobile-first design
+- Optimized conversion sections
+- Modern UI focused on readability and trust
+
+### Lead Capture System
+
+- Contact form with validation
+- Simple anti-spam captcha
+- SMTP email delivery using Nodemailer
+
+### Analytics & Tracking
+
+- Google Analytics integration
+- Traffic and behavior monitoring
+- Conversion-oriented tracking
+
+### Google Reviews Sync
+
+- Automated review synchronization script
+- Google Places API integration
+- Testimonials centralized in `testimonials.ts`
+
+### Interactive Media Gallery
+
+- Carousel navigation
+- Modal preview
+- Mobile swipe support
+
+### Performance & Deployment
+
+- Production deployment on Vercel
+- Lightweight architecture
+- No database required
+- Low-maintenance structure for real business usage
+
+---
+
+## Problem It Solves
+
+Many small service businesses struggle to transform website visitors into actual customer inquiries.
+
+Polarizados del Este addresses that by combining:
+
+- strong visual trust signals
+- real testimonials
+- fast contact access
+- responsive design
+- service-focused conversion structure
+
+The result is a lightweight and maintainable platform optimized for lead generation.
+
+---
+
+## Architecture Notes
+
+- Static-first approach for simplicity and speed
+- No authentication layer required
+- No database dependency
+- Reviews synchronized externally and injected into frontend data structures
+- Optimized for easy deployment and maintenance
+
+---
+
+## Local Development
 
 ```bash
+git clone https://github.com/pablox85/pdewin.git
+
+cd pdewin
+
 npm install
-```
 
-3. Toma `.env.example` como base y copialo a `.env.local`, luego completalo con tus valores.
-
-## Ejecutar en desarrollo
-
-```bash
 npm run dev
 ```
 
-Luego abrilo en `http://localhost:3000`.
-
-Este comando levanta la aplicacion completa de Next.js, incluida la parte de servidor que expone la API interna.
-
-## Backend
-
-No hay un backend separado en otro proyecto o puerto. La logica del servidor vive dentro de Next.js, en particular en:
-
-- `src/app/api/contact/route.ts`
-
-Ese endpoint procesa el formulario de contacto, valida datos y envia el correo mediante SMTP. Tambien puede generar un resumen interno con OpenAI si se configuran las variables correspondientes.
-
-## Variables de entorno
-
-Variables utiles:
+Open:
 
 ```bash
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_USER=tu_usuario_smtp
-SMTP_PASS=tu_app_password_o_clave_smtp
-SMTP_FROM=correo_remitente
-CONTACT_EMAIL_TO=correo_destino
-OPENAI_API_KEY=tu_api_key
-OPENAI_MODEL=gpt-4o-mini
+http://localhost:3000
 ```
 
-Notas:
+---
 
-- `NEXT_PUBLIC_GA_ID` es opcional. Si no existe, el sitio funciona igual sin Analytics.
-- Las variables `SMTP_*` son necesarias para que el formulario de contacto pueda enviar correos.
-- `OPENAI_API_KEY` y `OPENAI_MODEL` son opcionales. Si no se configuran, el sistema usa un resumen local de respaldo.
+## Environment Variables
 
-## Correr el servidor en modo produccion local
+Create a `.env.local` file:
 
-```bash
-npm run build
-npm run start
+```env
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USER=
+SMTP_PASS=
+GOOGLE_PLACES_API_KEY=
 ```
 
-Eso levanta la version compilada de Next.js, incluyendo la API interna de contacto.
+---
 
-## Lint
+## Deployment
 
-```bash
-npm run lint
-```
+Production deployment hosted on Vercel:
 
-## Flujo recomendado de uso
+https://pdewin.vercel.app
 
-1. Instalar dependencias con `npm install`.
-2. Configurar `.env.local`.
-3. Ejecutar `npm run dev` para desarrollar.
-4. Probar el formulario de contacto y verificar que SMTP este funcionando.
-5. Antes de publicar, correr `npm run build`.
+---
 
-## Despliegue
+## Why I Built This
 
-El proyecto esta listo para deploy en Vercel o cualquier entorno compatible con Next.js.
+This project was built to create a real-world commercial solution capable of generating leads for a services business while maintaining a lightweight and maintainable architecture.
 
-Para produccion, no olvides cargar las mismas variables de entorno del formulario y, si corresponde, la clave de Analytics y OpenAI.
+The focus was not only on UI design, but also on:
+
+- conversion optimization
+- maintainability
+- responsive experience
+- performance
+- practical business usability
+
+---
+
+## Author
+
+**Pablo Pérez**
+
+Focused on:
+
+- modern web development
+- frontend architecture
+- conversion-oriented interfaces
+- real-world business solutions
+
+GitHub: https://github.com/pablox85
