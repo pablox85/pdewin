@@ -2,7 +2,7 @@
 
 Modern lead-generation website built for **Polarizados del Este**, focused on converting traffic into real customer inquiries through high-conversion UI, trust signals, and streamlined contact flows.
 
-🚀 Live Demo: https://pdewin.vercel.app
+🚀 Live Demo: www.polarizadosdeleste.com
 
 ---
 
@@ -160,7 +160,7 @@ GOOGLE_PLACES_API_KEY=
 
 Production deployment hosted on Vercel:
 
-https://pdewin.vercel.app
+www.polarizadosdeleste.com
 
 ---
 
