@@ -8,7 +8,7 @@ import { ServicesSection } from "./(marketing)/_sections/ServicesSection";
 import { TestimonialsSection } from "./(marketing)/_sections/TestimonialsSection";
 
 export const metadata = buildMetadata({
-  title: "Polarizados y tratamiento ceramico en Ciudad de la Costa",
+  title: "Polarizados del este",
   description:
     "Instalacion de laminas para vehiculos, car detailing y tratamiento ceramico. Servicio en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
   alternates: {

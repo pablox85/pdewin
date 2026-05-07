@@ -4,7 +4,7 @@ function resolveSiteUrl() {
     return envSiteUrl.replace(/\/$/, "");
   }
 
-  return "https://pdewin.vercel.app";
+  return "https://polarizadosdeleste.com";
 }
 
 // Config centralizada para datos de marca, SEO y contacto.
