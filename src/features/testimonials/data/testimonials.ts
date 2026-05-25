@@ -16,7 +16,7 @@ export const testimonials: TestimonialItem[] = [
     id: "g2",
     name: "Maximiliano Piñeyro",
     role: "Reseña de Google (5/5)",
-    quote: "Excelente trabajo y atención. Todo muy rapido, me comuniqué en la mañana y a la tarde estaba listo. Muy recomendable",
+    quote: "Excelente trabajo y atención. Todo muy rápido, me comuniqué en la mañana y a la tarde estaba listo. Muy recomendable",
   },
   {
     id: "g3",

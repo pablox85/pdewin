@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import { cookies } from "next/headers";
 import { ClientEnhancements } from "@/components/client/ClientEnhancements";
 import { siteConfig } from "@/config/site";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -17,7 +18,6 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 
-// Metadata global SEO para toda la app.
 export const metadata: Metadata = buildMetadata({
   metadataBase: new URL(siteConfig.domain),
   alternates: {
@@ -35,9 +35,26 @@ export default async function RootLayout({
   const isDark = themeCookie !== "light";
 
   return (
-    <html lang="es" suppressHydrationWarning className={isDark ? "dark" : undefined}>
-      <body className={`${manrope.variable} ${spaceGrotesk.variable} bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100`}>
+    <html
+      lang="es"
+      suppressHydrationWarning
+      className={isDark ? "dark" : undefined}
+    >
+      <body
+        className={`${manrope.variable} ${spaceGrotesk.variable} bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100`}
+      >
         {children}
+
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wwpzr1zea8");
+          `}
+        </Script>
+
         <ClientEnhancements />
         <Analytics />
       </body>

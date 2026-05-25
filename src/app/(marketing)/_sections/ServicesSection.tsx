@@ -27,9 +27,9 @@ const AREA_CAROUSEL_AUTOPLAY_MS = 1500;
 
 const areaCarouselImages: Record<string, AreaCarouselImage[]> = {
   vehiculos: [
-    { src: "/images/polarizado/pola002.jpeg", alt: "Instalacion en Peugeot", positionMobile: "50% 52%", positionDesktop: "42% 45%" },
-    { src: "/images/polarizado/pola022.jpeg", alt: "Laminas para vehiculos", positionMobile: "50% 50%", positionDesktop: "25% 46%" },
-    { src: "/images/polarizado/pola014.jpeg", alt: "Instalcion Mercedes", positionMobile: "50% 50%", positionDesktop: "50% 42%" },
+    { src: "/images/polarizado/pola002.jpeg", alt: "Instalación en Peugeot", positionMobile: "50% 52%", positionDesktop: "42% 45%" },
+    { src: "/images/polarizado/pola022.jpeg", alt: "Láminas para vehículos", positionMobile: "50% 50%", positionDesktop: "25% 46%" },
+    { src: "/images/polarizado/pola014.jpeg", alt: "Instalación Mercedes", positionMobile: "50% 50%", positionDesktop: "50% 42%" },
   ],
   cardetailing: [
     { src: "/images/detailing/det001.jpeg", alt: "Proceso de polishing", positionMobile: "50% 52%", positionDesktop: "42% 45%" },
@@ -44,17 +44,17 @@ const areaCarouselImages: Record<string, AreaCarouselImage[]> = {
   ],
 };
 
-// Home: presentacion de unidades con acceso a paginas dedicadas.
+// Home: presentación de unidades con acceso a páginas dedicadas.
 export function ServicesSection() {
   return (
     <SectionWrapper className="bg-slate-50 dark:bg-slate-900/40">
       <div id="soluciones">
-      <SectionTitle
-        eyebrow="Unidades de negocio"
-        title="Elegi la solucion ideal para tu objetivo"
-        description="Cada unidad cuenta con una pagina dedicada y detalle por servicio para ayudarte a decidir rapido."
-      />
-</div>
+        <SectionTitle
+          eyebrow="Unidades de negocio"
+          title="Elegí la solución ideal para tu objetivo"
+          description="Cada unidad cuenta con una página dedicada y detalle por servicio para ayudarte a decidir rápido."
+        />
+      </div>
       <div className="mt-10 grid gap-5 md:grid-cols-3">
         {BUSINESS_AREAS.map((area, index) => (
           <Reveal key={area.id} delay={Math.min(index * 0.06, 0.24)}>
@@ -78,7 +78,7 @@ export function ServicesSection() {
               <PhotoCarousel
                 className="mt-4"
                 images={areaCarouselImages[area.id] ?? []}
-                autoPlayMs={AREA_CAROUSEL_AUTOPLAY_MS} 
+                autoPlayMs={AREA_CAROUSEL_AUTOPLAY_MS}
                 startDelayMs={index * 350}
               />
 
@@ -92,7 +92,7 @@ export function ServicesSection() {
                 href={`/galeria#${galleryAnchorByAreaId[area.id] ?? ""}`}
                 className="mt-3 inline-flex rounded-xl border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-brand-700 hover:text-brand-700 dark:border-slate-600 dark:text-slate-200 dark:hover:border-blue-300 dark:hover:text-blue-200"
               >
-                Ver fotos en galeria
+                Ver fotos en galería
               </RouteButton>
             </article>
           </Reveal>

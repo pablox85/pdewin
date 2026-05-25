@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 
-// Sitemap basico para indexacion de home y paginas por rubro.
+// Sitemap básico para indexación de home y páginas por rubro.
 function resolveSitemapLastModified(): Date {
   const deployDateEnv = process.env.VERCEL_GIT_COMMIT_DATE ?? process.env.BUILD_DATE;
 
@@ -24,6 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteConfig.domain}${route}`,
     lastModified,
     changeFrequency: "weekly",
-    priority: index === 0 ? 1 : 0.8,
+    priority: index === 0 ? 1 : route === "/galeria" ? 0.85 : 0.8,
   }));
 }

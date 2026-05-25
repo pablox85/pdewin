@@ -2,7 +2,7 @@ import { siteConfig } from "@/config/site";
 import { Reveal, SectionTitle, SectionWrapper } from "@/components/shared";
 import { ContactForm } from "@/features/contact/components/ContactForm";
 
-// Cierre de conversion con formulario y datos de contacto.
+// Cierre de conversión con formulario y datos de contacto.
 export function ContactSection() {
   return (
     <SectionWrapper id="contacto">
@@ -19,11 +19,11 @@ export function ContactSection() {
 
         <Reveal delay={0.1}>
           <aside className="lift-card rounded-2xl border border-slate-300 bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-900">
-            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Atencion directa</h3>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Atención directa</h3>
             <ul className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
               <li>Email: {siteConfig.contactEmail}</li>
-              <li>Telefono: {siteConfig.contactPhone}</li>
-              <li>Ubicacion: {siteConfig.address}</li>
+              <li>Teléfono: {siteConfig.contactPhone}</li>
+              <li>Ubicación: {siteConfig.address}</li>
             </ul>
             <p className="mt-5 rounded-xl border border-slate-300 bg-white p-4 text-sm text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
               Al recibir tu mensaje, analizamos tu necesidad y te contactamos con una recomendacion puntual.

@@ -25,98 +25,98 @@ const areaSeoContent: Record<
   }
 > = {
   vehiculos: {
-    processTitle: "Como trabajamos el polarizado y laminado vehicular",
+    processTitle: "Cómo trabajamos el polarizado y laminado vehicular",
     processSteps: [
-      "Diagnostico inicial del vehiculo y recomendacion de la lamina segun uso, exposicion solar y nivel de privacidad buscado.",
-      "Preparacion tecnica del vidrio y aplicacion profesional para lograr terminacion limpia, sin burbujas y con excelente adherencia.",
-      "Recomendaciones de cuidado post-instalacion para extender la vida util del trabajo y mantener el acabado.",
+      "Diagnóstico inicial del vehículo y recomendación de la lámina según uso, exposición solar y nivel de privacidad buscado.",
+      "Preparación técnica del vidrio y aplicación profesional para lograr terminación limpia, sin burbujas y con excelente adherencia.",
+      "Recomendaciones de cuidado post-instalación para extender la vida útil del trabajo y mantener el acabado.",
     ],
     seoParagraphs: [
-      "Nuestro servicio de polarizados para vehiculos esta pensado para quienes buscan confort termico, reduccion de reflejos y una imagen prolija. Trabajamos con autos particulares, utilitarios, flotas y unidades de gran porte, priorizando calidad de instalacion y materiales confiables.",
-      "Trabajamos en todo el pais, siempre con agenda previa. Si la distancia es una preocupacion, coordinamos agenda por zona para facilitar tiempos y traslado, de forma que puedas resolver el servicio sin complicaciones.",
+      "Nuestro servicio de polarizados para vehículos está pensado para quienes buscan confort térmico, reducción de reflejos y una imagen prolija. Trabajamos con autos particulares, utilitarios, flotas y unidades de gran porte, priorizando calidad de instalación y materiales confiables.",
+      "Trabajamos en todo el país, siempre con agenda previa. Si la distancia es una preocupación, coordinamos agenda por zona para facilitar tiempos y traslado, de forma que puedas resolver el servicio sin complicaciones.",
     ],
     faq: [
       {
-        question: "Que zonas cubren para polarizados?",
+        question: "Qué zonas cubren para polarizados?",
         answer:
-          "Trabajamos en todo el pais, siempre con agenda previa para optimizar tiempos.",
+          "Trabajamos en todo el país, siempre con agenda previa para optimizar tiempos.",
       },
       {
-        question: "Que beneficio principal tiene el laminado de vidrios?",
+        question: "Qué beneficio principal tiene el laminado de vidrios?",
         answer:
-          "Mejora el confort termico, reduce el impacto del sol, aumenta privacidad y ayuda a proteger el interior del vehiculo.",
+          "Mejora el confort térmico, reduce el impacto del sol, aumenta privacidad y ayuda a proteger el interior del vehículo.",
       },
       {
-        question: "Hacen reparacion o cambio de vidrios?",
+        question: "Hacen reparación o cambio de vidrios?",
         answer:
-          "No. Nuestro enfoque esta en instalacion de laminas, polarizados y tratamientos de proteccion, no en cambio de cristales.",
+          "No. Nuestro enfoque está en instalación de láminas, polarizados y tratamientos de protección, no en cambio de cristales.",
       },
     ],
   },
   cardetailing: {
-    processTitle: "Proceso de car detailing y tratamiento ceramico",
+    processTitle: "Proceso de car detailing y tratamiento cerámico",
     processSteps: [
-      "Evaluamos estado de pintura, interior y objetivos del cliente para definir el plan de trabajo mas conveniente.",
-      "Realizamos limpieza tecnica, descontaminado y correcciones necesarias antes de cualquier sellado.",
-      "Aplicamos tratamiento ceramico o acrilico segun necesidad, con recomendaciones de mantenimiento para sostener el resultado.",
+      "Evaluamos estado de pintura, interior y objetivos del cliente para definir el plan de trabajo más conveniente.",
+      "Realizamos limpieza técnica, descontaminado y correcciones necesarias antes de cualquier sellado.",
+      "Aplicamos tratamiento cerámico o acrílico según necesidad, con recomendaciones de mantenimiento para sostener el resultado.",
     ],
     seoParagraphs: [
-      "El car detailing profesional combina tecnica y criterio para recuperar brillo, higiene y presencia general del vehiculo. Nuestro objetivo no es solo que se vea bien un dia, sino que conserve su estado por mas tiempo con un mantenimiento razonable.",
-      "Trabajamos en todo el pais, siempre con agenda previa, para minimizar traslados y darte una experiencia ordenada de principio a fin.",
+      "El car detailing profesional combina técnica y criterio para recuperar brillo, higiene y presencia general del vehículo. Nuestro objetivo no es solo que se vea bien un día, sino que conserve su estado por más tiempo con un mantenimiento razonable.",
+      "Trabajamos en todo el país, siempre con agenda previa, para minimizar traslados y darte una experiencia ordenada de principio a fin.",
     ],
     faq: [
       {
-        question: "Cuando conviene elegir tratamiento ceramico?",
+        question: "Cuándo conviene elegir tratamiento cerámico?",
         answer:
-          "Es ideal cuando queres una proteccion duradera y mejor comportamiento frente a sol, suciedad y agua.",
+          "Es ideal cuando querés una protección duradera y mejor comportamiento frente a sol, suciedad y agua.",
       },
       {
-        question: "Cuanto demora un trabajo de detailing?",
+        question: "Cuánto demora un trabajo de detailing?",
         answer:
-          "Depende del estado del vehiculo y del paquete elegido. Te damos tiempos estimados al momento del diagnostico inicial.",
+          "Depende del estado del vehículo y del paquete elegido. Te damos tiempos estimados al momento del diagnóstico inicial.",
       },
       {
         question: "Trabajan clientes fuera de Ciudad de la Costa?",
-        answer: "Si. Trabajamos en todo el pais, siempre con agenda previa.",
+        answer: "Sí. Trabajamos en todo el país, siempre con agenda previa.",
       },
     ],
   },
   arquitectura: {
-    processTitle: "Como resolvemos proyectos Home, Office, Business y Carteleria",
+    processTitle: "Cómo resolvemos proyectos Home, Office, Business y Cartelería",
     processSteps: [
-      "Relevamos necesidad de control solar, privacidad, estetica o comunicacion visual segun el tipo de espacio.",
-      "Definimos materiales y propuesta de instalacion para asegurar funcionalidad y coherencia visual.",
-      "Ejecutamos la aplicacion con terminacion profesional y recomendaciones de cuidado.",
+      "Relevamos necesidad de control solar, privacidad, estética o comunicación visual según el tipo de espacio.",
+      "Definimos materiales y propuesta de instalación para asegurar funcionalidad y coherencia visual.",
+      "Ejecutamos la aplicación con terminación profesional y recomendaciones de cuidado.",
     ],
     seoParagraphs: [
-      "Para hogares, oficinas y negocios, combinamos laminas de control solar, polarizado arquitectonico, vinilos y carteleria interna y exterior con foco en resultado real: espacios mas confortables, mejor imagen y comunicacion clara para clientes o equipos.",
-      "Trabajamos en todo el pais, siempre con agenda previa, para ejecutar proyectos de carteleria interior/exterior y soluciones para vidrios con coordinacion logistica ordenada.",
+      "Para hogares, oficinas y negocios, combinamos láminas de control solar, polarizado arquitectónico, vinilos y cartelería interna y exterior con foco en resultado real: espacios más confortables, mejor imagen y comunicación clara para clientes o equipos.",
+      "Trabajamos en todo el país, siempre con agenda previa, para ejecutar proyectos de cartelería interior/exterior y soluciones para vidrios con coordinación logística ordenada.",
     ],
     faq: [
       {
-        question: "Pueden asesorarme segun el tipo de vidriado?",
+        question: "Pueden asesorarme según el tipo de vidriado?",
         answer:
-          "Si. Evaluamos tu caso y recomendamos la opcion mas conveniente en control solar, privacidad o estetica.",
+          "Sí. Evaluamos tu caso y recomendamos la opción más conveniente en control solar, privacidad o estética.",
       },
       {
         question: "Trabajan oficinas y comercios pequeños?",
         answer:
-          "Si, trabajamos tanto hogares como oficinas y comercios, adaptando la propuesta a cada necesidad.",
+          "Sí, trabajamos tanto hogares como oficinas y comercios, adaptando la propuesta a cada necesidad.",
       },
       {
-        question: "Tambien hacen carteleria para negocios?",
+        question: "También hacen cartelería para negocios?",
         answer:
-          "Si. Realizamos carteleria interna y externa, piezas publicitarias para fachada y puntos de contacto, adaptadas a cada espacio comercial.",
+          "Sí. Realizamos cartelería interna y externa, piezas publicitarias para fachada y puntos de contacto, adaptadas a cada espacio comercial.",
       },
       {
         question: "Cubren Montevideo y Maldonado?",
         answer:
-          "Si. Trabajamos en todo el pais, siempre con agenda previa, incluyendo Montevideo, Maldonado, Ciudad de la Costa y Canelones.",
+          "Sí. Trabajamos en todo el país, siempre con agenda previa, incluyendo Montevideo, Maldonado, Ciudad de la Costa y Canelones.",
       },
       {
         question:"Realizan trabajos en edificios con seguridad estricta o acceso controlado?",
         answer:
-          "Si. Para proyectos en edificios con seguridad o acceso controlado, coordinamos con anticipacion para cumplir con los requisitos y asegurar una instalacion sin contratiempos.",
+          "Sí. Para proyectos en edificios con seguridad o acceso controlado, coordinamos con anticipación para cumplir con los requisitos y asegurar una instalación sin contratiempos.",
       },
     ],
   },
@@ -216,7 +216,7 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
         <SectionTitle
           eyebrow="Proceso y cobertura"
           title={seoContent.processTitle}
-          description="Trabajamos con metodologia clara, buena comunicacion y coordinacion por zonas."
+          description="Trabajamos con metodología clara, buena comunicación y coordinación por zonas."
         />
 
         <div className="mt-8 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
@@ -246,7 +246,7 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
               <li>Maldonado</li>
             </ul>
             <p className="new-content-highlight mt-4 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-              Trabajamos en todo el pais, siempre con agenda previa, para reducir tiempos de traslado y facilitar la contratacion.
+              Trabajamos en todo el país, siempre con agenda previa, para reducir tiempos de traslado y facilitar la contratación.
             </p>
           </aside>
         </div>
@@ -284,13 +284,13 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
           <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Servicios relacionados</h3>
           <div className="mt-3 flex flex-wrap gap-3 text-sm">
             <Link className="font-semibold text-brand-700 hover:underline dark:text-blue-200" href="/vehiculos">
-              Polarizados para vehiculos
+              Polarizados para vehículos
             </Link>
             <Link className="font-semibold text-brand-700 hover:underline dark:text-blue-200" href="/detailing">
-              Car detailing y tratamiento ceramico
+              Car detailing y tratamiento cerámico
             </Link>
             <Link className="font-semibold text-brand-700 hover:underline dark:text-blue-200" href="/home-business">
-              Laminas para home, office y business
+              Láminas para home, office y business
             </Link>
           </div>
         </div>

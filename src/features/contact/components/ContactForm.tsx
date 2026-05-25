@@ -122,7 +122,7 @@ export function ContactForm() {
           <option value="" disabled>
             Seleccionar
           </option>
-          <option value="vehiculos">Vehiculos</option>
+          <option value="vehiculos">Vehículos</option>
           <option value="detailing">Car Detailing</option>
           <option value="home-business">Home & Business</option>
         </select>
@@ -141,7 +141,7 @@ export function ContactForm() {
       </label>
 
       <label className="mt-4 block text-sm font-medium text-slate-800 dark:text-slate-200">
-        <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">Verificacion anti-spam</span>
+        <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">Verificacion</span>
         <div className="mt-2 flex flex-wrap items-center gap-3">
           <button
             type="button"
@@ -181,7 +181,7 @@ export function ContactForm() {
 
       {submitted ? (
         <p className="mt-3 text-sm font-medium text-emerald-800 dark:text-emerald-300">
-          Consulta enviada con exito. Te responderemos a la brevedad.
+          Consulta enviada con éxito. Te responderemos a la brevedad.
         </p>
       ) : null}
 

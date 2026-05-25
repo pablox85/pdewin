@@ -17,19 +17,19 @@ export interface BusinessArea {
 export const BUSINESS_AREAS: BusinessArea[] = [
   {
     id: "vehiculos",
-    label: "Vehiculos",
+    label: "Vehículos",
     href: "/vehiculos",
-    heroTitle: "Polarizados y laminado de vidrios para vehiculos",
+    heroTitle: "Polarizados y laminado de vidrios para vehículos",
     heroDescription:
-      "Instalamos laminas de control solar y seguridad para autos, utilitarios, vehiculos de gran porte y maquinaria pesada, con terminacion profesional y foco en durabilidad.",
+      "Instalamos láminas de control solar y seguridad para autos, utilitarios, vehículos de gran porte y maquinaria pesada, con terminación profesional y foco en durabilidad.",
     summary:
-      "Servicio de polarizados y laminado vehicular para clientes particulares, empresas y flotas en todo el pais, siempre con agenda previa.",
+      "Servicio de polarizados y laminado vehicular para clientes particulares, empresas y flotas en todo el país, siempre con agenda previa.",
     details: [
       {
         id: "vehiculos-autos",
         title: "Autos",
         description:
-          "Laminas de control solar para mayor confort, privacidad y proteccion.",
+          "Láminas de control solar para mayor confort, privacidad y protección.",
       },
       {
         id: "vehiculos-utilitarios",
@@ -39,7 +39,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
       },
       {
         id: "vehiculos-gran-porte",
-        title: "Vehiculos de gran porte",
+        title: "Vehículos de gran porte",
         description:
           "Aplicaciones para camiones, omnibus, motorhome y ambulancias.",
       },
@@ -55,33 +55,33 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     id: "cardetailing",
     label: "Car Detailing",
     href: "/detailing",
-    heroTitle: "Car detailing y tratamiento ceramico profesional",
+    heroTitle: "Car detailing y tratamiento cerámico profesional",
     heroDescription:
-      "Restauramos y protegemos tu vehiculo con tecnicas especializadas para conservar su estetica y valor, incluyendo tratamiento ceramico de alta duracion.",
+      "Restauramos y protegemos tu vehículo con técnicas especializadas para conservar su estética y valor, incluyendo tratamiento cerámico de alta duración.",
     summary:
-      "Limpieza profunda, correccion visual y coating para clientes en todo el pais, siempre con agenda previa.",
+      "Limpieza profunda, corrección visual y coating para clientes en todo el país, siempre con agenda previa.",
     details: [
       {
         id: "detailing-interior",
         title: "Limpieza Interior",
         description:
-          "Limpieza tecnica de tapizados, plasticos y superficies para recuperar confort e higiene.",
+          "Limpieza técnica de tapizados, plásticos y superficies para recuperar confort e higiene.",
       },
       {
         id: "detailing-exterior",
         title: "Limpieza Exterior",
         description:
-          "Lavado premium, descontaminado y proteccion de pintura con terminacion uniforme.",
+          "Lavado premium, descontaminado y protección de pintura con terminación uniforme.",
       },
       {
         id: "detailing-ceramico",
-        title: "Tratamiento Nanoceramico",
+        title: "Tratamiento Nanocerámico",
         description:
           "Se fusiona con la pintura. Repele agua, UV y suciedad por años — sin retoques, sin perder el brillo.",
       },
       {
         id: "detailing-acrilico",
-        title: "Tratamiento Acrilico",
+        title: "Tratamiento Acrílico",
         description:
           "Sella y protege la superficie con brillo visible desde el primer día. Mantenimiento más fácil, resultado inmediato.",
       },
@@ -93,30 +93,30 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     href: "/home-business",
     heroTitle: "Home, Office, Business y Carteleria para hogares y espacios comerciales",
     heroDescription:
-      "Laminas para vidrios, polarizado arquitectonico y vinilos decorativos para hogares y oficinas.\nCarteleria interna y exterior para reforzar la comunicacion visual en espacios comerciales.",
+      "Láminas para vidrios, polarizado arquitectónico y vinilos decorativos para hogares y oficinas.\nCartelería interna y exterior para reforzar la comunicación visual en espacios comerciales.",
     summary:
-      "Soluciones en laminas para vidrios, polarizado arquitectonico, vinilos y carteleria para comunicar tu marca en todo el pais, siempre con agenda previa.",
+      "Soluciones en láminas para vidrios, polarizado arquitectónico, vinilos y cartelería para comunicar tu marca en todo el país, siempre con agenda previa.",
     details: [
       {
         id: "arquitectura-laminas",
         title: "Home",
         description: [
-          "Laminas de control solar.",
-          "Laminas de seguridad.",
+          "Láminas de control solar.",
+          "Láminas de seguridad.",
           "Control visual.",
-          "Laminas decorativas.",
-          "Vinilos decorativos y de proteccion.",
+          "Láminas decorativas.",
+          "Vinilos decorativos y de protección.",
         ],
       },
       {
         id: "arquitectura-carteleria",
         title: "Office + carteleria interna",
         description: [
-          "Laminas de control solar.",
-          "Laminas de seguridad.",
+          "Láminas de control solar.",
+          "Láminas de seguridad.",
           "Control visual.",
-          "Laminas decorativas.",
-          "Vinilos decorativos y de proteccion.",
+          "Láminas decorativas.",
+          "Vinilos decorativos y de protección.",
           "Carteleria interna.",
         ],
       },

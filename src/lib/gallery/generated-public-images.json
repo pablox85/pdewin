@@ -1,422 +1,407 @@
 [
   {
-    "src": "/images/BLANCO-FONDO-TRANSPARENTE.png",
-    "alt": "BLANCO FONDO TRANSPARENTE",
-    "folder": "General"
-  },
-  {
     "src": "/images/carteleria/car001.jpeg",
-    "alt": "Trabajo de carteleria y vinilo",
+    "alt": "Aplicación de vinilo publicitario en superficie comercial - foto 1",
     "folder": "carteleria"
   },
   {
     "src": "/images/carteleria/car002.jpeg",
-    "alt": "Trabajo de carteleria y vinilo",
+    "alt": "Proyecto de cartelería para reforzar imagen de marca - foto 2",
     "folder": "carteleria"
   },
   {
     "src": "/images/carteleria/car003.jpeg",
-    "alt": "Trabajo de carteleria y vinilo",
+    "alt": "Instalación de gráfica adhesiva y vinilo decorativo - foto 3",
     "folder": "carteleria"
   },
   {
     "src": "/images/carteleria/car004.jpeg",
-    "alt": "Trabajo de carteleria y vinilo",
+    "alt": "Trabajo de cartelería y vinilo para comunicación visual comercial - foto 4",
     "folder": "carteleria"
   },
   {
     "src": "/images/carteleria/car005.jpeg",
-    "alt": "Trabajo de carteleria y vinilo",
+    "alt": "Aplicación de vinilo publicitario en superficie comercial - foto 5",
     "folder": "carteleria"
   },
   {
     "src": "/images/carteleria/car006.jpeg",
-    "alt": "Trabajo de carteleria y vinilo",
+    "alt": "Proyecto de cartelería para reforzar imagen de marca - foto 6",
     "folder": "carteleria"
   },
   {
     "src": "/images/carteleria/car007.jpeg",
-    "alt": "Trabajo de carteleria y vinilo",
+    "alt": "Instalación de gráfica adhesiva y vinilo decorativo - foto 7",
     "folder": "carteleria"
   },
   {
     "src": "/images/carteleria/car008.jpeg",
-    "alt": "Trabajo de carteleria y vinilo",
+    "alt": "Trabajo de cartelería y vinilo para comunicación visual comercial - foto 8",
     "folder": "carteleria"
   },
   {
     "src": "/images/carteleria/car009.jpeg",
-    "alt": "Trabajo de carteleria y vinilo",
+    "alt": "Aplicación de vinilo publicitario en superficie comercial - foto 9",
     "folder": "carteleria"
   },
   {
     "src": "/images/detailing/det001.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Tratamiento de protección y brillo en pintura de vehículo - foto 1",
     "folder": "detailing"
   },
   {
     "src": "/images/detailing/det002.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Detalle de limpieza técnica y terminación exterior del auto - foto 2",
     "folder": "detailing"
   },
   {
     "src": "/images/detailing/det003.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Resultado de car detailing profesional con acabado cuidado - foto 3",
     "folder": "detailing"
   },
   {
     "src": "/images/detailing/det004.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Proceso de car detailing para recuperación estética vehicular - foto 4",
     "folder": "detailing"
   },
   {
     "src": "/images/detailing/det005.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Tratamiento de protección y brillo en pintura de vehículo - foto 5",
     "folder": "detailing"
   },
   {
     "src": "/images/detailing/det006.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Detalle de limpieza técnica y terminación exterior del auto - foto 6",
     "folder": "detailing"
   },
   {
     "src": "/images/detailing/det007.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Resultado de car detailing profesional con acabado cuidado - foto 7",
     "folder": "detailing"
   },
   {
     "src": "/images/detailing/det008.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Proceso de car detailing para recuperación estética vehicular - foto 8",
     "folder": "detailing"
   },
   {
     "src": "/images/detailing/det009.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Tratamiento de protección y brillo en pintura de vehículo - foto 9",
     "folder": "detailing"
   },
   {
     "src": "/images/detailing/det010.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Detalle de limpieza técnica y terminación exterior del auto - foto 10",
     "folder": "detailing"
   },
   {
     "src": "/images/detailing/det011.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Resultado de car detailing profesional con acabado cuidado - foto 11",
     "folder": "detailing"
   },
   {
     "src": "/images/detailing/det012.jpeg",
-    "alt": "Trabajo de car detailing",
+    "alt": "Proceso de car detailing para recuperación estética vehicular - foto 12",
     "folder": "detailing"
   },
   {
-    "src": "/images/FONDO-NEGRO.png",
-    "alt": "FONDO NEGRO",
-    "folder": "General"
-  },
-  {
     "src": "/images/home/home001.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Láminas de control solar para mejorar confort en interiores - foto 1",
     "folder": "home"
   },
   {
     "src": "/images/home/home002.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Solución de privacidad y protección solar para oficina o comercio - foto 2",
     "folder": "home"
   },
   {
     "src": "/images/home/home003.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Aplicación de láminas decorativas y funcionales para espacios interiores - foto 3",
     "folder": "home"
   },
   {
-    "src": "/images/NEGRO-FONDO-TRANSPARENTE.png",
-    "alt": "NEGRO FONDO TRANSPARENTE",
-    "folder": "General"
-  },
-  {
     "src": "/images/office/office001.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Láminas de control solar para mejorar confort en interiores - foto 1",
     "folder": "office"
   },
   {
     "src": "/images/office/office002.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Solución de privacidad y protección solar para oficina o comercio - foto 2",
     "folder": "office"
   },
   {
     "src": "/images/office/office003.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Aplicación de láminas decorativas y funcionales para espacios interiores - foto 3",
     "folder": "office"
   },
   {
     "src": "/images/office/office004.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Instalación de láminas para vidrios en home, office y espacios comerciales - foto 4",
     "folder": "office"
   },
   {
     "src": "/images/office/sorri001.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Láminas de control solar para mejorar confort en interiores - foto 1",
     "folder": "office"
   },
   {
     "src": "/images/office/sorri002.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Solución de privacidad y protección solar para oficina o comercio - foto 2",
     "folder": "office"
   },
   {
     "src": "/images/office/sorri003.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Aplicación de láminas decorativas y funcionales para espacios interiores - foto 3",
     "folder": "office"
   },
   {
     "src": "/images/office/sorri004.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Instalación de láminas para vidrios en home, office y espacios comerciales - foto 4",
     "folder": "office"
   },
   {
     "src": "/images/office/sorri005.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Láminas de control solar para mejorar confort en interiores - foto 5",
     "folder": "office"
   },
   {
     "src": "/images/office/sorri006.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Solución de privacidad y protección solar para oficina o comercio - foto 6",
     "folder": "office"
   },
   {
     "src": "/images/office/sorri007.jpeg",
-    "alt": "Instalacion de laminas para home y office",
+    "alt": "Aplicación de láminas decorativas y funcionales para espacios interiores - foto 7",
     "folder": "office"
   },
   {
-    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.42.jpeg",
-    "alt": "WhatsApp Image 2026 04 24 at 09.37.42",
-    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+    "src": "/images/office/sorrifacil/sorrifacil001.jpeg",
+    "alt": "Láminas para vidrios en oficina comercial Sorrifacil",
+    "folder": "office/sorrifacil"
   },
   {
-    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.43.jpeg",
-    "alt": "WhatsApp Image 2026 04 24 at 09.37.43",
-    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+    "src": "/images/office/sorrifacil/sorrifacil002.jpeg",
+    "alt": "Aplicación de láminas de privacidad en consultorio Sorrifacil",
+    "folder": "office/sorrifacil"
   },
   {
-    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.43%20(1).jpeg",
-    "alt": "WhatsApp Image 2026 04 24 at 09.37.43 (1)",
-    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+    "src": "/images/office/sorrifacil/sorrifacil003.jpeg",
+    "alt": "Solución de control visual para oficina comercial Sorrifacil",
+    "folder": "office/sorrifacil"
   },
   {
-    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.43%20(2).jpeg",
-    "alt": "WhatsApp Image 2026 04 24 at 09.37.43 (2)",
-    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+    "src": "/images/office/sorrifacil/sorrifacil004.jpeg",
+    "alt": "Instalación de láminas decorativas en espacio de atención Sorrifacil",
+    "folder": "office/sorrifacil"
   },
   {
-    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.43%20(3).jpeg",
-    "alt": "WhatsApp Image 2026 04 24 at 09.37.43 (3)",
-    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+    "src": "/images/office/sorrifacil/sorrifacil005.jpeg",
+    "alt": "Terminación de láminas para vidrios interiores en Sorrifacil",
+    "folder": "office/sorrifacil"
   },
   {
-    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.43%20(4).jpeg",
-    "alt": "WhatsApp Image 2026 04 24 at 09.37.43 (4)",
-    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+    "src": "/images/office/sorrifacil/sorrifacil006.jpeg",
+    "alt": "Proyecto de láminas para oficina y recepción comercial Sorrifacil",
+    "folder": "office/sorrifacil"
   },
   {
-    "src": "/images/office/sorrifacil/WhatsApp%20Unknown%202026-04-24%20at%2009.37.53/WhatsApp%20Image%202026-04-24%20at%2009.37.44.jpeg",
-    "alt": "WhatsApp Image 2026 04 24 at 09.37.44",
-    "folder": "office/sorrifacil/WhatsApp Unknown 2026-04-24 at 09.37.53"
+    "src": "/images/office/sorrifacil/sorrifacil007.jpeg",
+    "alt": "Resultado final de láminas instaladas en oficina Sorrifacil",
+    "folder": "office/sorrifacil"
   },
   {
     "src": "/images/pesados/pesados001.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Instalación de láminas en vehículo de gran porte - foto 1",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados002.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Polarizado para cabina de maquinaria o unidad de trabajo - foto 2",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados003.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Láminas de seguridad y control solar en vehículo pesado - foto 3",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados004.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Laminado de vidrios en maquinaria pesada para protección solar - foto 4",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados005.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Instalación de láminas en vehículo de gran porte - foto 5",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados006.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Polarizado para cabina de maquinaria o unidad de trabajo - foto 6",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados007.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Láminas de seguridad y control solar en vehículo pesado - foto 7",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados008.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Laminado de vidrios en maquinaria pesada para protección solar - foto 8",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados009.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Instalación de láminas en vehículo de gran porte - foto 9",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados010.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Polarizado para cabina de maquinaria o unidad de trabajo - foto 10",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados011.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Láminas de seguridad y control solar en vehículo pesado - foto 11",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados012.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Laminado de vidrios en maquinaria pesada para protección solar - foto 12",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados013.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Instalación de láminas en vehículo de gran porte - foto 13",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados014.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Polarizado para cabina de maquinaria o unidad de trabajo - foto 14",
     "folder": "pesados"
   },
   {
     "src": "/images/pesados/pesados015.jpeg",
-    "alt": "Laminado en vehiculo de gran porte",
+    "alt": "Láminas de seguridad y control solar en vehículo pesado - foto 15",
     "folder": "pesados"
   },
   {
     "src": "/images/polarizado/pola001.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Instalación de láminas de seguridad para auto en Ciudad de la Costa - foto 1",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola002.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Terminación de polarizado vehicular realizada por Polarizados del Este - foto 2",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola003.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado para mejorar privacidad y confort térmico del vehículo - foto 3",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola004.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado automotriz con láminas de control solar en vehículo particular - foto 4",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola005.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Instalación de láminas de seguridad para auto en Ciudad de la Costa - foto 5",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola006.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Terminación de polarizado vehicular realizada por Polarizados del Este - foto 6",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola007.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado para mejorar privacidad y confort térmico del vehículo - foto 7",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola008.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado automotriz con láminas de control solar en vehículo particular - foto 8",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola009.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Instalación de láminas de seguridad para auto en Ciudad de la Costa - foto 9",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola010.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Terminación de polarizado vehicular realizada por Polarizados del Este - foto 10",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola011.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado para mejorar privacidad y confort térmico del vehículo - foto 11",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola012.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado automotriz con láminas de control solar en vehículo particular - foto 12",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola013.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Instalación de láminas de seguridad para auto en Ciudad de la Costa - foto 13",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola014.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Terminación de polarizado vehicular realizada por Polarizados del Este - foto 14",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola015.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado para mejorar privacidad y confort térmico del vehículo - foto 15",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola016.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado automotriz con láminas de control solar en vehículo particular - foto 16",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola017.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Instalación de láminas de seguridad para auto en Ciudad de la Costa - foto 17",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola018.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Terminación de polarizado vehicular realizada por Polarizados del Este - foto 18",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola019.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado para mejorar privacidad y confort térmico del vehículo - foto 19",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola020.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado automotriz con láminas de control solar en vehículo particular - foto 20",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola021.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Instalación de láminas de seguridad para auto en Ciudad de la Costa - foto 21",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola022.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Terminación de polarizado vehicular realizada por Polarizados del Este - foto 22",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola023.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado para mejorar privacidad y confort térmico del vehículo - foto 23",
     "folder": "polarizado"
   },
   {
     "src": "/images/polarizado/pola024.jpeg",
-    "alt": "Trabajo de polarizado vehicular",
+    "alt": "Polarizado automotriz con láminas de control solar en vehículo particular - foto 24",
     "folder": "polarizado"
   }
 ]

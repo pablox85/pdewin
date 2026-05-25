@@ -1,68 +1,96 @@
-AUDITORIA SEO - PAGINA /galeria
-Fecha: 2026-05-06
+AUDITORIA SEO - TEXTOS ALTERNATIVOS DE IMAGENES
+Fecha: 2026-05-18
+Proyecto: Polarizados del Este
 
-Puntaje general: 5.2/10
+**Auditoría SEO Actual**
 
-Resumen ejecutivo
-- La base SEO de metadata, canonical y estructura H1/H2 esta bien, pero hay dos brechas fuertes: falta JSON-LD especifico para la pagina y falta CTA de conversion visible.
-- Se detecta ademas ausencia de `og:image` dedicado para compartir en redes.
-- El mayor impacto para subir ranking y conversion esta en schema + CTA + optimizacion semantica de imagenes.
+Puntaje general: **8.1/10**
 
-Hallazgos criticos
-1) JSON-LD ausente en galeria.
-	- Evidencia: src/app/(marketing)/galeria/page.tsx
-	- Impacto: menor contexto semantico para buscadores y menos opciones de rich results.
+El proyecto está bastante bien encaminado: tiene estructura Next correcta, metadata por página, sitemap, robots, schema local, contenido local, galería con JSON-LD, breadcrumbs, CTAs y alt text generado. Lo que queda ya no es “base SEO”, sino optimización fina.
 
-2) Sin CTA explicita de conversion dentro de galeria.
-	- Evidencia: src/app/(marketing)/galeria/page.tsx
-	- Impacto: friccion de conversion; el usuario llega a la galeria pero no tiene un siguiente paso fuerte.
+**Puntajes Por Área**
+- SEO técnico: **8.5/10**
+- SEO local: **8.3/10**
+- Metadata / titles / descriptions: **7.2/10**
+- Schema / JSON-LD: **8.4/10**
+- Contenido visible: **8/10**
+- Imágenes / alt text: **7.4/10**
+- Galería SEO: **8.2/10**
+- Conversión / CTAs: **8.5/10**
+- Accesibilidad relacionada a SEO: **8/10**
 
-3) `openGraph.images` no definido para galeria.
-	- Evidencia: src/app/(marketing)/galeria/page.tsx
-	- Impacto: previews sociales debiles y menor CTR al compartir URL.
 
-Hallazgos altos
-1) Alt text de imagenes demasiado generico.
-	- Evidencia: src/lib/gallery/getPublicImages.ts
 
-2) Modal sin `aria-labelledby` y `aria-describedby`.
-	- Evidencia: src/app/(marketing)/galeria/_components/GalleryStackWithModal.tsx
+2. **Textos con tildes normalizados** ##terminado##
+   Se normalizaron textos visibles, metadata y alt text principales:
+   `láminas`, `vehículos`, `instalación`, `cerámico`, `galería`, entre otros.
 
-3) Falta breadcrumb HTML y BreadcrumbList.
-	- Evidencia: src/app/(marketing)/galeria/page.tsx
+3. **Alt text mejorado** ##terminado##
+   Se reemplazaron los textos repetitivos por variantes según categoría y contexto conocido.
+   Ejemplos actuales:
+   - `Instalación de láminas de seguridad para auto en Ciudad de la Costa - foto 1`
+   - `Tratamiento de protección y brillo en pintura de vehículo - foto 1`
+   - `Láminas para vidrios en oficina comercial Sorrifacil`
+   - `Aplicación de vinilo publicitario en superficie comercial - foto 1`
 
-Hallazgos medios
-1) Falta descripcion corta por cada categoria debajo del H2.
-2) Prioridad de sitemap para /galeria mejorable (0.8 -> 0.85).
-3) Falta tracking de evento especifico de conversion post-galeria.
+4. **Imágenes no comerciales excluidas del manifest** ##terminado##
+   Se excluyeron los logos/assets de marca del manifest SEO:
+   - `/images/BLANCO-FONDO-TRANSPARENTE.png`
+   - `/images/FONDO-NEGRO.png`
+   - `/images/NEGRO-FONDO-TRANSPARENTE.png`
 
-Fortalezas detectadas
-1) Metadata base bien armada (title, description, canonical, OG/Twitter en estructura general).
-2) Jerarquia semantica limpia (H1 unico + H2 por categoria).
-3) Implementacion de modal con soporte de teclado y bloqueo de scroll.
-4) Rutas de imagenes publicas bien resueltas y encodeadas.
+   El manifest de galería quedó en 81 imágenes comerciales.
 
-Plan de accion priorizado
-Alta (semana 1)
-1) Agregar JSON-LD `ImageGallery` + `BreadcrumbList` en galeria.
-2) Agregar CTA visible de presupuesto/contacto dentro de galeria.
-3) Definir `openGraph.images` con asset social de 1200x630 para /galeria.
+5. **Rutas con imágenes de WhatsApp normalizadas** ##terminado##
+   Las imágenes provenientes de WhatsApp fueron renombradas con rutas limpias:
+   - `/images/office/sorrifacil/sorrifacil001.jpeg`
+   - `/images/office/sorrifacil/sorrifacil002.jpeg`
+   - `/images/office/sorrifacil/sorrifacil003.jpeg`
+   - `/images/office/sorrifacil/sorrifacil004.jpeg`
+   - `/images/office/sorrifacil/sorrifacil005.jpeg`
+   - `/images/office/sorrifacil/sorrifacil006.jpeg`
+   - `/images/office/sorrifacil/sorrifacil007.jpeg`
 
-Media (semana 1-2)
-1) Mejorar `toAltText()` para producir textos especificos por categoria/contexto.
-2) Agregar `aria-labelledby` y `aria-describedby` al dialog del modal.
-3) Agregar copy descriptivo corto debajo de cada H2.
+   También mantienen textos alternativos descriptivos, por ejemplo:
+   `Láminas para vidrios en oficina comercial Sorrifacil`.
 
-Baja (semana 2-3)
-1) Ajustar prioridad en sitemap para /galeria.
-2) Agregar evento analytics de click en CTA de galeria.
-3) Evaluar FAQ schema si se incorpora bloque de preguntas frecuentes.
+6. **Schema LocalBusiness puede enriquecerse** ##terminado##
+   Ya está correcto, pero podría mejorar con:
+   - `image`
+   - `logo`
+   - `priceRange`
+   - `openingHoursSpecification`
+   - `sameAs` si hay perfiles oficiales confirmados
+   - `hasOfferCatalog` para servicios principales
 
-Archivos revisados
-- src/app/(marketing)/galeria/page.tsx
-- src/app/(marketing)/galeria/_components/GalleryStackWithModal.tsx
-- src/lib/gallery/getPublicImages.ts
-- src/lib/seo/metadata.ts
-- src/app/layout.tsx
-- src/app/sitemap.ts
-- src/app/robots.ts
+7. **Home podría tener FAQ local**
+   Ya hay FAQ schema en páginas internas. La home podría sumar 2-3 preguntas frecuentes locales:
+   - zonas de cobertura,
+   - tipos de láminas,
+   - cuándo pedir presupuesto.
+
+8. **Galería: schema ImageGallery pesado**
+   Si la cantidad de imágenes crece mucho, el JSON-LD puede volverse pesado. Por ahora está bien, pero conviene limitarlo a imágenes visibles/prioritarias si pasa de 100-150 fotos.
+
+9. **Schema Service en páginas internas** ##terminado##
+   Las páginas internas podrían tener schema más específico:
+   - `Service`
+   - `FAQPage`
+   - `BreadcrumbList`
+   
+   Se agregó schema `Service` en:
+   - `/vehiculos`
+   - `/detailing`
+   - `/home-business`
+
+10. **Medición de conversiones**
+   Ya hay tracking de CTAs. Próximo paso: revisar que GA esté configurado en producción y medir:
+   - click WhatsApp,
+   - click presupuesto,
+   - envío formulario,
+   - navegación desde galería.
+
+**Prioridad Recomendada** ##terminada##
+1. Revisar medición de conversiones en producción.
+
+Estado general: **bueno y competitivo para SEO local**, con margen claro de mejora en metadata fina, calidad de alt text y enriquecimiento semántico.

@@ -10,7 +10,7 @@ function resolveSiteUrl() {
 // Config centralizada para datos de marca, SEO y contacto.
 export const siteConfig = {
   name: "Polarizados del Este",
-  description: "Soluciones profesionales en Vehiculos, Car detailing, Home, Office & Business.",
+  description: "Soluciones profesionales en vehículos, car detailing, home, office & business.",
   domain: resolveSiteUrl(),
   locale: "es_UY",
   contactEmail: "polarizadosdeleste@gmail.com",

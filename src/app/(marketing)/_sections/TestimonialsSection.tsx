@@ -1,7 +1,7 @@
 import { Reveal, SectionTitle, SectionWrapper } from "@/components/shared";
 import { testimonials } from "@/features/testimonials/data/testimonials";
 
-// Bloque social proof para mejorar confianza y conversion.
+// Bloque social proof para mejorar confianza y conversión.
 export function TestimonialsSection() {
   return (
     <SectionWrapper>

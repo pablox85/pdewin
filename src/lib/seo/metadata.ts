@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 
-// Helper para mantener metadata SEO consistente por pagina.
+// Helper para mantener metadata SEO consistente por página.
 export function buildMetadata(overrides?: Partial<Metadata>): Metadata {
   const isVercelPreview = process.env.VERCEL_ENV === "preview";
   const defaultSocialImage = "/preview-home.png";
 
-  return {
+  const baseMetadata: Metadata = {
     metadataBase: new URL(siteConfig.domain),
     title: {
       default: siteConfig.name,
@@ -48,6 +48,22 @@ export function buildMetadata(overrides?: Partial<Metadata>): Metadata {
           },
         }
       : undefined,
+  };
+
+  return {
+    ...baseMetadata,
     ...overrides,
+    alternates: {
+      ...baseMetadata.alternates,
+      ...overrides?.alternates,
+    }, // Mantiene canonical base y permite canonical específico por página.
+    openGraph: {
+      ...baseMetadata.openGraph,
+      ...overrides?.openGraph,
+    }, // Conserva type, locale, siteName e imagen global al sumar datos por página.
+    twitter: {
+      ...baseMetadata.twitter,
+      ...overrides?.twitter,
+    }, // Conserva card e imagen global salvo que la página los reemplace.
   };
 }

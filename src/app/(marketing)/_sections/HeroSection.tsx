@@ -21,12 +21,15 @@ export function HeroSection() {
               Polarizados del Este
             </p>
             <h1 className="text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-              Soluciones premium para vehiculos, Car Detailing, Home & Office.
+              Polarizados automotrices en Ciudad de la Costa y Canelones.
             </h1>
-            <p className="mt-5 max-w-2xl text-lg text-slate-700 dark:text-slate-300">
-              Elevamos la imagen y el valor de cada proyecto con procesos claros, ejecucion precisa y
-              resultados que se notan al instante.
-            </p>
+            <div className="mt-5 max-w-2xl space-y-2 text-lg text-slate-700 dark:text-slate-300">
+              <p>
+                Elevamos la imagen y el valor de cada proyecto con procesos claros, ejecución precisa y
+                resultados que se notan al instante.
+              </p>
+              <p>Láminas de seguridad, control solar y tratamiento cerámico.</p>
+            </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="#soluciones" //cambiado
@@ -48,8 +51,8 @@ export function HeroSection() {
           <div className="lift-card rounded-2xl border border-slate-300 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900">
             <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Por que elegirnos</h2>
             <ul className="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-300">
-              <li>Diagnostico inicial para definir la mejor solucion para tu caso.</li>
-              <li>Atencion personalizada para clientes particulares, empresas y flotas.</li>
+              <li>Diagnóstico inicial para definir la mejor solución para tu caso.</li>
+              <li>Atención personalizada para clientes particulares, empresas y flotas.</li>
               <li>Estandares de calidad consistentes en cada etapa del servicio.</li>
             </ul>
           </div>

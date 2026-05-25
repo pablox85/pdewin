@@ -1,6 +1,6 @@
 import type { NavMenu } from "../types/navigation";
 
-// Navegacion principal por rutas con subitems anclados para cada pagina.
+// Navegación principal por rutas con subitems anclados para cada página.
 export const NAV_MENUS: NavMenu[] = [
   {
     id: "inicio",
@@ -10,14 +10,14 @@ export const NAV_MENUS: NavMenu[] = [
   },
   {
     id: "vehiculos",
-    label: "Vehiculos",
+    label: "Vehículos",
     href: "/vehiculos",
     items: [
       { id: "vehiculos-autos", label: "Autos", href: "/vehiculos#vehiculos-autos" },
       { id: "vehiculos-utilitarios", label: "Utilitarios", href: "/vehiculos#vehiculos-utilitarios" },
       {
         id: "vehiculos-gran-porte",
-        label: "Vehiculos de gran porte",
+        label: "Vehículos de gran porte",
         href: "/vehiculos#vehiculos-gran-porte",
       },
     ],
@@ -29,8 +29,8 @@ export const NAV_MENUS: NavMenu[] = [
     items: [
       { id: "detailing-interior", label: "Interior", href: "/detailing#detailing-interior" },
       { id: "detailing-exterior", label: "Exterior", href: "/detailing#detailing-exterior" },
-      { id: "detailing-ceramico", label: "Ceramico", href: "/detailing#detailing-ceramico" },
-      { id: "detailing-acrilico", label: "Acrilico", href: "/detailing#detailing-acrilico" },
+      { id: "detailing-ceramico", label: "Cerámico", href: "/detailing#detailing-ceramico" },
+      { id: "detailing-acrilico", label: "Acrílico", href: "/detailing#detailing-acrilico" },
     ],
   },
   {
@@ -57,7 +57,7 @@ export const NAV_MENUS: NavMenu[] = [
   },
   {
     id: "galeria",
-    label: "Galeria",
+    label: "Galería",
     href: "/galeria",
     items: [],
   },

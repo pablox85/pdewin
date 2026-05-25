@@ -44,6 +44,9 @@ export function GalleryStackWithModal({
   );
 
   const activeImage = activeGroup && activeModal ? activeGroup.images[activeModal.index] : null;
+  const activeModalBaseId = activeGroup ? `gallery-modal-${toCategoryAnchor(activeGroup.title)}` : "gallery-modal";
+  const activeModalTitleId = `${activeModalBaseId}-title`;
+  const activeModalDescriptionId = `${activeModalBaseId}-description`;
 
   useEffect(() => {
     if (!activeModal || !activeGroup) {
@@ -132,6 +135,8 @@ export function GalleryStackWithModal({
               className="fixed inset-0 z-[120] flex items-center justify-center bg-black/85 p-4"
               role="dialog"
               aria-modal="true"
+              aria-labelledby={activeModalTitleId}
+              aria-describedby={activeModalDescriptionId}
               onClick={() => setActiveModal(null)}
             >
               <div
@@ -158,8 +163,10 @@ export function GalleryStackWithModal({
                 </div>
 
                 <div className="mt-3 flex items-center justify-between gap-2 text-white">
-                  <p className="truncate text-sm font-medium">{activeGroup.title}</p>
-                  <p className="text-xs text-white/80">
+                  <h2 id={activeModalTitleId} className="truncate text-sm font-medium">
+                    {activeGroup.title}
+                  </h2>
+                  <p id={activeModalDescriptionId} className="text-xs text-white/80">
                     Foto {activeModal.index + 1} de {activeGroup.images.length}
                   </p>
                 </div>

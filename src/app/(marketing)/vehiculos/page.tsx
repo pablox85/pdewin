@@ -6,33 +6,57 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { AreaDetailPage } from "../_components/AreaDetailPage";
 
 const area = requireBusinessAreaById("vehiculos");
+const serviceAreaServed = ["Ciudad de la Costa", "Canelones", "Montevideo", "Maldonado"];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Polarizados para vehiculos en Ciudad de la Costa, Montevideo y Canelones",
+  title: "Polarizados para vehículos en Ciudad de la Costa", // La marca se agrega desde el template global en buildMetadata().
   description:
-    "Instalacion de laminas y polarizados para autos, utilitarios y flotas. Atendemos Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
+    "Instalación de láminas y polarizados para autos, utilitarios y flotas. Atendemos Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
   alternates: { canonical: "/vehiculos" },
   openGraph: {
     url: `${siteConfig.domain}/vehiculos`,
-    title: `Polarizados para vehiculos | ${siteConfig.name}`,
+    title: `Polarizados para vehículos | ${siteConfig.name}`,
     description:
-      "Laminado de vidrios vehiculares con instalacion profesional en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
+      "Laminado de vidrios vehiculares con instalación profesional en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
   },
   twitter: {
-    title: `Polarizados para vehiculos | ${siteConfig.name}`,
+    title: `Polarizados para vehículos | ${siteConfig.name}`,
     description:
-      "Laminado de vidrios vehiculares con instalacion profesional en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
+      "Laminado de vidrios vehiculares con instalación profesional en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
   },
 });
 
 export default function VehiculosPage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Polarizados para vehículos",
+    serviceType: "Polarizados automotrices",
+    description:
+      "Instalación de láminas y polarizados para autos, utilitarios y flotas en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
+    provider: {
+      "@type": "LocalBusiness",
+      name: siteConfig.name,
+      url: siteConfig.domain,
+      telephone: siteConfig.contactPhone,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Ciudad de la Costa",
+        addressRegion: "Canelones",
+        addressCountry: "UY",
+      },
+    },
+    areaServed: serviceAreaServed.map((name) => ({ "@type": "Place", name })),
+    url: `${siteConfig.domain}/vehiculos`,
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
       {
         "@type": "Question",
-        name: "Que zonas cubren para polarizados?",
+        name: "Qué zonas cubren para polarizados?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Trabajamos en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
@@ -40,10 +64,10 @@ export default function VehiculosPage() {
       },
       {
         "@type": "Question",
-        name: "Hacen reparacion o cambio de vidrios?",
+        name: "Hacen reparación o cambio de vidrios?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. Nos especializamos en instalacion de laminas y polarizados para vehiculos.",
+          text: "No. Nos especializamos en instalación de láminas y polarizados para vehículos.",
         },
       },
     ],
@@ -51,6 +75,7 @@ export default function VehiculosPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       <main>

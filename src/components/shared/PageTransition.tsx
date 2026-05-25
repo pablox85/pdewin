@@ -8,7 +8,7 @@ interface PageTransitionProps {
   children: ReactNode;
 }
 
-// Transicion global de rutas para suavizar el cambio entre paginas.
+// Transición global de rutas para suavizar el cambio entre páginas.
 export function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname();
   const prefersReducedMotion = useReducedMotion();
