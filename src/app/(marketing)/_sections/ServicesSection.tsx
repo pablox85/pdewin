@@ -23,7 +23,7 @@ type AreaCarouselImage = {
 };
 
 // Control global del autoplay del carrusel: usar 0 para dejarlo fijo.
-const AREA_CAROUSEL_AUTOPLAY_MS = 0;
+const AREA_CAROUSEL_AUTOPLAY_MS = 1500;
 
 const areaCarouselImages: Record<string, AreaCarouselImage[]> = {
   vehiculos: [

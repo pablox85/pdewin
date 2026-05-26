@@ -156,24 +156,28 @@ export function PhotoCarousel({
         tabIndex={onImageClick ? 0 : undefined}
         aria-label={onImageClick ? "Abrir imagen en grande" : undefined}
       >
-        <Image
-          key={`${images[activeIndex].src}-${activeIndex}`}
-          src={images[activeIndex].src}
-          alt={images[activeIndex].alt}
-          fill
-          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-          className="carousel-image object-cover"
-          style={
-            {
-              "--image-position-mobile": images[activeIndex].positionMobile ?? images[activeIndex].position ?? "50% 50%",
-              "--image-position-desktop":
-                images[activeIndex].positionDesktop ??
-                images[activeIndex].position ??
-                images[activeIndex].positionMobile ??
-                "50% 50%",
-            } as CSSProperties
-          }
-        />
+        {images.map((image, index) => (
+          <div
+            key={`${image.src}-${index}`}
+            className={`absolute inset-0 transition-opacity duration-500 ${
+              index === activeIndex ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              className="carousel-image object-cover"
+              style={
+                {
+                  "--image-position-mobile": image.positionMobile ?? image.position ?? "50% 50%",
+                  "--image-position-desktop": image.positionDesktop ?? image.position ?? image.positionMobile ?? "50% 50%",
+                } as CSSProperties
+              }
+            />
+          </div>
+        ))}
       </div>
 
       {showArrows && total > 1 ? (
