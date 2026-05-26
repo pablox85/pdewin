@@ -56,7 +56,7 @@ export default function VehiculosPage() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Qué zonas cubren para polarizados?",
+        name: "¿Qué zonas cubren para polarizados?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Trabajamos en Ciudad de la Costa, Canelones, Montevideo y Maldonado.",
@@ -64,7 +64,7 @@ export default function VehiculosPage() {
       },
       {
         "@type": "Question",
-        name: "Hacen reparación o cambio de vidrios?",
+        name: "¿Hacen reparación o cambio de vidrios?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "No. Nos especializamos en instalación de láminas y polarizados para vehículos.",

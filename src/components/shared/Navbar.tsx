@@ -9,7 +9,7 @@ import { mobileItemsVariants, mobilePanelVariants } from "../../lib/animations/n
 import { RouteButton } from "./RouteButton";
 import { ThemeToggle } from "./ThemeToggle";
 
-// Colores de hover/activo por seccion (desktop y movil).
+// Colores de hover/activo por sección (desktop y móvil).
 const sectionHoverStyles: Record<
   string,
   {
@@ -36,13 +36,13 @@ const sectionHoverStyles: Record<
 };
 
 export function Navbar() {
-  // Estado del menu hamburguesa en movil.
+  // Estado del menú hamburguesa en móvil.
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
-    // Cierra menu movil al hacer click fuera de la barra.
+    // Cierra menú móvil al hacer click fuera de la barra.
     const onClickOutside = (event: MouseEvent) => {
       if (!navRef.current?.contains(event.target as Node)) {
         setMobileMenuOpen(false);
@@ -56,7 +56,7 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    // Al volver a desktop cerramos estado movil.
+    // Al volver a desktop cerramos estado móvil.
     const mediaQuery = window.matchMedia("(min-width: 768px)");
     const onViewportChange = (event: MediaQueryListEvent) => {
       if (event.matches) {
@@ -69,7 +69,7 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    // Evita scroll del fondo mientras el menu movil esta abierto.
+    // Evita scroll del fondo mientras el menú móvil está abierto.
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
@@ -80,7 +80,7 @@ export function Navbar() {
     <nav
       className="sticky top-0 z-50 w-full border-b border-slate-300/70 bg-slate-100/95 backdrop-blur dark:border-slate-700 dark:bg-slate-950/95"
       ref={navRef}
-      aria-label="Navegacion principal"
+      aria-label="Navegación principal"
     >
       <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-5 py-3.5 max-[360px]:px-3 max-[360px]:py-2.5">
         <RouteButton href="/" className="inline-flex items-center" aria-label="Ir al inicio">
@@ -142,7 +142,7 @@ export function Navbar() {
             className="inline-flex min-h-[38px] min-w-[42px] items-center justify-center rounded-lg border border-slate-300 bg-white px-2.5 py-2 outline-none ring-offset-2 transition hover:bg-slate-100 focus-visible:ring-2 focus-visible:ring-brand-700 dark:border-slate-600 dark:bg-slate-900 dark:hover:bg-slate-800 dark:focus-visible:ring-brand-100"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation-panel"
-            aria-label="Abrir menu principal"
+            aria-label="Abrir menú principal"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
           >
             <span className="inline-flex flex-col gap-1" aria-hidden="true">
@@ -159,7 +159,7 @@ export function Navbar() {
           <>
             <motion.button
               type="button"
-              aria-label="Cerrar menu"
+              aria-label="Cerrar menú"
               className="fixed inset-0 z-40 bg-slate-950/45 md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

@@ -28,6 +28,17 @@ const missingMailConfig = [
   !CONTACT_EMAIL_TO ? "CONTACT_EMAIL_TO" : null,
 ].filter((value): value is string => Boolean(value));
 
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMIT_MAX_REQUESTS = 5;
+
+type RateLimitEntry = {
+  count: number;
+  resetAt: number;
+};
+
+// Rate limit in-memory: suficiente como barrera simple, pero no compartido entre instancias serverless.
+const contactRateLimitStore = new Map<string, RateLimitEntry>();
+
 export const runtime = "nodejs";
 
 function isValidEmail(value: string) {
@@ -36,6 +47,47 @@ function isValidEmail(value: string) {
 
 function sanitizeText(value: unknown) {
   return String(value ?? "").trim();
+}
+
+function isWithinLength(value: string, min: number, max: number) {
+  return value.length >= min && value.length <= max;
+}
+
+function getClientIp(request: Request) {
+  const forwardedFor = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  return (
+    forwardedFor ||
+    request.headers.get("x-real-ip")?.trim() ||
+    request.headers.get("cf-connecting-ip")?.trim() ||
+    "unknown"
+  );
+}
+
+function isRateLimited(ip: string) {
+  const now = Date.now();
+
+  for (const [storedIp, entry] of contactRateLimitStore.entries()) {
+    if (entry.resetAt <= now) {
+      contactRateLimitStore.delete(storedIp);
+    }
+  }
+
+  const currentEntry = contactRateLimitStore.get(ip);
+
+  if (!currentEntry || currentEntry.resetAt <= now) {
+    contactRateLimitStore.set(ip, {
+      count: 1,
+      resetAt: now + RATE_LIMIT_WINDOW_MS,
+    });
+    return false;
+  }
+
+  if (currentEntry.count >= RATE_LIMIT_MAX_REQUESTS) {
+    return true;
+  }
+
+  currentEntry.count += 1;
+  return false;
 }
 
 function escapeHtml(value: string) {
@@ -57,11 +109,26 @@ function getPayload(body: unknown): ContactPayload | null {
   const email = sanitizeText(payload.email);
   const servicio = sanitizeText(payload.servicio);
   const mensaje = sanitizeText(payload.mensaje);
+  const website = sanitizeText(payload.website);
   const captchaA = Number(payload.captchaA);
   const captchaB = Number(payload.captchaB);
   const captchaAnswer = Number(payload.captchaAnswer);
 
+  if (website) {
+    return null;
+  }
+
   if (!nombre || !email || !servicio || !mensaje) {
+    return null;
+  }
+
+  const hasValidLengths =
+    isWithinLength(nombre, 2, 80) &&
+    isWithinLength(email, 1, 120) &&
+    isWithinLength(servicio, 1, 60) &&
+    isWithinLength(mensaje, 10, 2000);
+
+  if (!hasValidLengths) {
     return null;
   }
 
@@ -87,11 +154,12 @@ function getPayload(body: unknown): ContactPayload | null {
 }
 
 export async function POST(request: Request) {
-  if (!hasMailConfig) {
-    console.error("Configuracion SMTP incompleta. Variables faltantes:", missingMailConfig.join(", "));
+  const clientIp = getClientIp(request);
+
+  if (isRateLimited(clientIp)) {
     return NextResponse.json(
-      { error: "La configuracion de correo no esta completa en el servidor. Faltan variables SMTP." },
-      { status: 500 },
+      { error: "Demasiados intentos. Esperá unos minutos antes de volver a enviar el formulario." },
+      { status: 429 },
     );
   }
 
@@ -101,8 +169,16 @@ export async function POST(request: Request) {
 
     if (!payload) {
       return NextResponse.json(
-        { error: "Datos invalidos. Revisar nombre, email, servicio, mensaje y captcha." },
+        { error: "Datos inválidos. Revisar nombre, email, servicio, mensaje y captcha." },
         { status: 400 },
+      );
+    }
+
+    if (!hasMailConfig) {
+      console.error("Configuración SMTP incompleta. Variables faltantes:", missingMailConfig.join(", "));
+      return NextResponse.json(
+        { error: "La configuración de correo no está completa en el servidor. Faltan variables SMTP." },
+        { status: 500 },
       );
     }
 

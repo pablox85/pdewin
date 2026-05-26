@@ -43,7 +43,7 @@ export default async function GaleriaPage() {
   const GALLERY_CAROUSEL_HEIGHT_CLASS = "h-[38vh] min-h-[260px] sm:min-h-[300px] lg:min-h-[320px]";
   const GALLERY_AUTOPLAY_MS = 0;
   const VISIBLE_CATEGORIES = [
-    "Carteleria",
+    "Cartelería",
     "Polarizados",
     "Maquinaria",
     "Home, Office & Business",
@@ -52,7 +52,7 @@ export default async function GaleriaPage() {
 
   const images = await getPublicImages("images");
   const categoryByPrefix: Record<string, string> = {
-    car: "Carteleria",
+    car: "Cartelería",
     pola: "Polarizados",
     pesados: "Maquinaria",
     sorri: "Home, Office & Business",
@@ -62,7 +62,7 @@ export default async function GaleriaPage() {
   };
 
   const categoryOrder = [
-    "Carteleria",
+    "Cartelería",
     "Polarizados",
     "Maquinaria",
     "Home, Office & Business",

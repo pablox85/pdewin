@@ -56,7 +56,7 @@ export default function DetailingPage() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Cuándo conviene hacer tratamiento cerámico?",
+        name: "¿Cuándo conviene hacer tratamiento cerámico?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Cuando querés una protección duradera de pintura y facilitar el mantenimiento del vehículo.",
@@ -64,7 +64,7 @@ export default function DetailingPage() {
       },
       {
         "@type": "Question",
-        name: "Trabajan Montevideo y Maldonado?",
+        name: "¿Trabajan Montevideo y Maldonado?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Sí. Coordinamos agenda para Ciudad de la Costa, Canelones, Montevideo y Maldonado.",

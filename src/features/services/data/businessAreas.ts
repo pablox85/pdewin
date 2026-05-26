@@ -41,7 +41,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
         id: "vehiculos-gran-porte",
         title: "Vehículos de gran porte",
         description:
-          "Aplicaciones para camiones, omnibus, motorhome y ambulancias.",
+          "Aplicaciones para camiones, ómnibus, motorhome y ambulancias.",
       },
       {
         id: "vehiculos-maquinaria-pesada",
@@ -91,7 +91,7 @@ export const BUSINESS_AREAS: BusinessArea[] = [
     id: "arquitectura",
     label: "Home & Office",
     href: "/home-business",
-    heroTitle: "Home, Office, Business y Carteleria para hogares y espacios comerciales",
+    heroTitle: "Home, Office, Business y Cartelería para hogares y espacios comerciales",
     heroDescription:
       "Láminas para vidrios, polarizado arquitectónico y vinilos decorativos para hogares y oficinas.\nCartelería interna y exterior para reforzar la comunicación visual en espacios comerciales.",
     summary:
@@ -110,24 +110,24 @@ export const BUSINESS_AREAS: BusinessArea[] = [
       },
       {
         id: "arquitectura-carteleria",
-        title: "Office + carteleria interna",
+        title: "Office + cartelería interna",
         description: [
           "Láminas de control solar.",
           "Láminas de seguridad.",
           "Control visual.",
           "Láminas decorativas.",
           "Vinilos decorativos y de protección.",
-          "Carteleria interna.",
+          "Cartelería interna.",
         ],
       },
       {
         id: "arquitectura-publicidad",
-        title: "Business + carteleria exterior/publicitaria",
+        title: "Business + cartelería exterior/publicitaria",
         description: [
           "Vinilos microperforados.",
           "Vinilos publicitarios.",
           "Lona impresa.",
-          "Carteleria en general.",
+          "Cartelería en general.",
         ],
       },
     ],
@@ -142,7 +142,7 @@ export function requireBusinessAreaById(areaId: BusinessArea["id"]): BusinessAre
   const area = getBusinessAreaById(areaId);
 
   if (!area) {
-    throw new Error(`No se encontro configuracion para ${areaId}`);
+    throw new Error(`No se encontró configuración para ${areaId}`);
   }
 
   return area;

@@ -92,7 +92,7 @@ html.dark body {
   }
 }
 
-/* Modo dia suave: evita blancos puros que cansan la vista. */
+/* Modo día suave: evita blancos puros que cansan la vista. */
 html:not(.dark) .bg-white {
   background-color: #f3f6fb !important;
 }

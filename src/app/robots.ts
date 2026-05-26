@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 
-// Robots basico para permitir rastreo y enlazar sitemap.
+// Robots básico para permitir rastreo y enlazar sitemap.
 export default function robots(): MetadataRoute.Robots {
   const isPreview = process.env.VERCEL_ENV === "preview";
 

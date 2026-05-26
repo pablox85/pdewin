@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState, useEffect } from "react";
-import { trackGenerateLead } from "@/lib/analytics/gtag";
+import { trackFormSubmitError, trackGenerateLead } from "@/lib/analytics/gtag";
 
 function getCaptchaValues() {
   const a = Math.floor(Math.random() * 8) + 1;
@@ -9,7 +9,7 @@ function getCaptchaValues() {
   return { a, b };
 }
 
-// Formulario cliente para disparar evento GA4 en envio exitoso.
+// Formulario cliente para disparar evento GA4 en envío exitoso.
 export function ContactForm() {
   const [captchaValues, setCaptchaValues] = useState({ a: 0, b: 0 });
   const [captchaAnswer, setCaptchaAnswer] = useState("");
@@ -32,16 +32,19 @@ export function ContactForm() {
       email: String(formData.get("email") ?? "").trim(),
       servicio: service,
       mensaje: String(formData.get("mensaje") ?? "").trim(),
+      website: String(formData.get("website") ?? "").trim(),
       captchaA: captchaValues.a,
       captchaB: captchaValues.b,
       captchaAnswer: Number(captchaAnswer),
     };
+    let errorWasTracked = false;
 
     setSubmitted(false);
     setErrorMessage("");
 
     if (!Number.isFinite(payload.captchaAnswer) || payload.captchaAnswer !== payload.captchaA + payload.captchaB) {
-      setErrorMessage("Captcha invalido. Resolve la suma para continuar.");
+      setErrorMessage("Captcha inválido. Resolvé la suma para continuar.");
+      trackFormSubmitError("captcha_error", service);
       setCaptchaValues(getCaptchaValues());
       setCaptchaAnswer("");
       return;
@@ -61,6 +64,14 @@ export function ContactForm() {
       const result = (await response.json().catch(() => null)) as { error?: string } | null;
 
       if (!response.ok) {
+        const errorType =
+          response.status === 429
+            ? "rate_limited"
+            : response.status === 400
+              ? "validation_error"
+              : "server_error";
+        trackFormSubmitError(errorType, service);
+        errorWasTracked = true;
         throw new Error(result?.error ?? "No se pudo enviar la consulta.");
       }
 
@@ -71,6 +82,9 @@ export function ContactForm() {
       setCaptchaAnswer("");
     } catch (error) {
       const message = error instanceof Error ? error.message : "No se pudo enviar la consulta.";
+      if (!errorWasTracked) {
+        trackFormSubmitError("submit_failed", service);
+      }
       setErrorMessage(message);
       setCaptchaValues(getCaptchaValues());
       setCaptchaAnswer("");
@@ -86,12 +100,27 @@ export function ContactForm() {
       className="lift-card rounded-2xl border border-slate-300 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900"
     >
       <div className="grid gap-4 sm:grid-cols-2">
+        <div className="pointer-events-none absolute left-[-10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+          <label>
+            Website
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              disabled={isSubmitting}
+            />
+          </label>
+        </div>
+
         <label className="text-sm font-medium text-slate-800 dark:text-slate-200">
           Nombre
           <input
             required
             type="text"
             name="nombre"
+            minLength={2}
+            maxLength={80}
             disabled={isSubmitting}
             placeholder="Tu nombre"
             className="mt-2 w-full rounded-xl border border-slate-400 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none ring-brand-500/40 focus:ring-4 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-400 dark:ring-brand-100/30"
@@ -103,6 +132,7 @@ export function ContactForm() {
             required
             type="email"
             name="email"
+            maxLength={120}
             disabled={isSubmitting}
             placeholder="tu@email.com"
             className="mt-2 w-full rounded-xl border border-slate-400 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none ring-brand-500/40 focus:ring-4 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-400 dark:ring-brand-100/30"
@@ -111,7 +141,7 @@ export function ContactForm() {
       </div>
 
       <label className="mt-4 block text-sm font-medium text-slate-800 dark:text-slate-200">
-        Servicio de interes
+        Servicio de interés
         <select
           required
           name="servicio"
@@ -135,13 +165,15 @@ export function ContactForm() {
           name="mensaje"
           disabled={isSubmitting}
           rows={5}
-          placeholder="Contanos que necesitas, para cuando lo necesitas y cual es tu objetivo."
+          minLength={10}
+          maxLength={2000}
+          placeholder="Contanos qué necesitás, para cuándo lo necesitás y cuál es tu objetivo."
           className="mt-2 w-full resize-none rounded-xl border border-slate-400 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none ring-brand-500/40 focus:ring-4 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-400 dark:ring-brand-100/30"
         />
       </label>
 
       <label className="mt-4 block text-sm font-medium text-slate-800 dark:text-slate-200">
-        <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">Verificacion</span>
+        <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">Verificación</span>
         <div className="mt-2 flex flex-wrap items-center gap-3">
           <button
             type="button"

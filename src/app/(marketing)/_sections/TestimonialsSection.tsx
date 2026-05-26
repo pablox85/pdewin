@@ -7,7 +7,7 @@ export function TestimonialsSection() {
     <SectionWrapper>
       <SectionTitle
         eyebrow="Casos reales"
-        title="Clientes que confian en nuestro trabajo"
+        title="Clientes que confían en nuestro trabajo"
         description="Historias de marcas y proyectos que eligieron calidad, orden y resultados medibles."
       />
 

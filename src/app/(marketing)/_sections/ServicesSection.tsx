@@ -34,13 +34,13 @@ const areaCarouselImages: Record<string, AreaCarouselImage[]> = {
   cardetailing: [
     { src: "/images/detailing/det001.jpeg", alt: "Proceso de polishing", positionMobile: "50% 52%", positionDesktop: "42% 45%" },
     { src: "/images/detailing/det003.jpeg", alt: "Proceso de polishing", positionMobile: "38% 35%", positionDesktop: "32% 33%" },
-    { src: "/images/detailing/det011.jpeg", alt: "Cobertura nanoceramica", positionMobile: "62% 50%", positionDesktop: "68% 48%" },
-    { src: "/images/detailing/det012.jpeg", alt: "Cobertura nanoceramica", positionMobile: "45% 58%", positionDesktop: "40% 52%" },
+    { src: "/images/detailing/det011.jpeg", alt: "Cobertura nanocerámica", positionMobile: "62% 50%", positionDesktop: "68% 48%" },
+    { src: "/images/detailing/det012.jpeg", alt: "Cobertura nanocerámica", positionMobile: "45% 58%", positionDesktop: "40% 52%" },
   ],
   arquitectura: [
     { src: "/images/office/office001.jpeg", alt: "Home & Office", positionMobile: "56% 60%", positionDesktop: "60% 0%" },
-    { src: "/images/office/office002.jpeg", alt: "Carteleria", positionMobile: "34% 50%", positionDesktop: "30% 46%" },
-    { src: "/images/office/sorri004.jpeg", alt: "Intervencion en oficina", positionMobile: "52% 60%", positionDesktop: "58% 40%" },
+    { src: "/images/office/office002.jpeg", alt: "Cartelería", positionMobile: "34% 50%", positionDesktop: "30% 46%" },
+    { src: "/images/office/sorri004.jpeg", alt: "Intervención en oficina", positionMobile: "52% 60%", positionDesktop: "58% 40%" },
   ],
 };
 

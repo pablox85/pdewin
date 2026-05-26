@@ -49,11 +49,11 @@ export function HeroSection() {
 
         <Reveal delay={0.1}>
           <div className="lift-card rounded-2xl border border-slate-300 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900">
-            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Por que elegirnos</h2>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Por qué elegirnos</h2>
             <ul className="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-300">
               <li>Diagnóstico inicial para definir la mejor solución para tu caso.</li>
               <li>Atención personalizada para clientes particulares, empresas y flotas.</li>
-              <li>Estandares de calidad consistentes en cada etapa del servicio.</li>
+              <li>Estándares de calidad consistentes en cada etapa del servicio.</li>
             </ul>
           </div>
         </Reveal>

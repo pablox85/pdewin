@@ -9,7 +9,7 @@ interface RevealProps {
   className?: string;
 }
 
-// Animacion de entrada reutilizable con respeto a reduced motion.
+// Animación de entrada reutilizable con respeto a reduced motion.
 export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
   const prefersReducedMotion = useReducedMotion();
 

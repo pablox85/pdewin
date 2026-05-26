@@ -1,7 +1,7 @@
 import { Collapsible, SectionWrapper, TrackedLinkButton } from "@/components/shared";
 import { buildWhatsAppHref } from "@/lib/whatsapp";
 
-// Bloque de contenido local para reforzar busquedas por zona sin reemplazar el copy anterior.
+// Bloque de contenido local para reforzar búsquedas por zona sin reemplazar el copy anterior.
 export function LocalSeoSection() {
   return (
     <SectionWrapper className="bg-white dark:bg-slate-950">
@@ -40,14 +40,14 @@ export function LocalSeoSection() {
                 interior del vehículo, mejorar la privacidad y sumar una protección adicional en vidrios
                 expuestos. También realizamos servicios de car detailing y tratamiento cerámico para
                 quienes quieren conservar la pintura, recuperar brillo, facilitar el mantenimiento diario
-                y mantener una imagen cuidada por mas tiempo.
+                y mantener una imagen cuidada por más tiempo.
               </p>
               <p>
                 Nuestro enfoque combina asesoramiento claro, materiales adecuados y ejecución cuidada. En
                 Ciudad de la Costa, Canelones, Lagomar, Solymar y El Pinar trabajamos con agenda previa
                 para ordenar cada proyecto, explicar las opciones disponibles y entregar un resultado
                 consistente. La idea es que cada cliente pueda entender qué lámina, tratamiento o
-                servicio necesita, que beneficios puede esperar y como solicitar presupuesto sin vueltas.
+                servicio necesita, qué beneficios puede esperar y cómo solicitar presupuesto sin vueltas.
               </p>
             </div>
           </Collapsible>

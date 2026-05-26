@@ -1,6 +1,6 @@
 import { Reveal, SectionTitle, SectionWrapper } from "@/components/shared";
 
-// Seccion institucional para reforzar propuesta y diferenciadores.
+// Sección institucional para reforzar propuesta y diferenciadores.
 export function AboutSection() {
   return (
     <SectionWrapper className="bg-slate-100 dark:bg-slate-950">
@@ -29,7 +29,7 @@ export function AboutSection() {
         </Reveal>
         <Reveal delay={0.16}>
           <article className="lift-card rounded-2xl border border-slate-300 bg-white p-5 text-slate-900 shadow-card dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100">
-            <h3 className="text-lg font-bold">Comunicacion clara</h3>
+            <h3 className="text-lg font-bold">Comunicación clara</h3>
             <p className="mt-3 text-sm text-slate-700 dark:text-slate-300">
               Mantenemos una comunicación simple y directa de impacto inmediato.  {/* modificado */}
             </p>

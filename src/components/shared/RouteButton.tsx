@@ -10,7 +10,7 @@ type RouteButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type"> & 
   children: ReactNode;
 };
 
-// Boton con navegacion interna para evitar exponer el href en el tooltip del navegador.
+// Botón con navegación interna para evitar exponer el href en el tooltip del navegador.
 export function RouteButton({
   href,
   replace = false,

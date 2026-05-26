@@ -41,3 +41,12 @@ export function trackGenerateLead(serviceName: string): void {
     value: 1,
   });
 }
+
+// Evento de error de formulario. Es seguro si GA4 no esta configurado.
+export function trackFormSubmitError(errorType: string, serviceName?: string): void {
+  trackEvent("form_submit_error", {
+    error_type: errorType,
+    service_name: serviceName,
+    source: "landing_contact_form",
+  });
+}

@@ -45,7 +45,7 @@ function subscribeToClientStatus() {
   return () => {};
 }
 
-// Toggle accesible de modo dia/noche con persistencia local.
+// Toggle accesible de modo día/noche con persistencia local.
 export function ThemeToggle() {
   const isClient = useSyncExternalStore(subscribeToClientStatus, () => true, () => false);
   const [theme, setTheme] = useState<ThemeMode | null>(null);
@@ -90,7 +90,7 @@ export function ThemeToggle() {
       onClick={handleToggle}
       role="switch"
       aria-checked={isDark}
-      aria-label={isDark ? "Activar modo dia" : "Activar modo noche"}
+      aria-label={isDark ? "Activar modo día" : "Activar modo noche"}
       className={`relative inline-flex h-8 w-14 items-center rounded-full border px-1 outline-none ring-offset-2 transition-colors focus-visible:ring-2 focus-visible:ring-brand-700 dark:focus-visible:ring-brand-100 ${
         isDark
           ? "border-blue-300/80 bg-blue-500"
@@ -105,7 +105,7 @@ export function ThemeToggle() {
       >
         {isDark ? "\u263E" : "\u2600"}
       </span>
-      <span className="sr-only">{isDark ? "Modo noche activo" : "Modo dia activo"}</span>
+      <span className="sr-only">{isDark ? "Modo noche activo" : "Modo día activo"}</span>
     </button>
   );
 }

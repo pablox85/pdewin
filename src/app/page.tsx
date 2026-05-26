@@ -29,6 +29,10 @@ const localBusinessSchema = {
     "Polarizados automotrices, láminas de seguridad, control solar, car detailing y tratamiento cerámico en Ciudad de la Costa, Canelones, Lagomar, Solymar y El Pinar.",
   email: siteConfig.contactEmail,
   telephone: siteConfig.contactPhone,
+  sameAs: [
+    "https://www.instagram.com/polarizadosdeleste/",
+    "https://www.facebook.com/polarizadosdeleste.com.uy",
+  ],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ciudad de la Costa",

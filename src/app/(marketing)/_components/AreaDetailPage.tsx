@@ -37,17 +37,17 @@ const areaSeoContent: Record<
     ],
     faq: [
       {
-        question: "Qué zonas cubren para polarizados?",
+        question: "¿Qué zonas cubren para polarizados?",
         answer:
           "Trabajamos en todo el país, siempre con agenda previa para optimizar tiempos.",
       },
       {
-        question: "Qué beneficio principal tiene el laminado de vidrios?",
+        question: "¿Qué beneficio principal tiene el laminado de vidrios?",
         answer:
           "Mejora el confort térmico, reduce el impacto del sol, aumenta privacidad y ayuda a proteger el interior del vehículo.",
       },
       {
-        question: "Hacen reparación o cambio de vidrios?",
+        question: "¿Hacen reparación o cambio de vidrios?",
         answer:
           "No. Nuestro enfoque está en instalación de láminas, polarizados y tratamientos de protección, no en cambio de cristales.",
       },
@@ -66,17 +66,17 @@ const areaSeoContent: Record<
     ],
     faq: [
       {
-        question: "Cuándo conviene elegir tratamiento cerámico?",
+        question: "¿Cuándo conviene elegir tratamiento cerámico?",
         answer:
           "Es ideal cuando querés una protección duradera y mejor comportamiento frente a sol, suciedad y agua.",
       },
       {
-        question: "Cuánto demora un trabajo de detailing?",
+        question: "¿Cuánto demora un trabajo de detailing?",
         answer:
           "Depende del estado del vehículo y del paquete elegido. Te damos tiempos estimados al momento del diagnóstico inicial.",
       },
       {
-        question: "Trabajan clientes fuera de Ciudad de la Costa?",
+        question: "¿Trabajan clientes fuera de Ciudad de la Costa?",
         answer: "Sí. Trabajamos en todo el país, siempre con agenda previa.",
       },
     ],
@@ -94,27 +94,27 @@ const areaSeoContent: Record<
     ],
     faq: [
       {
-        question: "Pueden asesorarme según el tipo de vidriado?",
+        question: "¿Pueden asesorarme según el tipo de vidriado?",
         answer:
           "Sí. Evaluamos tu caso y recomendamos la opción más conveniente en control solar, privacidad o estética.",
       },
       {
-        question: "Trabajan oficinas y comercios pequeños?",
+        question: "¿Trabajan oficinas y comercios pequeños?",
         answer:
           "Sí, trabajamos tanto hogares como oficinas y comercios, adaptando la propuesta a cada necesidad.",
       },
       {
-        question: "También hacen cartelería para negocios?",
+        question: "¿También hacen cartelería para negocios?",
         answer:
           "Sí. Realizamos cartelería interna y externa, piezas publicitarias para fachada y puntos de contacto, adaptadas a cada espacio comercial.",
       },
       {
-        question: "Cubren Montevideo y Maldonado?",
+        question: "¿Cubren Montevideo y Maldonado?",
         answer:
           "Sí. Trabajamos en todo el país, siempre con agenda previa, incluyendo Montevideo, Maldonado, Ciudad de la Costa y Canelones.",
       },
       {
-        question:"Realizan trabajos en edificios con seguridad estricta o acceso controlado?",
+        question: "¿Realizan trabajos en edificios con seguridad estricta o acceso controlado?",
         answer:
           "Sí. Para proyectos en edificios con seguridad o acceso controlado, coordinamos con anticipación para cumplir con los requisitos y asegurar una instalación sin contratiempos.",
       },

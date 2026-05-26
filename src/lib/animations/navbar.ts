@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
 
-// Variants reutilizables para animaciones de la barra de navegacion.
+// Variants reutilizables para animaciones de la barra de navegación.
 export const desktopDropdownVariants: Variants = {
   hidden: { opacity: 0, y: -8, scale: 0.98 },
   visible: {

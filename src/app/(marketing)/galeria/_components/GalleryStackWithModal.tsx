@@ -25,6 +25,8 @@ interface ActiveModal {
 function toCategoryAnchor(title: string) {
   return title
     .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/&/g, "and")
     .replace(/,/g, "")
     .replace(/\s+/g, "-");

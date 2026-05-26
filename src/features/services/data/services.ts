@@ -29,7 +29,7 @@ export const serviceItems: ServiceItem[] = [
     id: "detailing-interior",
     area: "Cardetailing",
     title: "Interior",
-    description: "Limpieza profunda, cuidado de tapizados y restauracion del habitaculo.",
+    description: "Limpieza profunda, cuidado de tapizados y restauración del habitáculo.",
   },
   {
     id: "detailing-exterior",
@@ -53,7 +53,7 @@ export const serviceItems: ServiceItem[] = [
     id: "arquitectura-proyectos",
     area: "Arquitectura",
     title: "Proyectos",
-    description: "Diseño arquitectonico integral para viviendas, locales y espacios corporativos.",
+    description: "Diseño arquitectónico integral para viviendas, locales y espacios corporativos.",
   },
   {
     id: "arquitectura-planos",
@@ -77,7 +77,7 @@ export const serviceItems: ServiceItem[] = [
     id: "publicidad-impresa",
     area: "Publicidad",
     title: "Impresa",
-    description: "Piezas graficas, carteleria y material comercial con foco en marca.",
+    description: "Piezas gráficas, cartelería y material comercial con foco en marca.",
   },
   {
     id: "publicidad-branding",

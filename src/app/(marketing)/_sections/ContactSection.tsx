@@ -8,8 +8,8 @@ export function ContactSection() {
     <SectionWrapper id="contacto">
       <SectionTitle
         eyebrow="Contacto"
-        title="Hablemos de tu proximo proyecto"
-        description="Completa el formulario y te respondemos a la brevedad con una propuesta clara."
+        title="Hablemos de tu próximo proyecto"
+        description="Completá el formulario y te respondemos a la brevedad con una propuesta clara."
       />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -26,7 +26,7 @@ export function ContactSection() {
               <li>Ubicación: {siteConfig.address}</li>
             </ul>
             <p className="mt-5 rounded-xl border border-slate-300 bg-white p-4 text-sm text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
-              Al recibir tu mensaje, analizamos tu necesidad y te contactamos con una recomendacion puntual.
+              Al recibir tu mensaje, analizamos tu necesidad y te contactamos con una recomendación puntual.
             </p>
           </aside>
         </Reveal>

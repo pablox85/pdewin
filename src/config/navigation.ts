@@ -50,7 +50,7 @@ export const NAV_MENUS: NavMenu[] = [
       },
       {
         id: "arquitectura-publicidad",
-        label: "Asesoria decorativa",
+        label: "Asesoría decorativa",
         href: "/home-business#arquitectura-publicidad",
       },
     ],
