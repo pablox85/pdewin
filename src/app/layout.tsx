@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 
-const isClarityEnabled = process.env.NODE_ENV === "production";
+const isClarityEnabled = process.env.VERCEL_ENV === "production";
 
 export const metadata: Metadata = buildMetadata({
   metadataBase: new URL(siteConfig.domain),

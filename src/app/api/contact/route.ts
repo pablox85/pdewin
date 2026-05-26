@@ -196,9 +196,9 @@ export async function POST(request: Request) {
       from: SMTP_FROM,
       to: CONTACT_EMAIL_TO,
       replyTo: payload.email,
-      subject: `Nueva consulta web: ${payload.servicio}`,
+      subject: `Consulta Web:  ${payload.servicio}`,
       text: [
-        "Nueva consulta recibida desde la landing.",
+        "Consulta desde Polarizados del este.",
         "",
         `Nombre: ${payload.nombre}`,
         `Email: ${payload.email}`,
@@ -208,12 +208,14 @@ export async function POST(request: Request) {
         payload.mensaje,
       ].join("\n"),
       html: `
-        <h2>Nueva consulta recibida desde la landing</h2>
+        <h2>Consulta desde Polarizadosdeleste.com</h2>
         <p><strong>Nombre:</strong> ${escapeHtml(payload.nombre)}</p>
         <p><strong>Email:</strong> ${escapeHtml(payload.email)}</p>
         <p><strong>Servicio:</strong> ${escapeHtml(payload.servicio)}</p>
         <p><strong>Mensaje:</strong></p>
-        <p>${escapeHtml(payload.mensaje).replace(/\n/g, "<br />")}</p>
+         <p style="margin-top:12px; line-height:1.8; font-size:16px; font-weight:700; color:#0f172a;">
+          ${escapeHtml(payload.mensaje).replace(/\n/g, "<br />")}
+        </p>
       `,
     });
 

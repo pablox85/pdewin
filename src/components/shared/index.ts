@@ -5,6 +5,7 @@ export { SectionTitle } from "./SectionTitle";
 export { SectionWrapper } from "./SectionWrapper";
 export { ThemeToggle } from "./ThemeToggle";
 export { PhotoCarousel } from "./PhotoCarousel";
+export { DeferredPhotoCarousel } from "./DeferredPhotoCarousel";
 export { WhatsAppFloatingButton } from "./WhatsAppFloatingButton";
 export { RouteButton } from "./RouteButton";
 export { Collapsible } from "./Collapsible";

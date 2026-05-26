@@ -1,4 +1,4 @@
-import { PhotoCarousel, Reveal, RouteButton, SectionTitle, SectionWrapper } from "@/components/shared";
+import { DeferredPhotoCarousel, Reveal, RouteButton, SectionTitle, SectionWrapper } from "@/components/shared";
 import { BUSINESS_AREAS } from "@/features/services/data/businessAreas";
 
 const areaStyles: Record<string, string> = {
@@ -23,7 +23,7 @@ type AreaCarouselImage = {
 };
 
 // Control global del autoplay del carrusel: usar 0 para dejarlo fijo.
-const AREA_CAROUSEL_AUTOPLAY_MS = 1500;
+const AREA_CAROUSEL_AUTOPLAY_MS = 0;
 
 const areaCarouselImages: Record<string, AreaCarouselImage[]> = {
   vehiculos: [
@@ -75,7 +75,7 @@ export function ServicesSection() {
                 ))}
               </ul>
 
-              <PhotoCarousel
+              <DeferredPhotoCarousel
                 className="mt-4"
                 images={areaCarouselImages[area.id] ?? []}
                 autoPlayMs={AREA_CAROUSEL_AUTOPLAY_MS}

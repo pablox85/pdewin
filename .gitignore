@@ -19,7 +19,7 @@ pnpm-debug.log*
 .env.production.local
 
 #manual
-.txt
+*.txt
 .sh
 .agents
 .codex

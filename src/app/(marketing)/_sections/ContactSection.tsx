@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site";
 import { Reveal, SectionTitle, SectionWrapper } from "@/components/shared";
-import { ContactForm } from "@/features/contact/components/ContactForm";
+import { DeferredContactForm } from "@/features/contact/components/DeferredContactForm";
 
 // Cierre de conversión con formulario y datos de contacto.
 export function ContactSection() {
@@ -14,7 +14,7 @@ export function ContactSection() {
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <Reveal>
-          <ContactForm />
+          <DeferredContactForm />
         </Reveal>
 
         <Reveal delay={0.1}>
