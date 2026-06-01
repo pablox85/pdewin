@@ -10,3 +10,4 @@ export { WhatsAppFloatingButton } from "./WhatsAppFloatingButton";
 export { RouteButton } from "./RouteButton";
 export { Collapsible } from "./Collapsible";
 export { TrackedLinkButton } from "./TrackedLinkButton";
+export { PromoModal } from "./PromoModal";
