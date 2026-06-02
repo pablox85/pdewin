@@ -90,6 +90,7 @@ export function PromoModal() {
             <Image
               src="/images/premio_1.jpeg"
               alt="Promoción junio"
+              fetchPriority="high"
               fill
               sizes="(min-width: 640px) 480px, 88vw"
               className="object-cover"
