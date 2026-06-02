@@ -127,6 +127,14 @@ html.dark body {
   }
 }
 
+@media (max-width: 767px) {
+  .ambient-orb,
+  .ambient-orb--slow {
+    animation: none !important;
+    will-change: auto;
+  }
+}
+
 /* Modo día suave: evita blancos puros que cansan la vista. */
 html:not(.dark) .bg-white {
   background-color: #f3f6fb !important;
