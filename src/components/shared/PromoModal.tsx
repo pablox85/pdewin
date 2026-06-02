@@ -93,7 +93,7 @@ export function PromoModal() {
               fill
               sizes="(min-width: 640px) 480px, 88vw"
               className="object-cover"
-              fetchPriority="high"
+              priority
             />
           </div>
         </div>
