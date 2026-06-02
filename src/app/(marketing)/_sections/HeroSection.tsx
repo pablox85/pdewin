@@ -15,37 +15,42 @@ export function HeroSection() {
       />
 
       <div className="relative grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
-        <Reveal>
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-brand-700 dark:text-blue-200">
-              Polarizados del Este
-            </p>
-            <h1 className="text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-              Polarizados automotrices en Ciudad de la Costa y Canelones.
-            </h1>
-            <div className="mt-5 max-w-2xl space-y-2 text-lg text-slate-700 dark:text-slate-300">
-              <p>
-                Elevamos la imagen y el valor de cada proyecto con procesos claros, ejecución precisa y
-                resultados que se notan al instante.
-              </p>
-              <p>Láminas de seguridad, control solar y tratamiento cerámico.</p>
+        <div>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-brand-700 dark:text-blue-200">
+            Polarizados del Este
+          </p>
+
+          <h1 className="text-4xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
+            Polarizados automotrices en Ciudad de la Costa y Canelones.
+          </h1>
+
+          <Reveal>
+            <div>
+              <div className="mt-5 max-w-2xl space-y-2 text-lg text-slate-700 dark:text-slate-300">
+                <p>
+                  Elevamos la imagen y el valor de cada proyecto con procesos claros, ejecución precisa y
+                  resultados que se notan al instante.
+                </p>
+                <p>Láminas de seguridad, control solar y tratamiento cerámico.</p>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href="#soluciones"
+                  className="cta-pop rounded-xl bg-brand-700 px-6 py-3 text-sm font-semibold text-white outline-none transition hover:bg-brand-500 focus-visible:ring-2 focus-visible:ring-brand-900 focus-visible:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-400 dark:focus-visible:ring-blue-200"
+                >
+                  Explorar servicios
+                </Link>
+                <Link
+                  href="#contacto"
+                  className="cta-pop rounded-xl border border-slate-400 bg-white px-6 py-3 text-sm font-semibold text-slate-900 outline-none transition hover:border-brand-700 hover:text-brand-700 focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-blue-300 dark:hover:text-blue-200 dark:focus-visible:ring-blue-200"
+                >
+                  Quiero asesoramiento
+                </Link>
+              </div>
             </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="#soluciones" //cambiado
-                className="cta-pop rounded-xl bg-brand-700 px-6 py-3 text-sm font-semibold text-white outline-none transition hover:bg-brand-500 focus-visible:ring-2 focus-visible:ring-brand-900 focus-visible:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-400 dark:focus-visible:ring-blue-200"
-              >
-                Explorar servicios
-              </Link>
-              <Link
-                href="#contacto"
-                className="cta-pop rounded-xl border border-slate-400 bg-white px-6 py-3 text-sm font-semibold text-slate-900 outline-none transition hover:border-brand-700 hover:text-brand-700 focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-blue-300 dark:hover:text-blue-200 dark:focus-visible:ring-blue-200"
-              >
-                Quiero asesoramiento
-              </Link>
-            </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
 
         <Reveal delay={0.1}>
           <div className="lift-card rounded-2xl border border-slate-300 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900">
