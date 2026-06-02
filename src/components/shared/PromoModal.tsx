@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const PROMO_MODAL_ENABLED = true;
-const PROMO_MODAL_DELAY_MS = 1500;
+const PROMO_MODAL_DELAY_MS = 2500;
 const CONTACT_FORM_TARGET = "#contacto";
 
 export function PromoModal() {
@@ -90,6 +90,7 @@ export function PromoModal() {
             <Image
               src="/images/premio_1.jpeg"
               alt="Promoción junio"
+              fetchPriority="high"
               fill
               sizes="(min-width: 640px) 480px, 88vw"
               className="object-cover"
