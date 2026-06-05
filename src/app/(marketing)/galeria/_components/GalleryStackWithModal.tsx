@@ -51,6 +51,35 @@ export function GalleryStackWithModal({
   const activeModalDescriptionId = `${activeModalBaseId}-description`;
 
   useEffect(() => {
+    const scrollHashTargetIntoView = () => {
+      const hash = window.location.hash;
+
+      if (!hash) {
+        return;
+      }
+
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+
+      if (!target) {
+        return;
+      }
+
+      window.requestAnimationFrame(() => {
+        target.scrollIntoView({
+          block: "center",
+          inline: "nearest",
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        });
+      });
+    };
+
+    scrollHashTargetIntoView();
+    window.addEventListener("hashchange", scrollHashTargetIntoView);
+
+    return () => window.removeEventListener("hashchange", scrollHashTargetIntoView);
+  }, []);
+
+  useEffect(() => {
     if (!activeModal || !activeGroup) {
       return;
     }
@@ -107,7 +136,7 @@ export function GalleryStackWithModal({
           <article
             key={group.title}
             id={toCategoryAnchor(group.title)}
-            className="rounded-2xl border border-slate-300 bg-white p-4 shadow-card dark:border-slate-700 dark:bg-slate-900 sm:p-5"
+            className="scroll-mt-28 rounded-2xl border border-slate-300 bg-white p-4 shadow-card dark:border-slate-700 dark:bg-slate-900 sm:p-5 md:scroll-mt-32"
           >
             <div className="mb-3 flex w-full items-center justify-between gap-3">
               <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">{group.title}</h2>

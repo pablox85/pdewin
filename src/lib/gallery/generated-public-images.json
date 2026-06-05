@@ -105,6 +105,11 @@
     "folder": "detailing"
   },
   {
+    "src": "/images/Ex55-2.png",
+    "alt": "Ex55 2",
+    "folder": "General"
+  },
+  {
     "src": "/images/home/home001.jpeg",
     "alt": "Láminas de control solar para mejorar confort en interiores - foto 1",
     "folder": "home"
@@ -137,6 +142,26 @@
   {
     "src": "/images/office/office004.jpeg",
     "alt": "Instalación de láminas para vidrios en home, office y espacios comerciales - foto 4",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/Selva001.jpg",
+    "alt": "Selva001",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/Selva002.jpg",
+    "alt": "Selva002",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/Selva003.jpg",
+    "alt": "Selva003",
+    "folder": "office"
+  },
+  {
+    "src": "/images/office/Selva004.jpg",
+    "alt": "Selva004",
     "folder": "office"
   },
   {
@@ -402,6 +427,31 @@
   {
     "src": "/images/polarizado/pola024.jpeg",
     "alt": "Polarizado automotriz con láminas de control solar en vehículo particular - foto 24",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola025.jpg",
+    "alt": "Instalación de láminas de seguridad para auto en Ciudad de la Costa - foto 25",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola026.jpg",
+    "alt": "Terminación de polarizado vehicular realizada por Polarizados del Este - foto 26",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola027.jpg",
+    "alt": "Polarizado para mejorar privacidad y confort térmico del vehículo - foto 27",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola028.jpg",
+    "alt": "Polarizado automotriz con láminas de control solar en vehículo particular - foto 28",
+    "folder": "polarizado"
+  },
+  {
+    "src": "/images/polarizado/pola029.jpg",
+    "alt": "Instalación de láminas de seguridad para auto en Ciudad de la Costa - foto 29",
     "folder": "polarizado"
   },
   {

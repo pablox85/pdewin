@@ -43,6 +43,15 @@ export function PhotoCarousel({
   });
   const total = images.length;
   const activeIndex = total > 0 ? currentIndex % total : 0;
+  const renderableImageIndexes = new Set(
+    total <= 3
+      ? images.map((_, index) => index)
+      : [
+          (activeIndex - 1 + total) % total,
+          activeIndex,
+          (activeIndex + 1) % total,
+        ],
+  );
 
   useEffect(() => {
     if (autoPlayMs <= 0 || total <= 1) {
@@ -156,28 +165,34 @@ export function PhotoCarousel({
         tabIndex={onImageClick ? 0 : undefined}
         aria-label={onImageClick ? "Abrir imagen en grande" : undefined}
       >
-        {images.map((image, index) => (
-          <div
-            key={`${image.src}-${index}`}
-            className={`absolute inset-0 transition-opacity duration-500 ${
-              index === activeIndex ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-              className="carousel-image object-cover"
-              style={
-                {
-                  "--image-position-mobile": image.positionMobile ?? image.position ?? "50% 50%",
-                  "--image-position-desktop": image.positionDesktop ?? image.position ?? image.positionMobile ?? "50% 50%",
-                } as CSSProperties
-              }
-            />
-          </div>
-        ))}
+        {images.map((image, index) => {
+          if (!renderableImageIndexes.has(index)) {
+            return null;
+          }
+
+          return (
+            <div
+              key={`${image.src}-${index}`}
+              className={`absolute inset-0 transition-opacity duration-500 ${
+                index === activeIndex ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="carousel-image object-cover"
+                style={
+                  {
+                    "--image-position-mobile": image.positionMobile ?? image.position ?? "50% 50%",
+                    "--image-position-desktop": image.positionDesktop ?? image.position ?? image.positionMobile ?? "50% 50%",
+                  } as CSSProperties
+                }
+              />
+            </div>
+          );
+        })}
       </div>
 
       {showArrows && total > 1 ? (

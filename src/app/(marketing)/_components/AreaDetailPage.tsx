@@ -11,6 +11,26 @@ const areaAnchorClasses: Record<string, string> = {
   arquitectura: "service-anchor--arquitectura",
 };
 
+const galleryHrefByAreaId: Record<BusinessArea["id"], string> = {
+  vehiculos: "/galeria#polarizados",
+  cardetailing: "/galeria#detailing",
+  arquitectura: "/galeria#home-office-and-business",
+};
+
+const galleryHrefByDetailId: Record<string, string> = {
+  "vehiculos-autos": "/galeria#polarizados",
+  "vehiculos-utilitarios": "/galeria#polarizados",
+  "vehiculos-gran-porte": "/galeria#maquinaria",
+  "vehiculos-maquinaria-pesada": "/galeria#maquinaria",
+  "detailing-interior": "/galeria#detailing",
+  "detailing-exterior": "/galeria#detailing",
+  "detailing-ceramico": "/galeria#detailing",
+  "detailing-acrilico": "/galeria#detailing",
+  "arquitectura-laminas": "/galeria#home-office-and-business",
+  "arquitectura-carteleria": "/galeria#home-office-and-business",
+  "arquitectura-publicidad": "/galeria#home-office-and-business",
+};
+
 interface AreaDetailPageProps {
   area: BusinessArea;
 }
@@ -164,6 +184,12 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
               >
                 Solicitar asesoramiento
               </Link>
+              <Link
+                href={galleryHrefByAreaId[area.id]}
+                className="cta-pop rounded-xl border border-brand-700 bg-brand-50 px-6 py-3 text-sm font-semibold text-brand-700 outline-none transition hover:bg-brand-100 focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 dark:border-blue-300 dark:bg-blue-950/40 dark:text-blue-200 dark:hover:bg-blue-900/60 dark:focus-visible:ring-blue-200"
+              >
+                Trabajos Realizados
+              </Link>
             </div>
           </div>
 
@@ -190,25 +216,36 @@ export function AreaDetailPage({ area }: AreaDetailPageProps) {
         />
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {area.details.map((detail, index) => (
-            <Reveal key={detail.id} delay={Math.min(index * 0.06, 0.2)}>
-              <article
-                id={detail.id}
-                className={`service-anchor lift-card ${areaAnchorClasses[area.id]} scroll-mt-28 rounded-2xl border border-slate-300 bg-white p-5 shadow-card dark:border-slate-700 dark:bg-slate-900`}
-              >
-                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">{detail.title}</h3>
-                {Array.isArray(detail.description) ? (
-                  <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                    {detail.description.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{detail.description}</p>
-                )}
-              </article>
-            </Reveal>
-          ))}
+          {area.details.map((detail, index) => {
+            const galleryHref = galleryHrefByDetailId[detail.id];
+
+            return (
+              <Reveal key={detail.id} delay={Math.min(index * 0.06, 0.2)}>
+                <Link
+                  id={detail.id}
+                  href={galleryHref}
+                  aria-label={`Ver trabajos realizados de ${detail.title}`}
+                  className={`service-anchor lift-card ${areaAnchorClasses[area.id]} group block scroll-mt-28 rounded-2xl border border-slate-300 bg-white p-5 shadow-card outline-none transition hover:-translate-y-1 hover:border-brand-700 focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-blue-300 dark:focus-visible:ring-blue-200`}
+                >
+                  <h3 className="text-xl font-bold text-slate-900 transition group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-blue-200">
+                    {detail.title}
+                  </h3>
+                  {Array.isArray(detail.description) ? (
+                    <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                      {detail.description.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{detail.description}</p>
+                  )}
+                  <span className="mt-4 inline-flex text-sm font-semibold text-brand-700 group-hover:underline dark:text-blue-200">
+                    Ver trabajos realizados
+                  </span>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </SectionWrapper>
 

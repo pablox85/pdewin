@@ -1,16 +1,50 @@
 import type { Metadata } from "next";
 import { Footer, Navbar, TrackedLinkButton } from "@/components/shared";
 import { siteConfig } from "@/config/site";
+import galleryOrder from "@/lib/gallery/gallery-order.json";
 import { getPublicImages } from "@/lib/gallery/getPublicImages";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildWhatsAppHref } from "@/lib/whatsapp";
 import { CoverageCollapsible } from "./_components/CoverageCollapsible";
 import { GalleryStackWithModal } from "./_components/GalleryStackWithModal";
+import { VideoGallery } from "./_components/VideoGallery";
 
 const galleryTitle = "Galería de trabajos de polarizados y detailing en Uruguay";
 const galleryDescription =
   "Fotos reales de trabajos en polarizados, láminas, home & office y car detailing en Ciudad de la Costa, Canelones, Montevideo y Maldonado.";
 const gallerySocialImage = "/preview-home.png";
+const galleryVideos = [
+  { src: "/videos/selva005.mp4", title: "Ahumado nanocerámico al 45%" },
+  { src: "/videos/selva006.mp4", title: "Ahumado nanocerámico al 45%" },
+  { src: "/videos/selva001.mp4", title: "Ahumado nanocerámico al 45%" },
+  { src: "/videos/selva002.mp4", title: "Ahumado nanocerámico al 45%" },
+  { src: "/videos/selva003.mp4", title: "Ahumado nanocerámico al 45%" },
+  { src: "/videos/selva004.mp4", title: "Ahumado nanocerámico al 45%" },
+];
+
+function sortImagesByManualOrder<T extends { src: string }>(category: string, images: T[]) {
+  const manualOrder = (galleryOrder as Record<string, string[]>)[category] ?? [];
+  const orderBySrc = new Map(manualOrder.map((src, index) => [src, index]));
+
+  return [...images].sort((a, b) => {
+    const orderA = orderBySrc.get(a.src);
+    const orderB = orderBySrc.get(b.src);
+
+    if (orderA !== undefined && orderB !== undefined) {
+      return orderA - orderB;
+    }
+
+    if (orderA !== undefined) {
+      return -1;
+    }
+
+    if (orderB !== undefined) {
+      return 1;
+    }
+
+    return a.src.localeCompare(b.src, "es", { numeric: true });
+  });
+}
 
 export const metadata: Metadata = buildMetadata({
   title: galleryTitle,
@@ -41,7 +75,7 @@ export const metadata: Metadata = buildMetadata({
 export default async function GaleriaPage() {
   // Ajustes manuales de layout para galeria.
   const GALLERY_CAROUSEL_HEIGHT_CLASS = "h-[38vh] min-h-[260px] sm:min-h-[300px] lg:min-h-[320px]";
-  const GALLERY_AUTOPLAY_MS = 0;
+  const GALLERY_AUTOPLAY_MS = 1600;
   const VISIBLE_CATEGORIES = [
     "Cartelería",
     "Polarizados",
@@ -58,6 +92,7 @@ export default async function GaleriaPage() {
     sorri: "Home, Office & Business",
     office: "Home, Office & Business",
     home: "Home, Office & Business",
+    selva: "Home, Office & Business",
     det: "Detailing",
   };
 
@@ -96,7 +131,10 @@ export default async function GaleriaPage() {
     }
 
     return a.localeCompare(b, "es");
-  }).map(([title, imagesInCategory]) => ({ title, images: imagesInCategory }));
+  }).map(([title, imagesInCategory]) => ({
+    title,
+    images: sortImagesByManualOrder(title, imagesInCategory),
+  }));
   const visibleGroups = groupedEntries.filter((group) => VISIBLE_CATEGORIES.includes(group.title));
   const galleryUrl = `${siteConfig.domain}/galeria`;
   const imageGallerySchema = {
@@ -204,6 +242,8 @@ export default async function GaleriaPage() {
               autoPlayMs={GALLERY_AUTOPLAY_MS}
             />
           )}
+
+          <VideoGallery videos={galleryVideos} />
         </section>
       </main>
       <Footer />

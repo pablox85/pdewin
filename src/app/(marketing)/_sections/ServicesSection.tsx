@@ -11,7 +11,7 @@ const areaStyles: Record<string, string> = {
 
 const galleryAnchorByAreaId: Record<string, string> = {
   vehiculos: "polarizados",
-  arquitectura: "home-office-business",
+  arquitectura: "home-office-and-business",
   cardetailing: "detailing",
 };
 
