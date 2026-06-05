@@ -47,6 +47,12 @@ export function HeroSection() {
                 >
                   Quiero asesoramiento
                 </Link>
+                <Link
+                  href="/galeria"
+                  className="cta-pop rounded-xl border border-brand-700 bg-brand-50 px-6 py-3 text-sm font-semibold text-brand-700 outline-none transition hover:bg-brand-100 focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 dark:border-blue-300 dark:bg-blue-950/40 dark:text-blue-200 dark:hover:bg-blue-900/60 dark:focus-visible:ring-blue-200"
+                >
+                  Ver trabajos realizados
+                </Link>
               </div>
             </div>
           </Reveal>
