@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const PROMO_MODAL_ENABLED = true;
+const PROMO_MODAL_ENABLED = false;
 const PROMO_MODAL_DELAY_MS = 2500;
 const CONTACT_FORM_TARGET = "#contacto";
 
