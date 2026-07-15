@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polarizados del Este</title>
+    <meta
+      name="description"
+      content="Soluciones profesionales en vehiculos, car detailing y Home & Deco."
+    />
+    <script>
+      (function () {
+        var storedTheme = localStorage.getItem("pde-theme");
+        var theme = storedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      })();
+    </script>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+  </head>
+  <body data-page="inicio">
+    <header class="navbar">
+      <div class="container navbar__inner">
+        <a class="navbar__brand" href="index.html" aria-label="Ir al inicio">
+          <img class="logo--light" src="assets/images/NEGRO-FONDO-TRANSPARENTE.png" alt="Polarizados del Este" />
+          <img class="logo--dark" src="assets/images/BLANCO-FONDO-TRANSPARENTE.png" alt="Polarizados del Este" />
+        </a>
+        <div class="navbar__menu">
+          <nav class="navbar__links" aria-label="Navegacion principal">
+            <a class="nav-link" data-nav-id="inicio" href="index.html">Inicio</a>
+            <a class="nav-link" data-nav-id="vehiculos" href="vehiculos.html">Vehiculos</a>
+            <a class="nav-link" data-nav-id="cardetailing" href="cardetailing.html">Car Detailing</a>
+            <a class="nav-link" data-nav-id="arquitectura" href="arquitectura.html">Home Deco & Business</a>
+          </nav>
+          <div class="navbar__actions">
+            <button class="theme-toggle" type="button" aria-label="Cambiar tema" role="switch" aria-checked="false">
+              <span class="theme-toggle__thumb" aria-hidden="true">☀</span>
+              <span class="sr-only">Cambiar tema</span>
+            </button>
+            <button class="menu-toggle" type="button" aria-label="Abrir menu principal" aria-expanded="false">
+              <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-backdrop" hidden></div>
+      <div class="mobile-menu" id="mobile-navigation-panel" aria-label="Navegacion movil">
+        <div class="container mobile-menu__inner">
+          <a class="mobile-menu__link" data-nav-id="inicio" href="index.html">Inicio</a>
+          <a class="mobile-menu__link" data-nav-id="vehiculos" href="vehiculos.html">Vehiculos</a>
+          <a class="mobile-menu__link" data-nav-id="cardetailing" href="cardetailing.html">Car Detailing</a>
+          <a class="mobile-menu__link" data-nav-id="arquitectura" href="arquitectura.html">Home &amp; Deco</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="site-shell">
+      <section class="section section--hero">
+        <div class="ambient-orb ambient-orb--left" aria-hidden="true"></div>
+        <div class="ambient-orb ambient-orb--right" aria-hidden="true"></div>
+        <div class="container grid grid--hero">
+          <div class="hero-copy reveal">
+            <p class="hero-copy__eyebrow">Polarizados del Este</p>
+            <h1 class="hero-copy__title">Soluciones premium para vehiculos, car detailing, Home, Deco & Business.</h1><!--modificado-->
+            <p class="hero-copy__description">
+              Elevamos la imagen y el valor de cada proyecto con procesos claros, ejecucion precisa y resultados que
+              se notan al instante. <!--modificado-->
+            </p>
+            <div class="button-row">
+              <a class="button cta-pop" href="vehiculos.html">Explorar servicios</a><!--corregir ancla #1-->
+              <a class="button-secondary cta-pop" href="#contacto">Quiero asesoramiento</a>
+            </div>
+          </div>
+          <aside class="card lift-card reveal" style="--reveal-delay:0.1s">
+            <h2>Por que elegirnos</h2>
+            <ul class="list-tight mt-4 text-sm">
+              <li>Diagnostico inicial para definir la mejor solucion para tu caso.</li>
+              <li>Atencion personalizada para clientes particulares, empresas y flotas.</li>
+              <li>Estandares de calidad consistentes en cada etapa del servicio.</li>
+              <li>Seguimiento post-servicio para asegurar resultados sostenibles.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--muted">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-header__eyebrow">Unidades de negocio</p> <!--anclar #1-->
+            <h2 class="section-header__title">Elegi la solucion ideal para tu objetivo</h2>
+            <p class="section-header__description">
+              Cada unidad cuenta con una pagina dedicada y detallada por servicio para ayudarte a decidir rapido.
+            </p>
+          </header>
+          <div class="grid grid--three stack-lg">
+            <article class="card lift-card reveal" style="--reveal-delay:0s">
+              <p class="pill pill--vehiculos">Vehiculos</p>
+              <h3 class="mt-4">Proteccion y estilo para todo tipo de vehiculos</h3>
+              <p class="mt-4 text-sm">Polarizados y laminas de seguridad, para particulares, comercial y flotas.</p> <!--modificado-->
+              <ul class="services-list mt-4 text-sm">
+                <li>• Autos</li>
+                <li>• Utilitarios</li>
+                <li>• Vehiculos de gran porte</li>
+                <li>• Maquinaria Pesada</li> <!--modificado-->
+              </ul>
+              <a class="button-secondary cta-pop mt-6" href="vehiculos.html">Ver servicios</a><!--modificado-->
+            </article>
+            <article class="card lift-card reveal" style="--reveal-delay:0.06s">
+              <p class="pill pill--cardetailing">Car Detailing</p>
+              <h3 class="mt-4">Car detailing de nivel profesional</h3>
+              <p class="mt-4 text-sm">
+                Limpieza profunda, pulidos y proteccion avanzada para resultados superiores.
+              </p>
+              <ul class="services-list mt-4 text-sm">
+                <li>• Interior</li>
+                <li>• Exterior</li>
+                <li>• Tratamiento ceramico y acrilico</li>
+                <li>• Pulido de opticas</li> <!--modificado-->
+              </ul>
+              <a class="button-secondary cta-pop mt-6" href="cardetailing.html">Ver servicios</a><!--modificado-->
+            </article>
+            <article class="card lift-card reveal" style="--reveal-delay:0.12s">
+              <p class="pill pill--arquitectura">Home-Office & Business</p> <!--modificado-->
+              <h3 class="mt-4">Control solar, Privacidad , Seguridad  Y publicidad </h3><!--modificado-->
+              <p class="mt-4 text-sm">
+                LAminas de conttol solar, visual y seguridad para hogares, comercios y oficinas.<!--modificado-->
+              </p>
+              <ul class="services-list mt-4 text-sm">
+                <li>• Microperforados</li><!--modificado-->
+                <li>• Vinilos</li><!--modificado-->
+                <li>• Lonas impresas</li><!--modificado-->
+                <li>• Carteleria en general</li><!--modificado-->
+              </ul>
+              <a class="button-secondary cta-pop mt-6" href="arquitectura.html">Ver servicios</a> <!--modificado-->
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-header__eyebrow">Casos reales</p>
+            <h2 class="section-header__title">Clientes que confian en nuestro trabajo</h2>
+            <p class="section-header__description">
+              Historias de marcas y proyectos que eligieron calidad, orden y resultados medibles.
+            </p>
+          </header>
+          <div class="grid grid--three stack-lg">
+            <article class="card lift-card reveal" style="--reveal-delay:0s">
+              <p class="testimonials-quote">
+                "Centralizamos varios servicios con un solo proveedor y mejoramos tiempos, calidad y experiencia del
+                cliente."
+              </p>
+              <footer class="testimonial-footer">
+                <p><strong>Laura M.</strong></p>
+                <p class="muted text-sm">Gerente comercial</p>
+              </footer>
+            </article>
+            <article class="card lift-card reveal" style="--reveal-delay:0.08s">
+              <p class="testimonials-quote">
+                "Nos ayudaron a ordenar la ejecucion y elevar la imagen de marca en vehiculos y espacios comerciales."
+              </p>
+              <footer class="testimonial-footer">
+                <p><strong>Martin P.</strong></p>
+                <p class="muted text-sm">Director de operaciones</p>
+              </footer>
+            </article>
+            <article class="card lift-card reveal" style="--reveal-delay:0.16s">
+              <p class="testimonials-quote">
+                "El equipo entendio nuestro objetivo desde el inicio y entrego resultados concretos en poco tiempo."
+              </p>
+              <footer class="testimonial-footer">
+                <p><strong>Sofia R.</strong></p>
+                <p class="muted text-sm">Emprendedora</p>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-header__eyebrow">Sobre nosotros</p>
+            <h2 class="section-header__title">Estrategia, ejecucion y resultados</h2>
+            <p class="section-header__description">
+              Combinamos criterio tecnico y comunicacion efectiva para convertir cada proyecto en una experiencia de
+              alto valor, satisfaciendo tus necesidades.
+            </p>
+          </header>
+          <div class="grid grid--three stack-lg">
+            <article class="card lift-card reveal">
+              <h3>Enfoque integral</h3>
+              <p class="mt-4 text-sm">
+                Combinamos tecnica, estetica y vision comercial para crear soluciones completas.
+              </p>
+            </article>
+            <article class="card lift-card reveal" style="--reveal-delay:0.08s">
+              <h3>Metodologia orientada a conversion</h3>
+              <p class="mt-4 text-sm">
+                Definimos objetivos, medimos impacto y optimizamos cada etapa para potenciar resultados.
+              </p>
+            </article>
+            <article class="card lift-card reveal" style="--reveal-delay:0.16s">
+              <h3>Comunicacion clara</h3>
+              <p class="mt-4 text-sm">
+                Mantenemos una comunicacion simple y directa de impacto inmediato.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contacto">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-header__eyebrow">Contacto</p>
+            <h2 class="section-header__title">Hablemos de tu proximo proyecto</h2> <!--revisar end-point-->
+            <p class="section-header__description">
+              Completa el formulario y te respondemos a la brevedad con una propuesta clara.
+            </p>
+          </header>
+          <div class="grid grid--contact stack-lg">
+            <form class="card lift-card reveal" id="contact-form">
+              <div class="form-grid">
+                <label class="field"><span>Nombre</span><input required type="text" name="nombre" placeholder="Tu nombre" /></label>
+                <label class="field"><span>Email</span><input required type="email" name="email" placeholder="tu@email.com" /></label>
+              </div>
+              <label class="field--full mt-4">
+                <span>Servicio de interes</span>
+                <select required name="servicio">
+                  <option value="" selected disabled>Seleccionar</option>
+                  <option value="vehiculos">Vehiculos</option>
+                  <option value="car-detailing">Car Detailing</option>
+                  <option value="home-deco">Home</option>
+
+<option value="home-deco">Office</option>
+<option value="home-deco">Business</option>   
+             </select>
+              </label>
+              <label class="field--full mt-4">
+                <span>Mensaje</span>
+                <textarea
+                  required
+                  name="mensaje"
+                  rows="5"
+                  placeholder="Contanos que necesitas, para cuando lo necesitas y cual es tu objetivo."
+                ></textarea>
+              </label>
+              <button class="button cta-pop mt-5" type="submit">Enviar consulta</button>
+              <p class="success-message" hidden>Consulta enviada con exito. Te responderemos a la brevedad.</p>
+            </form>
+            <aside class="card lift-card reveal" style="--reveal-delay:0.1s">
+              <h3>Atencion directa</h3>
+              <ul class="list-tight mt-4 text-sm">
+                <li>Email: contacto@pdwwin.com</li>
+                <li>Telefono: +598 92 906 102</li>
+                <li>Ubicacion: Ciudad de la costa, Uruguay</li>
+              </ul><!--modificado agregar que se atiende en montevideo-->
+              <p class="contact-note">
+                Al recibir tu mensaje, analizamos tu necesidad y te contactamos con una recomendacion puntual.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>Polarizados del Este | Ciudad de la Costa, Uruguay</p>
+        <p>contacto@pdwwin.com | +598 92 906 102</p>
+        <p>Copyright <span id="footer-year"></span>. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/render.js"></script>
+  </body>
+</html>
