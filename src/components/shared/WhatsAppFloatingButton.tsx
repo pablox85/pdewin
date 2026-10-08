@@ -18,7 +18,7 @@ function subscribeToClientStatus() {
   return () => {};
 }
 
-function getInitialPosition(): Position | null {
+function getBasePosition(): Position | null {
   if (typeof window === "undefined") {
     return null;
   }
@@ -32,6 +32,30 @@ function getInitialPosition(): Position | null {
   const initialY = Math.min(Math.max(preferredY, SIDE_MARGIN), maxY);
 
   return { x: initialX, y: initialY };
+}
+
+function getDesktopFooterAlignedY(): number | null {
+  if (typeof window === "undefined" || window.innerWidth < 768) {
+    return null;
+  }
+
+  const footer = document.querySelector("footer.border-slate-200.bg-white");
+  const footerTop = footer?.getBoundingClientRect().top;
+
+  if (footerTop === undefined || footerTop < BUTTON_SIZE + SIDE_MARGIN || footerTop > window.innerHeight) {
+    return null;
+  }
+
+  return footerTop - BUTTON_SIZE;
+}
+
+function getInitialPosition(): Position | null {
+  const basePosition = getBasePosition();
+  const footerAlignedY = getDesktopFooterAlignedY();
+
+  return basePosition && footerAlignedY !== null
+    ? { ...basePosition, y: footerAlignedY }
+    : basePosition;
 }
 
 export function WhatsAppFloatingButton() {
@@ -48,6 +72,7 @@ export function WhatsAppFloatingButton() {
     moved: false,
     active: false,
   });
+  const isFooterAlignedRef = useRef(false);
   const suppressClickRef = useRef(false);
 
   const whatsappHref = useMemo(() => buildWhatsAppHref(), []);
@@ -76,6 +101,39 @@ export function WhatsAppFloatingButton() {
 
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
+  }, [isClient]);
+
+  useEffect(() => {
+    if (!isClient) {
+      return;
+    }
+
+    const syncFooterAlignment = () => {
+      const footerAlignedY = getDesktopFooterAlignedY();
+
+      if (footerAlignedY !== null) {
+        isFooterAlignedRef.current = true;
+        setPosition((prev) => {
+          const basePosition = prev ?? getBasePosition();
+          return basePosition ? { ...basePosition, y: footerAlignedY } : prev;
+        });
+        return;
+      }
+
+      if (!isFooterAlignedRef.current) {
+        return;
+      }
+
+      isFooterAlignedRef.current = false;
+      setPosition((prev) => {
+        const basePosition = getBasePosition();
+        return basePosition && prev ? { ...prev, y: basePosition.y } : prev;
+      });
+    };
+
+    syncFooterAlignment();
+    window.addEventListener("scroll", syncFooterAlignment, { passive: true });
+    return () => window.removeEventListener("scroll", syncFooterAlignment);
   }, [isClient]);
 
   const openWhatsApp = () => {

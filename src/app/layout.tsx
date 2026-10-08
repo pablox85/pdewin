@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Manrope, Space_Grotesk } from "next/font/google";
+import { Inter, Manrope, Space_Grotesk } from "next/font/google";
 import { cookies } from "next/headers";
 import { ClientEnhancements } from "@/components/client/ClientEnhancements";
 import { siteConfig } from "@/config/site";
@@ -16,6 +16,11 @@ const manrope = Manrope({
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 const isClarityEnabled = process.env.VERCEL_ENV === "production";
@@ -43,7 +48,7 @@ export default async function RootLayout({
       className={isDark ? "dark" : undefined}
     >
       <body
-        className={`${manrope.variable} ${spaceGrotesk.variable} bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100`}
+        className={`${manrope.variable} ${spaceGrotesk.variable} ${inter.variable} bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100`}
       >
         {children}
 

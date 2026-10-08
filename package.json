@@ -9,6 +9,7 @@
     "gallery:manifest": "node scripts/generate-gallery-manifest.mjs"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.49.0",
     "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.34.3",
     "next": "^16.2.4",
